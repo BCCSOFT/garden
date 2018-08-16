@@ -1,0 +1,1142 @@
+@import "../css-framework/02_import";
+@import "header";
+@import "footer";
+@import "menu-desktop";
+@import "menu-mobile";
+@import "light-box";
+@import "contact-form";
+//------------------------------------------------------------------------------
+// 隱藏 / 顯示 項目:
+//------------------------------------------------------------------------------
+
+.desktop {
+  display: none;
+  @include tablet-7inch {
+    display: block;
+  }
+}
+
+.mobile {
+  display: none;
+  @include tablet-7inch-max {
+    display: block;
+  }
+}
+
+#ad_area,
+.breadcrumb,
+.pagination-top {
+  display: none;
+}
+
+[data-tab-default-content] {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+[data-tab-content] {
+  display: none;
+
+  &.active {
+    display: block;
+    width: 100%;
+  }
+}
+
+[data-toggle-content] {
+  @include tablet-7inch-max {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+a {
+  display: block;
+  color: $color-black;
+
+  &.active,
+  &:hover {
+    color: $color-main;
+  }
+}
+
+a[href^="tel:"] {
+  color: $color-main;
+}
+
+section {
+  text-align: center;
+  overflow: hidden;
+}
+
+figure,
+hgroup {
+  vertical-align: middle;
+  text-align: center;
+  letter-spacing: initial;
+  word-spacing: initial;
+}
+
+figcaption {
+  @extend %text-hide;
+}
+
+// 錨點偏移
+:target {
+    padding-top: 110px;
+    margin-top: -110px;
+}
+//------------------------------------------------------------------------------
+// 手機版選單按鈕
+//------------------------------------------------------------------------------
+
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  @include tablet-7inch-max {
+    display: inline-block;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  &.change .bar1 {
+    //-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  &.change .bar2 {
+    opacity: 0;
+  }
+
+  &.change .bar3 {
+    //-webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+}
+
+//------------------------------------------------------------------------------
+// fixed top [effect]
+//------------------------------------------------------------------------------
+
+.effect_fixed {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  //background: white; // 假底色
+}
+// .sub-nav-1 當視窗滑動到此 項目tab 它才會固定在上方
+
+#main-nav {
+  &.effect_fixed {
+    top: 60px;
+  }
+}
+
+.product-nav,
+.sub-nav-1,
+.sub-nav-2 {
+  &.effect_fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+  }
+}
+
+.product-nav {
+  background-color: white;
+}
+//------------------------------------------------------------------------------
+// body
+//------------------------------------------------------------------------------
+
+body {
+  position: relative;
+  left: 0;
+  color: $black;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: all $menu-effect-time ease-in-out;
+
+  > * {
+    background-color: $body-bg-color;
+  }
+
+  &.effect-body-left-slide {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
+}
+//------------------------------------------------------------------------------
+// main
+//------------------------------------------------------------------------------
+
+main {
+  position: relative;
+  margin-top: 110px;
+}
+
+body.index,
+body#about-us,
+body#case,
+body#support {
+  main {
+    margin-top: 60px;
+  }
+}
+
+body.contact-us_popup{
+  main{
+    margin-top: 0;
+  }
+}
+
+//------------------------------------------------------------------------------
+// main-nav & .sub-nav-1
+//------------------------------------------------------------------------------
+
+#main-nav,
+.sub-nav-1,
+.sub-nav-2 {
+  @include nav(50px);
+  z-index: 1;
+  border-bottom: solid 1px #ddd;
+
+
+  a {
+    padding: 0 10px;
+
+    &.active,
+    &:hover {
+      @include tablet-7inch {
+        color: $color-main;
+        box-shadow: 0 -2px $color-main inset, 0 2px $color-main;
+        background-color: #eee;
+
+        &::before {
+          display: inline-block;
+        }
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid $color-main;
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      display: none;
+    }
+  }
+}
+
+.sub-nav-1,
+.sub-nav-2 {
+  a {
+    &.active,
+    &:hover {
+      box-shadow: 0 -4px $color-main inset;
+      background-color: transparent;
+    }
+
+    &::before {
+      bottom: 4px;
+    }
+  }
+}
+
+#main-nav {
+  z-index: 7;
+  border-top: solid 1px #ddd;
+  background-color: white;
+
+  [data-toggle-nav] {
+    display: inline-block;
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    display: none;
+    color: $black;
+
+    span {
+      @include h5;
+      position: relative;
+      display: inline-block;
+      padding-right: 20px;
+
+      &::after {
+        display: block;
+        content: '';
+        @include svg_down(#dddddd);
+        @include scale(15px,15px);
+        position: absolute;
+        top: 2px;
+        right: 0;
+      }
+    }
+
+    i,
+    img {
+      display: none;
+    }
+
+//    &:after {
+//      @extend .bcc-down;
+//      margin-left: 6px;
+//      color: #ddd;
+//    }
+
+    &.active {
+      color: $color-main;
+
+      &:after {
+        color: $color-main;
+      }
+    }
+    @include tablet-7inch-max {
+      display: block;
+    }
+  }
+
+  article {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  h1 {
+    margin: 0 15px;
+    @include h5;
+    display: inline-block;
+    line-height: 50px !important;
+  }
+
+  ol {
+    float: right;
+    @include tablet-7inch-max {
+      float: none;
+    }
+
+    li {
+      @include tablet-7inch-max {
+        display: block;
+        border-top: solid 1px #ddd;
+      }
+    }
+  }
+}
+
+.sub-nav-1,
+.sub-nav-2 {
+  border-top: solid 1px #ddd;
+  background-color: white;
+
+  article {
+    overflow: auto;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  a[data-type="button"] {
+    display: none;
+  }
+
+  ol {
+    float: left;
+    @include tablet-7inch-max {
+      white-space: nowrap;
+      overflow: auto;
+      display: block;
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// .pagination-bottom (頁數按鈕)
+//------------------------------------------------------------------------------
+
+#pagination_bottom {
+  $size: 20px;
+  $size-s: 50px;
+  position: fixed;
+  right: 0;
+  top: 100px;
+  display: none;
+  @include tablet-7inch-max {
+    top: inherit;
+    bottom: 0;
+    background-color: white;
+    box-shadow: -1px -1px 5px rgba(0,0,0,0.4);
+    height: 150px;
+    overflow-y: scroll;
+    padding: 0;
+  }
+
+  ol {
+    @include tablet-7inch-max {
+      padding: 10px;
+    }
+  }
+
+  li {
+    display: block;
+    float: none;
+    margin: 10px;
+    @include tablet-7inch-max {
+      display: inline-block;
+      margin: 0;
+      float: left;
+    }
+
+    a {
+      padding: 0;
+      width: $size;
+      height: $size;
+      line-height: $size - 2px;
+      border-radius: 50%;
+      @extend %text-hide;
+      background-color: #948890;
+      @include tablet-7inch-max {
+        text-indent: inherit;
+        width: $size-s;
+        height: $size-s;
+        line-height: $size-s - 2px;
+        border-radius: 0;
+        background-color: transparent;
+      }
+
+      &.active {
+        border: 1px solid #ddd;
+        background-color: #4CAF50;
+      }
+    }
+  }
+}
+
+section[class*="page-"] {
+  &.active {
+    border: solid 10px red;
+  }
+}
+//------------------------------------------------------------------------------
+// #ad_area (廣告區塊)
+//------------------------------------------------------------------------------
+
+body.ADanimate #ad_area {
+  top: 0;
+  opacity: 1;
+}
+
+body#index header,
+body#index main {
+  transition: all 0.2s ease-in-out;
+}
+
+body.ADanimate header {
+  top: 100px;
+}
+
+body.ADanimate .menu {
+  top: 161px;
+}
+
+body#index.ADanimate main {
+  margin-top: 160px;
+}
+
+body.ADanimate .cd-nav {
+  top: 160px;
+  padding-bottom: 100px;
+}
+
+#ad_area {
+  height: 100px;
+  overflow: hidden;
+  background-color: #eeeeee;
+  position: fixed;
+  width: 100%;
+  display: block;
+  box-shadow: 0 1px 3px rgba(51, 51, 51, 0.5);
+  top: -100px;
+  opacity: 0;
+  z-index: 9999;
+  transition: all 0.2s ease-in-out;
+  @include bg("index/ad/bg.jpg");
+
+  img {
+    @include img_desktop("index/ad/01.png");
+    @include img_mobile("index/ad/02.jpg");
+    padding-bottom: 100px;
+    background-position: bottom;
+  }
+
+  .close {
+    color: #cacaca;
+    float: right;
+    font-size: 8px;
+    font-weight: 100;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    background-color: #fff;
+    border: solid 1px #e0e0e0;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 23px;
+    text-indent: 1px;
+    z-index: 20;
+    cursor: pointer;
+    @include desktop {
+      position: absolute;
+      left: 1160px;
+      right: 0;
+      margin: 0 auto;
+    }
+    @include desktop-max {
+      position: absolute;
+      right: 5px;
+    }
+  }
+
+  a[data-type="button"] {
+    @include btn-full;
+    width: 100%;
+  }
+}
+
+//-----------------------------------------------------------------------------
+// 燈 箱 light-box
+//-----------------------------------------------------------------------------
+
+#light-box {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in;
+  display: none;
+
+  &.active {
+    display: block;
+
+    .overlay {
+      display: block;
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-size: 35px;
+    width: 50px;
+    color: #888;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  h4 {
+    margin: 12px 50px 0 12px;
+  }
+
+  article {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1002;
+    overflow: auto;
+    width: 75%;
+    margin: 0 auto;
+    max-width: 960px;
+    transition: all 0.3s ease-in;
+    @include tablet-7inch-max {
+      width: 90%;
+    }
+
+    section {
+      padding: 15px;
+      @include tablet-7inch-max {
+        padding: 5px;
+      }
+
+      figure {
+        @include video;
+      }
+    }
+  }
+
+  .overlay {
+    background-color: rgba(0,0,0,.5);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: none;
+    transition: all 0.3s ease-in;
+  }
+}
+
+//-----------------------------------------------------------------------------
+// 影片
+//-----------------------------------------------------------------------------
+
+.mobile-pos-video {
+  @include section;
+
+  article {
+    @include content;
+  }
+
+  .video-container {
+    @include video;
+  }
+}
+//-----------------------------------------------------------------------------
+// 電子發票專用熱感紙
+//-----------------------------------------------------------------------------
+
+%module_paper {
+  @include section;
+  @include section-img-left;
+  background-color: $section-bg;
+
+  h2 {
+    margin-bottom: 35px;
+  }
+
+  dl {
+    @include dl;
+    @extend %dl-spec;
+    @include grid-group;
+
+    dt {
+      @include col-5_desktop;
+      @include col-5_mobile;
+    }
+
+    dd {
+      @include col-7_desktop;
+      @include col-7_mobile;
+    }
+  }
+}
+
+.module_paper-m,
+.module_paper-s {
+  @extend %module_paper;
+}
+
+.module_paper-s {
+  figure img {
+    @include img('hardware/paper.png');
+  }
+}
+
+.module_paper-m {
+  figure img {
+    @include img('hardware/paper80.png');
+  }
+}
+//-----------------------------------------------------------------------------
+// 型錄下載
+//-----------------------------------------------------------------------------
+
+.module_catalog-download {
+  @include section;
+  background-color: $section-bg;
+  // @include bg('_global/bg-catalog-download.jpg');
+
+  ol {
+    @include list-grid-4_desktop;
+
+    li {
+      margin-bottom: 60px;
+
+      figure {
+        // max-width: 300px;
+        margin: 0 auto;
+        padding: 0 15%;
+
+        &:hover {
+          > picture img {
+            transform: translateY(-10px);
+          }
+
+          i {
+            background-color: #2d51c7;
+          }
+        }
+
+        > picture img {
+          @include scale-1x1-4;
+          box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      &:nth-child(1) figure > picture img {
+        @include bg('download/2018_智能餐飲_概觀_A4雙面_DM_v17-01.jpg');
+      }
+
+      &:nth-child(2) figure > picture img {
+        @include bg('download/2016_雲端點餐_DM-01.jpg');
+      }
+
+      &:nth-child(3) figure > picture img {
+        @include bg('download/2018_Kiosk_DM_p01.jpg');
+      }
+      &:nth-child(4) figure > picture img {
+        @include bg('download/2018_行動收銀_概觀_A4雙面_DM(V1)_v16-01.jpg');
+      }
+      &:nth-child(5) figure > picture img {
+        @include bg('download/2018_行動收銀_概觀_A4雙面_DM(x990)_v13-01.jpg');
+      }
+      &:nth-child(6) figure > picture img {
+        @include bg('download/2018_餐飲大師_促銷DM_雲端版_v12.jpg');
+      }
+       &:nth-child(7) figure > picture img {
+        @include bg('download/2018_雲端後台_概觀_A4雙面_DM_v13-01.jpg');
+      }
+
+      hgroup {
+        margin: 10px 0;
+
+        picture img {
+          $color: #36c;
+          @include scale(20px,20px);
+          vertical-align: top;
+          @include svg_download1($color);
+        }
+
+        h6 {
+          display: inline-block;
+          font-weight: bold;
+          margin-left: 6px;
+        }
+      }
+
+      a[data-type="button"] {
+        border-radius: 4px;
+        border: solid 2px transparent;
+        padding: 6px 15px;
+
+        &:before {
+          content: '';
+          @include scale(25px,25px);
+          margin-right: 8px;
+          display: none;
+        }
+      }
+      $color-a: white;
+      $color-b: #5775d8;
+
+      a[data-type="button"]:nth-of-type(1) {
+        color: $color-a;
+        background-color: $color-b;
+        border-color: $color-b;
+        @include btn-full;
+      }
+
+      i {
+        color: $color-a;
+        background-color: $color-b;
+        border-color: $color-b;
+        display: inline-block;
+        border-radius: 4px;
+        border: solid 2px transparent;
+        padding: 6px 15px;
+        font-style: normal;
+      }
+
+      a[data-type="button"]:nth-of-type(2) {
+        display: none;
+        color: $color-b;
+        border-color: $color-b;
+
+        &:hover {
+          color: $color-a;
+          background-color: $color-b;
+        }
+      }
+    }
+  }
+}
+
+//-----------------------------------------------------------------------------
+// 售後服務
+//-----------------------------------------------------------------------------
+.product_service{
+  @include section;
+
+  ol{
+    padding: 0 10%;
+    li{
+      > figure{
+        @include grid-group;
+
+        > *{
+          vertical-align: middle;
+        }
+
+        > figure{
+          @include col-4_desktop;
+        }
+        > hgroup{
+          @include col-8_desktop;
+          text-align: left;
+          margin-bottom: 0;
+          @include tablet-7inch-max{
+            text-align: center;
+          }
+
+          h4{
+            color: #eb7225;
+          }
+        }
+      }
+      figure img{
+        max-width: 180px;
+        @include scale-3x2;
+      }
+      &:nth-child(1) figure img{
+        @include img('support/service-1.png');
+      }
+      &:nth-child(2) figure img{
+        @include img('support/service-2.png');
+      }
+      &:nth-child(3) figure img{
+        @include img('support/service-3.png');
+      }
+    }
+  }
+}
+
+.contact-info{
+  display: none;
+  @include section;
+  background-color: $section-bg;
+
+  ol{
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li{
+      padding: 10px;
+      figure img{
+        max-width: 200px;
+      }
+      &:nth-child(1){
+        figure img{
+          @include img('support/line.png');
+        }
+        picture img{
+          @include img('support/line-search.png');
+          @include scale-8x1_desktop;
+          @include scale-5x1_mobile;
+        }
+      }
+      &:nth-child(2){
+        figure img{
+          @include img('support/call.png');
+        }
+      }
+      &:nth-child(3){
+        figure img{
+          @include img('support/mail.png');
+        }
+      }
+      &:nth-child(4){
+        figure img{
+          @include img('support/fb.png');
+        }
+        picture img{
+          @include img('support/fb-search.png');
+          @include scale-8x1_desktop;
+          @include scale-5x1_mobile;
+        }
+      }
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------------------
+// 功能模組 - 單元項目按鈕
+//-----------------------------------------------------------------------------
+
+.module_feature {
+  @include section;
+  text-align: center;
+
+  ol {
+    @include grid-group;
+
+    li {
+      $color: white;
+      $size: 100px;
+      @include col-3_desktop;
+      @include col-6_mobile;
+      display: inline-block;
+      margin-left: -4px;
+      vertical-align: top;
+      float: none;
+
+      figure {
+        margin: 20px 20%;
+        @include tablet-7inch-max {
+          margin: 15px 0;
+        }
+
+        &:hover {
+          span:before {
+            transform: rotate(90deg);
+          }
+          color: #2c4396;
+        }
+      }
+
+      h5 {
+        margin: 5px 0;
+        font-weight: bold;
+      }
+
+      span {
+        display: inline-block;
+        position: relative;
+        width: $size;
+        height: $size;
+        line-height: $size - 5px;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          width: $size;
+          height: $size;
+          border-radius: 50%;
+          transform: rotate(45deg);
+          transition: all 0.2s ease-in-out;
+        }
+      }
+
+      img {
+        @include scale(50px,50px);
+      }
+
+      &:nth-child(1) {
+        span:before {
+          $color-a: #4fbfe7;
+          $color-b: #3bb1d9;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_pos($color);
+        }
+      }
+
+      &:nth-child(2) {
+        span:before {
+          $color-a: #fbcf54;
+          $color-b: #f5ba42;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_purchase($color);
+        }
+      }
+
+      &:nth-child(3) {
+        span:before {
+          $color-a: #9ad368;
+          $color-b: #82c252;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_inventory($color);
+        }
+      }
+
+      &:nth-child(4) {
+        span:before {
+          $color-a: #f87d51;
+          $color-b: #e6663f;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_coupon($color);
+        }
+      }
+
+      &:nth-child(5) {
+        span:before {
+          $color-a: #ed5667;
+          $color-b: #d9434e;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_member($color);
+        }
+      }
+
+      &:nth-child(6) {
+        span:before {
+          $color-a: #47cdc4;
+          $color-b: #3abeb0;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_report($color);
+        }
+      }
+
+      &:nth-child(7) {
+        span:before {
+          $color-a: #5f9eee;
+          $color-b: #4d8cdc;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_chain($color);
+        }
+      }
+
+      &:nth-child(8) {
+        span:before {
+          $color-a: #c0d264;
+          $color-b: #b0c14e;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_money($color);
+        }
+      }
+
+      &:nth-child(9) {
+        span:before {
+          $color-a: #fcb355;
+          $color-b: #f79942;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_wholesale($color);
+        }
+      }
+
+      &:nth-child(10) {
+        span:before {
+          $color-a: #9298ee;
+          $color-b: #7378d6;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_payment($color);
+        }
+      }
+
+      &:nth-child(11) {
+        span:before {
+          $color-a: #ec87bf;
+          $color-b: #d870ab;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_invoice($color);
+        }
+      }
+
+      &:nth-child(12) {
+        span:before {
+          $color-a: #ca92ed;
+          $color-b: #b478da;
+          $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+          @include gradient(left, $list-1);
+        }
+
+        img {
+          @include svg_webmenu($color);
+        }
+      }
+    }
+  }
+
+  a[data-type="button"] {
+    @include btn-full;
+  }
+}
+
+//-----------------------------------------------------------------------------
+// 支援服務
+//-----------------------------------------------------------------------------
+
+#page-support .dm-img {
+  max-width: 158px;
+  margin: 0 auto;
+}
+//-----------------------------------------------------------------------------
+// jabezpos 專業的功能 按鈕連結
+//-----------------------------------------------------------------------------
+
+body#restaurant-solution_jabezpos-overview,
+body#retail-solution_jabezpos-overview {
+  a.for-software {
+    display: none;
+  }
+}
+
+body#page-jabezpos {
+  a.for-overview {
+    display: none;
+  }
+}

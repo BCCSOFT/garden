@@ -1,0 +1,289 @@
+@import "../css-framework/02_import";
+
+//-----------------------------------------------------------------------------
+// 消費者 - 概觀
+//-----------------------------------------------------------------------------
+
+.webmenu_banner {
+  @extend %banner_restaurant-solution;
+  background-image: url('../../image/_global/cloud-bg.png'), url("../../image/_global/bg-pomelo.jpg");
+  $color: white;
+  color: $color;
+
+  > article {
+    padding-bottom: 0;
+
+    > hgroup img {
+      @include img('software/webmenu/title.png');
+    }
+
+    > figure img {
+      @include img('software/webmenu/banner-item.png');
+      @include scale-3x1_desktop;
+      @include scale-4x3_mobile;
+      background-position: right bottom;
+    }
+  }
+
+  ol {
+    @extend %banner_main-svg;
+
+    li {
+      &:nth-child(1) span img {
+        @include svg_qrcode($color);
+      }
+
+      &:nth-child(2) span img {
+        @include svg_mobile-order($color);
+      }
+
+      &:nth-child(3) span img {
+        @include svg_payment_gateway($color);
+      }
+
+      &:nth-child(4) span img {
+        @include svg_search1($color);
+      }
+    }
+  }
+}
+
+ 
+.webmenu_overview_order {
+  display: none;
+  @include section;
+  background-color: $section-bg;
+
+  ol {
+    @extend %event;
+    margin: 0;
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) img {
+          @include img('software/webmenu/overview-order-#{$i}.png');
+        }
+      }
+    }
+  }
+
+  h4 {
+    color: #888888;
+    font-weight: normal;
+  }
+}
+
+.webmenu_overview_apply {
+  @include section;
+  $color: #fbd4d2;
+  background-color: $color;
+
+  ol {
+    @include list-grid-2_desktop;
+    @include list-grid-1_mobile;
+
+    li {
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) img {
+          @include img('software/webmenu/overview-apply-#{$i}.png');
+        }
+      }
+
+      > figure {
+        background-color: white;
+        border: solid 15px $color;
+        padding: 15px;
+        @include grid-group;
+        @include tablet-7inch-max {
+          border-width: 7.5px;
+          border-left: none;
+          border-right: none;
+        }
+
+        figure:first-of-type {
+          @include col-4;
+        }
+
+        figure:last-of-type {
+          @include col-8;
+          text-align: left;
+          padding-left: 5%;
+        }
+
+        h4 {
+          color: #ef858c;
+        }
+      }
+    }
+  }
+}
+
+.webmenu_overview_ordersection {
+  @include section-long;
+
+  > figure {
+    &:not(:last-child) {
+      margin-bottom: $section-space;
+    }
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        @include bg_desktop('software/webmenu/overview-bg-order-#{$i}.jpg');
+        @include bg_mobile('software/webmenu/overview-bg-order-#{$i}_mobile.jpg');
+      }
+    }
+
+    hgroup {
+      @include col-6_desktop;
+      @include tablet-7inch {
+        float: left;
+      }
+
+      h2 {
+        margin: 10px 0;
+      }
+      button{
+        @include btn-default(#36c);
+        max-width: 200px ;
+        border: none;
+      }
+    }
+
+    &:nth-child(1),&:nth-child(3) {
+      color: white;
+    }
+
+    &:nth-child(4) {
+      > article{
+        padding-top: 5%;
+        padding-bottom: 0;
+      }
+      hgroup{
+        @include col-12;
+      }
+      img{
+        @include img('software/webmenu/overview-order-4-img.png');
+        @include scale-2x1;
+      }
+    }
+    &:nth-child(6){
+      > article{
+        padding-top: 5%;
+        padding-bottom: 0;
+      }
+      hgroup{
+        @include col-12;
+      }
+      img{
+        @include img('software/webmenu/overview-order-6-img.png');
+        @include scale-2x1;
+      }
+    }
+  }
+}
+
+.webmenu_overview_video {
+  @include list-grid-3_desktop;
+  @include list-grid-1_mobile;
+  @include section;
+  color: white;
+  @extend %pilot;
+
+  > figure {
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        @include bg('software/webmenu/overview-video-#{$i}.jpg');
+      }
+    }
+
+    > article {
+      padding-top: 30%;
+      padding-bottom: 20%;
+    }
+
+    a[data-type="button"] {
+      @include btn-full;
+    }
+  }
+}
+
+.webmenu_overview_buy {
+  @include section;
+  @extend %pilot;
+
+  a[data-type="button"] {
+    @extend %button-buy;
+  }
+}
+//-----------------------------------------------------------------------------
+// 消費者 - 軟體介紹
+//-----------------------------------------------------------------------------
+
+.webmenu_software_content {
+  > figure {
+    &:nth-child(even) {
+      @include section-img-right;
+    }
+
+    &:nth-child(odd) {
+      @include section-img-left;
+    }
+
+    &:nth-child(n) {
+      @include section;
+
+      > article {
+        padding-bottom: 0;
+      }
+
+      img {
+        background-position: bottom;
+      }
+    }
+
+    &:nth-child(1) {
+      @include bg('software/webmenu/software-bg-qrcode.jpg');
+      text-align: center;
+
+      img {
+        @include img('software/webmenu/software-grcode.png');
+        @include scale-4x3;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 0;
+      $color-a: white;
+      $color-b: $section-bg;
+      $list-1: $color-a 0%, $color-a 80%, $color-b 80%, $color-b 100%;
+      @include gradient(top, $list-1);
+
+      img {
+        @include img('software/webmenu/software-ordering.png');
+      }
+    }
+
+    &:nth-child(3) {
+      background-color: $section-bg;
+
+      img {
+        @include img('software/webmenu/software-internal-or-external.jpg');
+      }
+    }
+
+    &:nth-child(4) {
+      background-color: #fbd3d1;
+
+      img {
+        @include img('software/webmenu/software-checkout.jpg');
+      }
+    }
+
+    &:nth-child(5) {
+      img {
+        @include img('software/webmenu/software-status.jpg');
+      }
+    }
+  }
+}

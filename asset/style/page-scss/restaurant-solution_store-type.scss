@@ -1,0 +1,314 @@
+@import "../css-framework/02_import";
+
+.restaurant-solution_store-type{
+	text-align: center;
+	padding: 60px 0; // 章節上下內距
+
+	 // Tab
+	nav{
+		margin: 20px 0;
+		ul{
+			//@include list-grid-4;
+			@include grid-group;
+			@include tablet-7inch{
+				max-width: 1200px; // 限制桌面版內容寬度
+				margin: 20px auto; // 內容置中
+			}
+			li{
+				max-width: 200px;
+				width: 25%;
+				display: inline-block;
+				a{
+					// display: block;
+					padding: 0.5rem;
+					color: #444;
+					border-bottom: solid 3px transparent;
+					transition: .3s;
+					@include tablet-7inch{
+						font-size: 1.5em;
+						font-weight: 700;
+					}
+
+					&:hover,&.active{
+						border-bottom: solid 3px #d83e39;
+						color: #d83e39;
+					}
+				}			
+			}
+		}
+	}
+
+	// 圖文區塊
+	figure{
+		//border: none; // 圖文區塊 邊框：無
+
+		&:nth-child(3){
+			picture{
+				@include bg('solution/restaurant/store-type-bg-1.jpg');
+			}
+			img{
+				@include img('solution/restaurant/store-type-img-1.png');
+				max-width: 650px;
+			}
+			ol{
+				li{
+					picture{
+						background-image: none;
+					}
+					&:nth-child(1){
+						img{
+							@include img('_global/product_mobile-pos.png');
+							max-width: 200px;
+						}
+					}
+					&:nth-child(2){						
+						img{
+							@include img('_global/product_webmenu.png');
+							max-width: 200px;
+						}	
+					}
+					&:nth-child(3){
+						img{
+							@include img('_global/product_jabezpos.png');
+							max-width: 200px;
+						}
+					}
+				}
+			}
+		}
+		&:nth-child(4){
+			picture{
+				@include bg('solution/restaurant/store-type-bg-2.jpg');
+			}
+			img{
+				@include img('solution/restaurant/store-type-img-2.png');
+			}
+			ol{
+				li{
+					picture{
+						background-image: none;
+					}
+					&:nth-child(1){
+						img{
+							@include img('_global/product_restaurant_pos.png');
+						}
+					}
+					&:nth-child(2){
+						img{
+							@include img('_global/product_mobile-pos.png');
+						}
+					}
+					&:nth-child(3){						
+						img{
+							@include img('_global/product_kds.png');
+						}	
+					}
+					&:nth-child(4){
+						img{
+							@include img('_global/product_webmenu.png');
+						}
+					}
+					&:nth-child(5){
+						img{
+							@include img('_global/product_member.png');
+						}
+					}
+					&:nth-child(6){
+						img{
+							@include img('_global/product_jabezpos.png');
+						}
+					}
+				}
+			}
+		}
+		&:nth-child(5){
+			picture{
+				@include bg('solution/restaurant/store-type-bg-3.jpg');
+			}
+			img{
+				@include img('solution/restaurant/store-type-img-3.png');
+			}
+			ol{
+				li{
+					picture{
+						background-image: none;
+					}
+					&:nth-child(1){
+						img{
+							@include img('_global/product_kiosk.png');
+						}
+					}
+					&:nth-child(2){						
+						img{
+							@include img('_global/product_kds.png');
+						}	
+					}
+					&:nth-child(3){
+						img{
+							@include img('_global/product_webmenu.png');
+						}
+					}
+					&:nth-child(4){
+						img{
+							@include img('_global/product_jabezpos.png');
+						}
+					}
+				}
+			}
+		}
+		&:nth-child(6){
+			picture{
+				@include bg('solution/restaurant/store-type-bg-4.jpg');
+			}
+			img{
+				@include img('solution/restaurant/store-type-img-4.png');
+			}
+			ol{
+				li{
+					picture{
+						background-image: none;
+					}
+					&:nth-child(1){
+						img{
+							@include img('_global/product_restaurant_pos.png');
+						}
+					}
+					&:nth-child(2){
+						img{
+							@include img('_global/product_mobile-pos.png');
+						}
+					}
+					&:nth-child(3){						
+						img{
+							@include img('_global/product_kds.png');
+						}	
+					}
+					&:nth-child(4){
+						img{
+							@include img('_global/product_webmenu.png');
+						}
+					}
+					&:nth-child(5){
+						img{
+							@include img('_global/product_member.png');
+						}
+					}
+					&:nth-child(6){
+						img{
+							@include img('_global/product_jabezpos.png');
+						}
+					}
+				}
+			}
+		}
+
+		// 圖片標題
+		figcaption{
+			display: none; // 顯示 或 隱藏
+		}
+		
+
+		// 圖片
+		> picture{
+			display: block;
+			position: relative;
+			overflow: hidden; // 控制 img 不超出範圍
+			@include tablet-7inch{
+				@include scale-2x1;
+			}
+			@include desktop{
+				@include scale-2-5x1;
+			}
+			// @include desktop-13inch{
+			// 	@include scale-4x1;
+			// }
+
+			img{
+				@include scale-2x1_mobile; // 圖片比例
+				@include scale-4x1_desktop; // 圖片比例
+				max-width: 1200px;
+				@include tablet-7inch{
+					margin-top: 40px;
+				}
+				@include desktop{
+					// margin-top: 130px;
+				}
+				@include desktop-13inch{
+					margin-top: 100px;
+				}
+				
+			}
+			blockquote{
+				color: #fff;
+				margin-top: 40px;
+				@include tablet-7inch{
+					margin-top: 60px;
+				}
+			}
+		}
+
+		// 項目二
+		ol{
+			//display: none;
+			@include list-grid-4_desktop;
+			@include list-grid-2_mobile;
+			@include tablet-7inch{
+				max-width: 1200px; // 限制桌面版內容寬度
+				margin: 20px auto; // 內容置中
+			}
+			margin: 20px 0;
+			li{
+				//display: list-item; // 顯示 123
+				//list-style-position: inside; // 項目在內容內
+				padding: 0 15px;
+				margin-bottom: 20px;
+				figure{
+					border-radius: 3px;
+					overflow: hidden;
+					box-shadow: 0 0 20px rgba(0,0,0,.1);
+					transition: all .3s;
+
+					&:hover{
+						transform: translate(3px, 3px);
+						box-shadow: 0 0 20px rgba(0,0,0,.3);
+					}
+
+					> a {
+						// 圖片區塊整塊連結
+						display: block; // 關閉 or 開啟 display: block;
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						cursor: pointer;
+						z-index: 9999;
+						cursor: pointer;
+					}
+
+					picture{
+						@include scale-1x1;
+						img{
+							@include scale-1x1;
+							max-width: 200px;
+							margin-top: 0;
+							//background-position: top -20px left 50%;
+						}
+					}
+
+
+					blockquote{
+						background-color: #f3726e;
+						padding: 0.5rem;
+						color: #fff;
+					}
+				}
+				
+
+				
+
+			}
+		}
+
+	}
+}

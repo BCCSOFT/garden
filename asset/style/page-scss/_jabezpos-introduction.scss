@@ -1,0 +1,254 @@
+//------------------------------------------------------------------------------
+// banner
+//------------------------------------------------------------------------------
+
+.jabezpos-introduction_banner {
+  @include bg('software/jabezpos/jabezpos_info/bg_main.jpg');
+  background-repeat: repeat;
+  background-size: contain;
+  color: white;
+
+  article {
+    @include content;
+    @include grid-group;
+  }
+
+  figure.cell,
+  figure.shop {
+    @include col-4_desktop;
+
+    img {
+      @include scale-16x9_desktop;
+      @include scale-3x1_mobile;
+    }
+  }
+
+  hgroup {
+    @include col-4_desktop;
+    margin-top: 15px;
+  }
+
+  figure.shop img {
+    @include img('software/jabezpos/jabezpos_info/bg_shop.png');
+  }
+
+  figure.cell img {
+    @include img('software/jabezpos/jabezpos_info/bg_cell.png');
+  }
+}
+//------------------------------------------------------------------------------
+// nav
+//------------------------------------------------------------------------------
+
+.nav_intro {
+  background-color: #eee;
+  border-bottom: solid 1px #c1c1c1;
+
+  article {
+    @include content;
+    @include breakpoint($pad-down) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  ol {
+    @include list-grid-3;
+    max-width: 600px;
+
+    a {
+      height: 60px;
+      line-height: 60px;
+      border-bottom: solid 4px #636363;
+
+      &.active,
+      &:hover {
+        color: $color-main;
+        background-color: white;
+        border-color: $color-main;
+      }
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 獲獎肯定
+//------------------------------------------------------------------------------
+@mixin introduction-report {
+  ol {
+    @include list-grid-2_desktop;
+
+    li {
+      margin-bottom: 5%;
+
+      img {
+        @include scale-2x1;
+      }
+
+      > figure {
+        background-color: white;
+        @include breakpoint($pad-up) {
+          margin: 0 5%;
+        }
+      }
+
+      hgroup {
+        text-align: left;
+        padding: 5%;
+        margin: 0;
+        @include scale-4x3_desktop;
+        @include breakpoint($pad-up) {
+          height: 0;
+        }
+      }
+
+      h4 {
+        margin-top: 12px;
+      }
+
+      h5 {
+        color: $color-main;
+        display: inline-block;
+        border: solid 1px $color-main;
+        background-color: white;
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+.jabezpos-introduction_award {
+  @include section;
+  background-color: $section-bg;
+  @include introduction-report;
+
+  li {
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) img {
+        @include img('software/jabezpos/jabezpos_info/photo_#{$i - 1}.jpg');
+      }
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 媒體報導
+//------------------------------------------------------------------------------
+
+.jabezpos-introduction_media {
+  @include section;
+  @include introduction-report;
+
+  ol{
+    li {
+      > figure{
+        background-color: #f8f8f8;
+      }
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) img {
+          @include img('software/jabezpos/jabezpos_info/report-#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 常見問題
+//------------------------------------------------------------------------------
+@mixin details-default {
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary {
+    color: $color-main;
+    @include h5;
+    padding-left: 40px;
+  }
+
+  p {
+    margin: 15px 0;
+    padding-left: 40px;
+  }
+
+  summary:after {
+    border-radius: 5px;
+    content: " ";
+    @include bg('software/jabezpos/jabezpos_info/com-open.png');
+    @include scale(24px,24px);
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &[open] summary:after {
+    content: "";
+    @include bg('software/jabezpos/jabezpos_info/com-less.png');
+    @include scale(24px,24px);
+    height: 0;
+  }
+
+  & {
+    padding: 15px;
+    clear: both;
+    cursor: pointer;
+  }
+}
+
+.jabezpos-introduction_faq {
+  @include section;
+  background-color: $section-bg;
+
+  figure {
+    text-align: left;
+    background-color: #fff;
+    padding: 15px 15px 35px;
+
+    h4 {
+      background-color: #36c;
+      color: white;
+      display: inline-block;
+      @include h5;
+      font-weight: normal;
+      padding: 3px 15px;
+      border-radius: 3px;
+      margin: 20px 0;
+    }
+  }
+
+  details {
+    @include details-default;
+    border-bottom: 1px dotted #ddd;
+  }
+}
+
+//------------------------------------------------------------------------------
+// ASIDE style
+//------------------------------------------------------------------------------
+// aside#scrollspy{
+//   position: fixed;
+//   top: 50%;
+//   right: 15px;
+//   z-index: 100;
+//   ol{
+//     li{
+//       width: 15px;
+//       height: 15px;
+//       border-radius: 50%;
+//       background-color: #36c;
+//       margin: 10px 0;
+//       &:nth-child():after{
+//         width: 100px;
+//         display: block;
+//         position: relative;
+//         left: -70px;
+//         font-size: 14px;
+//       }
+//       &:nth-child(1):after{
+//         content: "獲獎肯定";      
+//       }
+//       &:nth-child(2):after{
+//         content: "媒體報導";      
+//       }
+//     }
+//   }
+// }

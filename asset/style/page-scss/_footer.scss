@@ -1,0 +1,308 @@
+//------------------------------------------------------------------------------
+// footer
+//------------------------------------------------------------------------------
+
+#footer {
+  article {
+    @include content;
+  }
+
+  .link {
+    background-color: #3c3c3c;
+    @include nav(23px);
+    padding: 60px 15px;
+    @include tablet-7inch-max {
+      padding: 0;
+      display: none;
+    }
+
+    nav {
+
+      @include list-grid-5_desktop;
+      @include list-grid-2_mobile;
+    }
+
+    figure {
+      text-align: left;
+      vertical-align: top;
+      padding-left: 15px;
+      margin-bottom: 35px;
+      @include tablet-7inch-max {
+        padding-left: 0;
+      }
+
+      &:first-of-type {
+        border-left: none;
+      }
+
+      h4 {
+        //border-bottom: solid 3px #555;
+        //@include h5;
+        font-size: 16px;
+        font-weight: 500;
+        display: inline-block;
+        @include tablet-7inch-max {
+          margin-top: 25px;
+        }
+        a{
+          color: #fff;
+        }
+      }
+
+      ol {
+
+        @include list-grid-1;
+        text-align: left;
+        border-top: solid 1px #555;
+        padding-top: 15px;
+
+        li {
+          margin-bottom: 5px;
+          font-size: 13px;
+          padding: 3px 6px;
+
+          b{
+            color: #888;
+            margin-top: 10px;
+            padding-bottom: 3px;
+            border-bottom: solid 1px #555;
+          }
+        }
+
+        a {
+    			color: #fff;
+    			font-size: 13px;
+    			white-space: nowrap;
+          transition: 0.3s;
+    			
+    			@include tablet-7inch-max {
+    			float: left;
+    			}
+    			&:hover{
+    				color: #ccc;
+    			}
+        }
+
+        h5 {
+          @include tablet-7inch-max {
+            float: left;
+          }
+        }
+      }
+    }
+
+    .hardware-item {
+      padding-left: 6%;
+    }
+
+    .feature-item {
+      ol {
+
+        @include list-grid-2;
+      }
+    }
+
+    .contact-us {
+      a[href^="tel:"] {
+        color: #0a33a3;
+        font-size: 130%;
+        margin: 10px 0;
+      }
+
+      small {
+        text-align: center;
+        display: block;
+        max-width: 130px;
+      }
+    }
+  }
+
+  .copyright {
+    float: none;
+    width: 100%;
+    padding: 15px 0;
+	  background-color: #202020;
+    color: #fff;
+    @include tablet-7inch-max {
+      display: none;
+    }
+
+    h6 {
+      float: right;
+      @include small;
+      font-weight: normal;
+      display: inline-block;
+      padding-top: 5px;
+    }
+
+    figure {
+      display: inline-block;
+      float: left;
+      @include tablet-7inch-max {
+        float: none;
+      }
+
+      // &:nth-child(1) {
+      //   i {
+      //     @include p;
+      //     color: #555;
+      //     vertical-align: sub;
+
+      //     &:hover {
+      //       color: $color-main;
+      //     }
+      //   }
+      // }
+      // &:nth-child(2) {
+      //   ol {
+      //
+      //     @include list-grid-4;
+      //     margin-left: 15px;
+      //
+      //     a {
+      //       padding: 0 6px;
+      //     }
+      //
+      //     i {
+      //       @include h3;
+      //       color: #555;
+      //
+      //       &:hover {
+      //         color: $color-main;
+      //       }
+      //     }
+      //   }
+      // }
+      &:nth-child(2) {
+        float: right;
+        text-align: right;
+        @include small;
+      }
+    }
+  }
+
+  .language-select {
+    border: solid 1px #fff;
+    // width: 160px;
+    line-height: 30px;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 0 15px;
+
+    i {
+      @include p;
+      color: #fff;
+      vertical-align: sub;
+    }
+
+    &:hover {
+      color: $color-main;
+      border-color: $color-main;
+      i{
+        color: $color-main;
+      }
+    }
+  }
+
+  aside {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    display: none;
+    @include tablet-7inch-max {
+      width: 100%;
+    }
+
+    ol {
+      li {
+        a {
+          text-align: center;
+        }
+      }
+
+      li:first-child {
+        @include tablet-7inch {
+          display: block;
+          max-width: 40px;
+          right: 15px;
+          bottom: 20px;
+        }
+        @include tablet-7inch-max {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          margin-bottom: 0;
+        }
+
+        a[data-type="button"],a.contact-button {
+          @include tablet-7inch {
+            // 框線顏色,背景顏色,文字顏色,hover文字顏色,hover背景顏色
+            @include button-default(transparent,#36c,white,white,#2d59b3);
+            padding: 5px;
+            @include p;
+            line-height: 1.2;
+
+            &:before {
+              content: '';
+              @include svg_contact-us(white);
+              @include scale(25px,25px);
+            }
+          }
+          @include tablet-7inch-max {
+            width: 100%;
+            background-color: #36c;
+            color: white;
+            @include h4;
+            padding: 10px;
+
+            &:before {
+              content: '';
+              @include svg_contact-us(white);
+              @include scale(25px,25px);
+              position: relative;
+              left: -10px;
+            }
+          }
+        }
+      }
+
+      li:last-child {
+        max-width: 40px;
+        @include tablet-7inch {
+          right: 15px;
+          bottom: 15px;
+        }
+        @include tablet-7inch-max {
+          right: 10px;
+          bottom: 55px;
+          position: absolute;
+        }
+
+        a[data-type="button"] {
+          width: 40px;
+          @include small;
+          $color: rgba(0, 0, 0, 0.3);
+          //$color2: rgba(0, 0, 0, 0.7);
+          // 框線顏色,背景顏色,文字顏色,hover文字顏色,hover背景顏色
+          @include button-default(rgba(0,0,0,.1),$color,white,white,$color);
+          line-height: 18px;
+          padding: 5px;
+
+          &:hover {
+            border: solid 1px rgba(0,0,0,.1);
+          }
+
+          &:before {
+            display: inline-block;
+            content: '';
+            @include svg_gotop(white);
+            @include scale(25px,25px);
+            position: relative;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
+}

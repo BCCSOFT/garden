@@ -1,0 +1,393 @@
+@import "../css-framework/02_import";
+
+//------------------------------------------------------------------------------
+// banner
+//------------------------------------------------------------------------------
+
+.news_banner {
+  @include banner-normal;
+  @include bg('news/news_banner.jpg');
+  margin-top: -60px;
+}
+//------------------------------------------------------------------------------
+// 年份 nav
+//------------------------------------------------------------------------------
+
+.news_years-nav {
+  $color-a: #3a3f42;
+  $color-b: white;
+  $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+  $list-2: $color-a 0%, $color-a 46%, $color-b 46%, $color-b 100%;
+  @include gradient(top, $list-1);
+  @include tablet-7inch-max {
+    @include gradient(top, $list-2);
+  }
+
+  article {
+    @include content;
+    @include tablet-7inch-max {
+      padding: 0;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    display: inline-block;
+    background-color: #202020;
+    color: white;
+    padding: 5px 50px 5px 40px;
+
+    i {
+      padding-right: 15px;
+      vertical-align: middle;
+    }
+  }
+
+  ol {
+    @include tablet-7inch-max {
+      white-space: nowrap;
+      overflow: scroll;
+    }
+
+    li {
+      display: inline-block;
+      
+
+      &:first-child {
+        a{
+          border-left: none;
+        }
+        
+      }
+
+      a {
+        padding: 16px 15px;
+        border-left: solid 1px #eee;
+      }
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 新聞項目
+//------------------------------------------------------------------------------
+
+[class^='news_list'] {
+  li:nth-child(odd) {
+    background-color: $section-bg;
+  }
+
+  li > figure {
+    @include content;
+    @include grid-group;
+
+    figure {
+      @include col-4_desktop;
+      @include col-12_mobile;
+    }
+
+    hgroup {
+      @include col-8_desktop;
+      @include col-12_mobile;
+      text-align: left;
+      vertical-align: top;
+      padding: 25px 0;
+      position: static;
+      @include tablet-7inch-max {
+        padding: 0 0 25px;
+      }
+
+      h5 {
+        color: #989898;
+        margin-bottom: 10px;
+        font-weight: normal;
+      }
+
+      h4 {
+        color: $color-main;
+        margin-bottom: 5px;
+        // @include text-ellipsis-1;
+      }
+
+      p {
+        @include text-ellipsis-2;
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    width: 100%;
+    padding: 25px 45px 25px 20px;
+    @include tablet-7inch-max {
+      padding: 25px 0;
+    }
+  }
+
+  img {
+    @include scale-3x2;
+  }
+
+  .more {
+    @extend %button-nomal;
+    @include p;
+    padding: 5px 20px;
+    position: absolute;
+    right: 15px;
+    bottom: 25px;
+    @include tablet-7inch-max {
+      position: relative;
+      right: 0;
+      bottom: 0;
+      margin-top: 25px;
+      float: right;
+      padding: 8px 30px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+// 新聞項目 2018 圖片
+//------------------------------------------------------------------------------
+
+.news_list-2018 {
+  li:nth-child(1) {
+    img {
+      @include img('news/2018/news_180701.jpg');
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+// 新聞項目 2017 圖片
+//------------------------------------------------------------------------------
+
+.news_list-2017 {
+  li:nth-child(1) {
+    img {
+      @include img('news/2017/computex.jpg');
+    }
+  }
+
+  li:nth-child(2) {
+    img {
+      @include img('news/2017/apple-pay.jpg');
+    }
+  }
+
+  li:nth-child(3) {
+    img {
+      @include img('news/2017/2uBill.jpg');
+    }
+  }
+
+  li:nth-child(4) {
+    img {
+      @include img('news/2017/medical-2uBill.jpg');
+    }
+  }
+
+  li:nth-child(5) {
+    img {
+      @include img('news/2017/alipay1212.jpg');
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 新聞項目 2016 圖片
+//------------------------------------------------------------------------------
+
+.news_list-2016 {
+  li:nth-child(1) {
+    img {
+      @include img('news/2016/8_district.jpg');
+    }
+  }
+
+  li:nth-child(2) {
+    img {
+      @include img('news/2016/computex.jpg');
+    }
+  }
+
+  li:nth-child(3) {
+    img {
+      @include img('news/2016/ningxia.jpg');
+    }
+  }
+
+  li:nth-child(4) {
+    img {
+      @include img('news/2016/wali.jpg');
+    }
+  }
+
+  li:nth-child(5) {
+    img {
+      @include img('news/2016/ltc.jpg');
+    }
+  }
+
+  li:nth-child(6) {
+    img {
+      @include img('news/2016/alipay1212.jpg');
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 新聞項目 2015 圖片
+//------------------------------------------------------------------------------
+
+.news_list-2015 {
+  li:nth-child(1) {
+    img {
+      @include img('news/2015/ipo.jpg');
+    }
+  }
+
+  li:nth-child(2) {
+    img {
+      @include img('news/2015/lohas.jpg');
+    }
+  }
+
+  li:nth-child(3) {
+    img {
+      @include img('news/2015/iDB.jpg');
+    }
+  }
+
+  li:nth-child(4) {
+    img {
+      @include img('news/2015/economic.jpg');
+    }
+  }
+
+  li:nth-child(5) {
+    img {
+      @include img('news/2015/york.jpg');
+    }
+  }
+
+  li:nth-child(6) {
+    img {
+      @include img('news/2015/jabezpos.jpg');
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 新聞項目 內頁
+//------------------------------------------------------------------------------
+
+.news_inside {
+  // 返回最新消息列表
+  #main-nav {
+    &:hover {
+      color: $color-main;
+    }
+
+    i {
+      vertical-align: middle;
+      font-size: 15px;
+    }
+
+    a {
+      @include btn-full;
+
+      &:hover {
+        border: none;
+        box-shadow: none;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+  // 內容
+  $content-space: 5%;
+
+  [class^='news_sub'] {
+    article {
+      @include content;
+      max-width: 960px;
+    }
+
+    .img,
+    img {
+      padding-bottom: 0;
+      height: inherit;
+      width: inherit;
+    }
+  }
+
+  .news_sub-banner {
+    // margin-top: 110px;
+    // padding-top: $content-space;
+  }
+    .news_banner_180701{
+      article{
+         @include content;
+      }
+    img{
+      @include img('news/2018/news_banner_180701.jpg');
+      @include scale-2x1;
+    }
+  }
+
+  .news_sub-content {
+    @include bg('news/news_bg.jpg');
+    background-size: contain;
+    background-position: top;
+    padding-top: $content-space;
+    padding-bottom: $content-space;
+    text-align: left;
+
+    figure,
+    h4 {
+      padding-top: $content-space;
+    }
+
+    h2,
+    h5 {
+      color: $color-main;
+    }
+
+    h2{
+      @include tablet-7inch-max{
+        @include h3;
+      }
+    }
+
+    h3 {
+      color: #777;
+      font-weight: 100;
+    }
+
+    h6 {
+      color: #555;
+    }
+
+    p {
+      margin: 15px 0;
+    }
+    a {
+      display: inline-block;
+    }
+
+    .num {
+      list-style: decimal;
+      margin-left: 30px;
+      li {
+        margin: 5px 0;
+      }
+    }
+    .part {
+      @include list-grid-2_desktop;
+      hgroup{
+        text-align: left;
+      }
+    }
+  }
+}

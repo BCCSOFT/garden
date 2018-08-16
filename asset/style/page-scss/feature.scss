@@ -1,0 +1,936 @@
+@import "../css-framework/02_import";
+
+//-----------------------------------------------------------------------------
+// 功能模組 - 總攬
+//-----------------------------------------------------------------------------
+
+%banner-feature {
+  @include section-mid;
+  color: white;
+}
+
+.feature-index_banner {
+  @extend %banner-feature;
+  @include bg('feature/main-bg.jpg');
+}
+//-----------------------------------------------------------------------------
+// 功能模組 - 門市收銀
+//-----------------------------------------------------------------------------
+
+.feature-pos_banner {
+  @extend %banner-feature;
+  @include bg('feature/pos.jpg');
+}
+
+.feature-pos_content {
+  > figure:nth-child(1) {
+    @include section;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/pos-1.jpg');
+      @include scale-2x1;
+    }
+  }
+
+  > figure:nth-child(2) {
+    @include section;
+    @include section-img-right;
+    background-color: $section-bg;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/pos-2.png');
+      @include scale-4x3;
+    }
+  }
+
+  > figure:nth-child(3) {
+    @include section-mid;
+    @include bg('feature/pos-3.jpg');
+    color: white;
+  }
+
+  > figure:nth-child(4) {
+    @include section;
+    @include section-img-left;
+    background-color: $section-bg;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/pos-4.png');
+      @include scale-4x3;
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// 功能模組 - 採購進貨
+//-----------------------------------------------------------------------------
+
+.feature-purchase_banner {
+  @extend %banner-feature;
+  @include bg('feature/purchase.jpg');
+  @include tablet-7inch-max {
+    background-position-x: 35%;
+  }
+  hgroup {
+    @include col-5_desktop;
+    @include tablet-7inch {
+      float: right;
+    }
+  }
+}
+
+.feature-purchase_content {
+  > figure:nth-child(1) {
+    @include section;
+    @include section-img-right;
+    background-color: $section-bg;
+
+    img {
+      @include img('feature/purchase-1.jpg');
+      @include scale-4x3;
+    }
+  }
+
+  > figure:nth-child(2) {
+    @include section;
+    @include section-img-left;
+    background-color: #d4ebf1;
+
+    img {
+      @include img('feature/purchase-2.jpg');
+      @include scale-4x3;
+    }
+  }
+
+  > figure:nth-child(3) {
+    @include section;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/purchase-3.jpg');
+      @include scale-3x1_desktop;
+      @include scale-2x1_mobile;
+    }
+  }
+
+  > figure:nth-child(4) {
+    @include section;
+    @include section-img-right;
+    background-color: #eeeeee;
+
+    img {
+      @include img('feature/purchase-4.jpg');
+      @include scale-4x3;
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// 功能模組 - 庫存管理
+//-----------------------------------------------------------------------------
+
+.feature-inventory_banner {
+  @extend %banner-feature;
+  @include bg('feature/inventory.jpg');
+
+  hgroup {
+    @include col-5_desktop;
+    @include tablet-7inch {
+      float: left;
+    }
+  }
+}
+
+.feature-inventory_content {
+  > figure:nth-child(1) {
+    @include section;
+    @include section-img-right;
+    background-color: $section-bg;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/inventory-1.jpg');
+      @include scale-4x3;
+    }
+  }
+
+  > figure:nth-child(2) {
+    @include section;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/inventory-2.jpg');
+      @include scale-3x1_desktop;
+      @include scale-2x1_mobile;
+    }
+  }
+
+  > figure:nth-child(3) {
+    @include section;
+    @include section-img-up;
+    @include bg('feature/inventory-3.jpg');
+    color: white;
+
+    img {
+      @include img('feature/warning.png');
+      @include scale-10x1;
+    }
+  }
+
+  > figure:nth-child(4) {
+    @include section;
+    background-color: #efefef;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/inventory-4.jpg');
+      @include scale-3x1_desktop;
+      @include scale-2x1_mobile;
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// 功能模組 - 促銷管理
+//-----------------------------------------------------------------------------
+
+.feature-promotion_banner {
+  @extend %banner-feature;
+  @include bg('feature/promotion.jpg');
+
+  hgroup {
+    @include col-5_desktop;
+    color: $black;
+    @include tablet-7inch {
+      float: left;
+    }
+  }
+}
+
+.feature-promotion_item {
+  @include section;
+
+  ol {
+
+    @include list-grid-2;
+    @extend %event;
+
+    li {
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) img {
+          @include img('feature/promotion_item0#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+
+.feature-promotion_auto {
+  @include section-long;
+  @include bg_desktop('feature/promotion-2.jpg');
+  @include bg_mobile('feature/promotion-2_xs.jpg');
+
+  hgroup {
+    max-width: 500px;
+  }
+}
+//-----------------------------------------------------------------------------
+// 功能模組 - CRM 顧客管理
+//-----------------------------------------------------------------------------
+.restaurant-solution_overview_member{
+  a[data-type="button"] {
+    display: none;
+  }
+}
+.feature-crm_banner {
+  display: none;
+  @extend %banner-feature;
+  @include bg('feature/crm.jpg');
+  @include tablet-7inch-max {
+    background-position-x: 60%;
+  }
+}
+
+.feature-crm_content {
+  > figure:nth-child(1) {
+    @include section;
+    @include section-img-right;
+    background-color: $section-bg;
+
+    img {
+      @include img('feature/crm-1.jpg');
+      @include scale-4x3;
+    }
+  }
+
+  > figure:nth-child(2) {
+    @include section;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/crm-2.jpg');
+      @include scale-2x1;
+    }
+  }
+
+  > figure:nth-child(3) {
+    @include section;
+    @include section-img-right;
+    $list-1: #9fcdd4 0%, #dbeef5 100%;
+    @include gradient(330deg, $list-1);
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/crm-3.png');
+      @include scale-4x3;
+    }
+  }
+
+  > figure:nth-child(4) {
+    @include section;
+    @include section-img-left;
+    background-color: #eee;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/crm-4.jpg');
+      @include scale-4x3;
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// 功能模組 - 營業報表
+//-----------------------------------------------------------------------------
+
+.feature-report_banner {
+  @extend %banner-feature;
+  @include bg('feature/report.jpg');
+  @include tablet-7inch-max {
+    background-position-x: 55%;
+  }
+}
+
+.feature-report_content {
+  > figure:nth-child(1) {
+    @include section-long;
+    @include bg_desktop('feature/report-1.jpg');
+    @include bg_mobile('feature/report-1_xs.jpg');
+
+    hgroup {
+      max-width: 500px;
+    }
+  }
+
+  > figure:nth-child(2) {
+    @include section-mid;
+    @include bg('feature/report-2.jpg');
+    color: white;
+  }
+}
+
+.feature-report_item {
+  @include section;
+  background-color: $section-bg;
+  $color: white;
+
+  > article > ol {
+
+    @include list-grid-4_desktop;
+    @include list-grid-1_mobile;
+    @extend %circle-block;
+
+    > li {
+      figure {
+        $list-1: $section-bg 0%, $section-bg 15%, white 15%, white 100%;
+        @include gradient(top, $list-1);
+        margin: 5%;
+      }
+
+      span {
+        background-color: $color-main;
+        padding: 10%;
+      }
+
+      img {
+        @include scale(60px,60px);
+      }
+
+      h4 {
+        margin-top: 15px;
+        color: $color-main;
+      }
+    }
+
+    li:nth-child(1) {
+      img {
+        @include svg_pos($color);
+      }
+    }
+
+    li:nth-child(2) {
+      img {
+        @include svg_inventory($color);
+      }
+    }
+
+    li:nth-child(3) {
+      img {
+        @include svg_member($color);
+      }
+    }
+
+    li:nth-child(4) {
+      img {
+        @include svg_money2($color);
+      }
+    }
+  }
+
+  ol ol {
+    @include scale-1x1_desktop;
+
+    > li {
+      @include p;
+      margin: 5px 0 0 0;
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// 功能模組 - 多元支付
+//-----------------------------------------------------------------------------
+
+.feature-payment_banner {
+  @extend %banner-feature;
+  @include bg('feature/payment.jpg');
+
+  hgroup {
+    @include col-5_desktop;
+    @include tablet-7inch {
+      float: left;
+    }
+  }
+}
+
+.feature-payment_content {
+  > figure:nth-child(1) {
+    @include section;
+
+    img {
+      @include img_desktop('feature/payment-1.jpg');
+      @include img_mobile('feature/payment-1_xs.jpg');
+      @include scale-16x9_desktop;
+      @include scale-4x7_mobile;
+    }
+  }
+
+  > figure:nth-child(2) {
+    @include section;
+    @include section-img-right;
+    background-color: $section-bg;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/payment-2.jpg');
+    }
+  }
+
+  > figure:nth-child(3) {
+    @include section;
+    @include section-img-left;
+    @include bg('feature/payment-3_bg.jpg');
+
+    img {
+      @include img('feature/payment-3.png');
+    }
+
+    em {
+      background-color: #fc6921 !important;
+      color: white;
+    }
+  }
+
+  > figure:nth-child(4) {
+    @include section;
+    @include section-img-right;
+    background-color: #efefef;
+    @include tablet-7inch {
+      article {
+        padding-top: 0;
+      }
+    }
+
+    article {
+      padding-bottom: 0;
+    }
+    @include tablet-7inch-max {
+      article {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    img {
+      @include img_desktop('feature/payment-4.jpg');
+      @include img_mobile('feature/payment-4_xs.jpg');
+    }
+  }
+}
+
+.mobile-pos_overview_pay {
+  @include section;
+  @include section-img-left;
+  background-color: #fff3eb;
+
+  figure {
+    hgroup img {
+      @include img('_global/logos.png');
+      @include scale-2x1;
+    }
+
+    figure img {
+      @include img('product/mobile-pos/pay.jpg');
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------------------
+// 功能模組 - 電子發票
+//-----------------------------------------------------------------------------
+
+.feature-invoice_banner {
+  @extend %banner-feature;
+  @include bg('feature/invoice.jpg');
+}
+@mixin fieldset($color) {
+  fieldset {
+    margin: 10px;
+    border-radius: 3px;
+    border: 2px solid $color;
+    @include scale-4x7_desktop;
+  }
+
+  legend {
+    border-radius: 3px;
+    color: white;
+    background-color: $color;
+    width: 85%;
+    height: 75px;
+    padding: 6% 10px;
+  }
+
+  p {
+    text-align: left;
+    padding-left: 20px;
+    margin: 10px 10px 0 0;
+
+    &:before {
+      display: inline-block;
+      content: '';
+      @include svg_next2($color);
+      @include scale(14px,14px);
+      position: absolute;
+      left: 0;
+      top: 5px;
+    }
+  }
+}
+
+.feature-invoice_rule {
+  @include section;
+  background-color: $section-bg;
+
+  ol {
+
+    @include list-grid-4_desktop;
+    @include list-grid-1_mobile;
+
+    li:nth-child(1) {
+      @include fieldset(#82c250);
+    }
+
+    li:nth-child(2) {
+      @include fieldset(#3bb85d);
+    }
+
+    li:nth-child(3) {
+      @include fieldset(#3bbeb0);
+    }
+
+    li:nth-child(4) {
+      @include fieldset(#3bb1d9);
+      line-height: 50px;
+    }
+  }
+}
+
+.feature-invoice_table {
+  @include section;
+
+  table {
+    @include table;
+
+    thead {
+      background-color: #e2e2e2;
+      text-align: center;
+      @include h4;
+
+      th:nth-child(1) {
+        @include tablet-7inch {
+          width: 20%;
+        }
+      }
+
+      th:nth-child(2) {
+        background-color: #ac9176;
+        color: white;
+      }
+    }
+
+    tbody {
+      td:first-child {
+        background-color: #f2ede9;
+        text-align: center;
+        vertical-align: middle;
+        @include h5;
+      }
+
+      td {
+        @include tablet-7inch {
+          vertical-align: middle;
+        }
+        @include tablet-7inch-max {
+          font-size: 80%;
+        }
+      }
+    }
+  }
+}
+@mixin invoice_info($color) {
+  @include section;
+
+  article {
+    padding-top: 0;
+  }
+
+  hgroup {
+    margin-bottom: 0;
+
+    em {
+      background-color: $color;
+      color: white;
+      box-shadow: none;
+      @include h4;
+    }
+  }
+
+  ol {
+    background-color: white;
+
+    @include list-grid-3_desktop;
+    @include list-grid-1_mobile;
+    border-top: solid 5px $color;
+    padding-left: 35px;
+
+    li {
+      text-align: left;
+      margin: 15px 0;
+      padding-right: 5%;
+      @include tablet-7inch-max {
+        margin: 10px 0;
+        padding-right: 0;
+      }
+
+      &:before {
+        content: " ";
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        left: -22px;
+        top: 4px;
+        background-color: $color;
+      }
+    }
+  }
+}
+
+.feature-invoice_info {
+  background-color: $section-bg;
+
+  > figure:nth-child(1) {
+    @include section;
+
+    ol {
+      @extend %event;
+
+      @include list-grid-4_desktop;
+      @include list-grid-2_mobile;
+
+      li {
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) img {
+            @include img('product/mobile-pos/e-#{$i}.png');
+          }
+        }
+      }
+    }
+  }
+
+  > figure:nth-child(2) {
+    @include invoice_info(#47cec0);
+  }
+
+  > figure:nth-child(3) {
+    @include invoice_info(#3bb1d9);
+  }
+  ol li {
+    @include p;
+  }
+}
+
+.feature-invoice_app {
+  @include section;
+
+  > article > ol {
+
+    @include list-grid-3_desktop;
+    @include list-grid-1_mobile;
+
+    > li {
+      padding: 10px;
+      @include tablet-7inch-max {
+        padding: 7px 0;
+      }
+
+      &:before {
+        font-weight: bold;
+        font-size: 300%;
+        display: inline-block;
+        color: white;
+        opacity: 0.4;
+        float: left;
+        top: 0;
+        position: relative;
+        left: 15px;
+        z-index: 1;
+      }
+
+      &:after {
+        content: '';
+        @include svg_arrow(white);
+        @include scale(35px,35px);
+        position: absolute;
+        top: 18px;
+        left: 15%;
+        opacity: 0.4;
+      }
+
+      figure {
+        text-align: right;
+        position: relative;
+        @include scale-4x3_desktop;
+      }
+
+      img {
+        @include scale(50px,50px);
+        opacity: 0.4;
+        position: relative;
+        top: 5px;
+        right: 15px;
+      }
+
+      p {
+        border-top: solid 1px rgba(255,255,255,.4);
+        color: white;
+        text-align: left;
+        padding: 15px;
+        margin-top: 10px;
+      }
+    }
+
+    > li:nth-child(1) {
+      figure {
+        background-color: #82c250;
+      }
+
+      &:before {
+        content: '1';
+      }
+
+      img {
+        @include svg_confirm(white);
+      }
+    }
+
+    > li:nth-child(2) {
+      figure {
+        background-color: #3bb85d;
+      }
+
+      &:before {
+        content: '2';
+      }
+
+      img {
+        @include svg_api(white);
+      }
+    }
+
+    > li:nth-child(3) {
+      figure {
+        background-color: #3bbeb0;
+      }
+
+      &:before {
+        content: '3';
+      }
+
+      img {
+        @include svg_set(white);
+      }
+
+      ol {
+        color: white;
+        list-style-type: decimal;
+        text-align: left;
+        padding-left: 35px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+
+
+.mobile-pos_overview_e-invoice {
+  @include section;
+  @include section-img-right;
+  background-color: $section-bg;
+
+  img {
+    @include img('product/mobile-pos/e-invoice.jpg');
+  }
+
+  a[data-type="button"] {
+    @extend %button-dark;
+    margin-top: 25px;
+  }
+}
+
+.mobile-pos_overview_e-feature {
+  @include section;
+
+  ol {
+    @extend %event;
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) img {
+          @include img('product/mobile-pos/e-#{$i}.png');
+        }
+      }
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------------------
+// 功能模組 - 雲端點餐
+//-----------------------------------------------------------------------------
+
+.feature-webmenu_banner {
+  @extend %banner-feature;
+  @include bg('feature/webmenu.jpg');
+  @include tablet-7inch-max {
+    background-position-x: 100%;
+  }
+  color: $black;
+}
+
+.feature-webmenu_content {
+  > figure:nth-child(1) {
+    @include section;
+    @include section-img-right;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/webmenu-1.jpg');
+    }
+  }
+
+  > figure:nth-child(2) {
+    @include section;
+    @include section-img-left;
+    background-color: $section-bg;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/webmenu-2.jpg');
+    }
+  }
+
+  > figure:nth-child(3) {
+    @include section;
+    @include section-img-right;
+
+    article {
+      padding-bottom: 0;
+    }
+
+    img {
+      @include img('feature/webmenu-3.jpg');
+    }
+  }
+
+  > figure:nth-child(4) {
+    @include section;
+    background-color: $section-bg;
+
+    img {
+      @include img('feature/webmenu-4.jpg');
+      @include scale-4x3;
+    }
+  }
+}

@@ -1,0 +1,126 @@
+* {
+  font: "Helvetica", "Arial", "微軟正黑體" ,"Microsoft JhengHei",sans-serif;
+  font-family: "Helvetica", "Arial", "微軟正黑體" ,"Microsoft JhengHei",sans-serif;
+  word-break: break-all;
+}
+//
+
+body {
+  font-size: 100%;
+}
+//
+@mixin font-size($sizeValue: 12) {
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.0625 * $sizeValue) + rem;
+}
+@mixin line-height($heightValue: 18) {
+  line-height: $heightValue + px; //fallback for old browsers
+  line-height: (0.0625 * $heightValue) + rem;
+}
+@mixin rhythm($sizeValue: 12, $heightValue: 18) {
+  @include font-size($sizeValue);
+  @include line-height($heightValue);
+}
+// p
+@mixin p {
+  @include rhythm(14, 18);
+  @include tablet-7inch {
+    @include rhythm(16, 24);
+  }
+}
+
+p {
+  @include p;
+}
+
+// h1
+@mixin h1 {
+  @include rhythm(44, 66);
+  @include tablet-7inch {
+    @include rhythm(56, 84);
+  }
+  @include desktop {
+    @include rhythm(64, 96);
+  }
+}
+
+h1 {
+  @include h1;
+}
+
+// h2
+@mixin h2 {
+  @include rhythm(36, 54);
+  @include tablet-7inch {
+    @include rhythm(44, 66);
+  }
+}
+
+h2 {
+  @include h2;
+}
+
+// h3
+@mixin h3 {
+  @include rhythm(20, 24);
+  @include tablet-7inch {
+    @include rhythm(24, 36);
+  }
+  @include desktop {
+    @include rhythm(36, 54);
+  }
+}
+
+h3 {
+  @include h3;
+}
+
+// h4
+@mixin h4 {
+  @include rhythm(16, 24);
+  @include tablet-7inch {
+    @include rhythm(20, 24);
+  }
+  @include desktop {
+    @include rhythm(24, 36);
+  }
+}
+
+h4 {
+  @include h4;
+}
+
+// h5
+@mixin h5 {
+  @include rhythm(14, 21);
+  @include tablet-7inch {
+    @include rhythm(20, 30);
+  }
+}
+
+h5 {
+  @include h5;
+}
+
+@mixin h6 {
+  @include rhythm(13, 20);
+  @include tablet-7inch {
+    @include rhythm(15, 22);
+  }
+}
+
+h6 {
+  @include h6;
+}
+
+// small
+@mixin small {
+  @include rhythm(12, 18);
+  // @include tablet-7inch {
+  //   @include rhythm(12, 18);
+  // }
+}
+
+small {
+  @include small;
+}

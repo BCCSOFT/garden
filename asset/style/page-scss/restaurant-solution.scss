@@ -1,0 +1,1081 @@
+@import "../css-framework/02_import";
+
+.b1pos_software_version#pagination_bottom {
+  display: none;
+}
+//-----------------------------------------------------------------------------
+// 影音介紹
+//-----------------------------------------------------------------------------
+
+.video-intro {
+  background-color: #333;
+  $color: white;
+  color: $color;
+  max-height: 100vh;
+  overflow: hidden;
+  @include video_desktop;
+  @include scale-1x1_mobile;
+
+  figure {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 15% 0;
+    background-color: rgba(0,0,0,0.3);
+    @include bg_mobile('video/overview/bg-video.jpg');
+  }
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 35px;
+  }
+
+  img {
+    @include scale(120px,120px);
+    @include svg_play1(white);
+  }
+}
+//-----------------------------------------------------------------------------
+// 概觀
+//-----------------------------------------------------------------------------
+
+.restaurant-solution_overview_banner {
+  @extend %banner_restaurant-solution;
+  background-image: url('../../image/_global/cloud-bg.png'), url("../../image/_global/bg-red.jpg");
+  @include tablet-7inch-max {
+    background-size: 370% ,cover;
+  }
+  color: white;
+
+  hgroup {
+    img {
+      @include img('solution/restaurant/title.png');
+      max-width: 350px;
+    }
+
+    h4 {
+      //white-space: nowrap;
+    }
+  }
+
+  ol {
+    @include list-grid-6_desktop;
+    @include list-grid-3_mobile;
+    color: $black;
+    margin-top: 30px;
+    @include tablet-7inch-max {
+      padding-top: 0;
+    }
+
+    li {
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) img {
+          @include img('_global/banner-item-#{$i}.png');
+        }
+      }
+
+      .img,
+      img {
+        margin-bottom: 10px;
+        transition: all 0.3s ease-in-out;
+        @include scale-4x3_mobile;
+      }
+
+      figure:hover {
+        cursor: pointer;
+
+        .img,
+        img {
+          transform: translateY(-10px);
+        }
+
+        h6 {
+          color: $color-main;
+        }
+      }
+
+      a[data-type="button"] {
+        @include btn-full;
+      }
+    }
+  }
+}
+
+.case_restaurant-picitem {
+  a[data-type="button"] {
+    display: block;
+  }
+}
+// .restaurant-solution_overview_case {
+//   @include section;
+//   background-color: #f6f8f7;
+
+//   ol:nth-of-type(1) {
+//     @include list-grid-3_desktop;
+
+//     li {
+//       @for $i from 1 through 3 {
+//         &:nth-child(#{$i}) img {
+//           @include bg('solution/restaurant/case-case-photo-#{$i}.jpg');
+//         }
+//       }
+
+//       img {
+//         @include scale-16x9;
+//       }
+
+//       figure {
+//         background-color: white;
+//         padding: 10px;
+//         margin: 15px;
+//         @include tablet-7inch-max {
+//           margin: 15px 0;
+//         }
+
+//         h4 {
+//           font-weight: bold;
+//           padding: 10px 0;
+//           border-bottom: solid 1px #ddd;
+//         }
+
+//         p {
+//           margin: 15px 0;
+//           @include h6;
+//         }
+//       }
+//     }
+//   }
+
+//   ol:nth-of-type(2) {
+//     @include list-grid-5_desktop;
+//     @include list-grid-3_mobile;
+//     margin-top: 60px;
+
+//     li {
+//       @for $i from 1 through 5 {
+//         &:nth-child(#{$i}) img {
+//           @include img('solution/restaurant/case-case-logo-#{$i}.png');
+//         }
+//       }
+
+//       img {
+//         @include scale-4x3;
+//       }
+
+//       figure {
+//         padding: 0 10% 15px;
+//         @include tablet-7inch-max {
+//           padding: 0;
+//         }
+//       }
+//     }
+//   }
+// }
+
+.restaurant-solution_overview_solve {
+  @include section;
+  background-color: #f8f8f8;
+
+  ol {
+    @extend %event;
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) img {
+          @include img('solution/restaurant/solve-#{$i}.png');
+        }
+      }
+
+      h5 {
+        color: #c7302d;
+      }
+    }
+  }
+}
+
+
+
+// 雲端點餐
+.restaurant-solution_overview_consumer {
+  @include section-long;
+  @include bg_desktop('solution/restaurant/bg-consumer.jpg');
+  @include bg_mobile('solution/restaurant/bg-consumer_mobile.jpg');
+  @extend %square-block;
+  $color: #ef858c;
+  $color-svg: white;
+  text-align: left;
+
+  hgroup em {
+    color: #d96f76;
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      picture {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include svg_door($color-svg);
+      }
+
+      &:nth-child(2) img {
+        @include svg_chair($color-svg);
+      }
+
+      &:nth-child(3) img {
+        @include svg_takeout($color-svg);
+      }
+
+      &:nth-child(4) img {
+        @include svg_mobile-order($color-svg);
+      }
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-dark;
+  }
+}
+
+// 自助點餐
+.restaurant-solution_overview_kiosk {
+  @include section-long;
+  @include bg_desktop('solution/restaurant/bg-kiosk.jpg');
+  // @include bg_mobile('solution/restaurant/bg-consumer_mobile.jpg');
+  @extend %square-block;
+  color: white;
+  $color: #e8a52d;
+  $color-svg: white;
+  text-align: left;
+
+  hgroup em {
+    color: #e8a52d;
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      picture {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include svg_door($color-svg);
+      }
+
+      &:nth-child(2) img {
+        @include svg_payment_gateway($color-svg);
+      }
+
+      &:nth-child(3) img {
+        @include svg_24hour($color-svg);
+      }
+
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-light;
+  }
+}
+
+// 桌邊點餐
+.restaurant-solution_overview_waiter {
+  @include section-long;
+  @include bg_desktop('_global/mobile-pos.jpg');
+  @include bg_mobile('_global/mobile-pos_xs.jpg');
+  @extend %square-block;
+  color: white;
+  $color: #e8611d;
+  $color-svg: white;
+  text-align: left;
+
+  hgroup em {
+    color: $color;
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      picture {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include svg_queue-border($color-svg);
+      }
+
+      &:nth-child(2) img {
+        @include svg_chair($color-svg);
+      }
+
+      &:nth-child(3) img {
+        @include svg_take-out($color-svg);
+      }
+
+      &:nth-child(4) img {
+        @include svg_drink($color-svg);
+      }
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-light;
+  }
+}
+
+//
+.restaurant-solution_overview_counter {
+  @include section-long;
+  @include bg_desktop('solution/restaurant/bg-counter.jpg');
+  @include bg_mobile('solution/restaurant/bg-counter_mobile.jpg');
+  @extend %square-block;
+  $color: #91c231;
+  $color-svg: white;
+
+  hgroup em {
+    color: $color;
+  }
+
+  article > figure {
+    @include tablet-7inch {
+      float: right;
+    }
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-3_mobile;
+    max-width: inherit;
+
+    li {
+      picture {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include svg_reservation($color-svg);
+      }
+
+      &:nth-child(2) img {
+        @include svg_takeout($color-svg);
+      }
+
+      &:nth-child(3) img {
+        @include svg_no-call($color-svg);
+      }
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-dark;
+  }
+}
+
+// 廚房控管
+.restaurant-solution_overview_kitchen {
+  @include section-long;
+  @include bg_desktop('solution/restaurant/bg-kitchen.jpg');
+  @include bg_mobile('solution/restaurant/bg-kitchen_mobile.jpg');
+  @extend %square-block;
+  $color: #089ad7;
+  $color-svg: white;
+  text-align: left;
+
+  hgroup em {
+    color: $color;
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      picture {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include svg_bell($color-svg);
+      }
+
+      &:nth-child(2) img {
+        @include svg_sorting1($color-svg);
+      }
+
+      &:nth-child(3) img {
+        @include svg_taste($color-svg);
+      }
+
+      &:nth-child(4) img {
+        @include svg_serve($color-svg);
+      }
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-dark;
+  }
+}
+
+// 自動送餐
+.restaurant-solution_overview_delivery {
+  @include section-long;
+  @include bg('solution/restaurant/bg-delivery.jpg');
+  // @include bg_mobile('solution/restaurant/bg-consumer_mobile.jpg');
+  @extend %square-block;
+  $color: #e8a52d;
+  $color-svg: white;
+  text-align: left;
+
+  hgroup em {
+    color: #e8a52d;
+  }
+
+  article > figure {
+    @include tablet-7inch {
+      float: right;
+    }
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-3_mobile;
+
+    li {
+      picture {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include img('product/delivery/hot-food.svg');
+      }
+
+      &:nth-child(2) img {
+         @include img('product/delivery/turnover.svg');
+      }
+
+      &:nth-child(3) img {
+        @include svg_restaurant($color-svg);
+      }
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-dark;
+  }
+}
+
+//jabezpos 雲端後台管理
+.restaurant-solution_overview_cloud {
+  @include section-long;
+  @include bg_desktop('_global/bg-cloud.jpg');
+  @include bg_mobile('_global/bg-cloud_mobile.jpg');
+  @extend %square-block;
+  $color: #2c4396;
+  $color-svg: white;
+
+  hgroup em {
+    color: $color;
+  }
+
+  article > figure {
+    @include tablet-7inch {
+      float: right;
+    }
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-3_mobile;
+    max-width: inherit;
+
+    li {
+      picture {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include svg_analysis($color-svg);
+      }
+
+      &:nth-child(2) img {
+        @include svg_management-store($color-svg);
+      }
+
+      &:nth-child(3) img {
+        @include svg_management($color-svg);
+      }
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-dark;
+  }
+}
+
+// 會員 APP
+.restaurant-solution_overview_member {
+  @include section-long;
+  @include bg('feature/crm.jpg');
+  // @include bg_mobile('solution/restaurant/bg-consumer_mobile.jpg');
+  @extend %square-block;
+  color: #fff;
+  $color: #1974da;
+  $color-svg: white;
+  text-align: left;
+
+  hgroup em {
+    color: $color;
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      picture {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include svg_member($color-svg);
+      }
+
+      &:nth-child(2) img {
+         @include svg_point($color-svg);
+      }
+
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-light;
+  }
+}
+
+
+
+//-----------------------------------------------------------------------------
+// 智能餐飲 - 適用餐飲型態
+//-----------------------------------------------------------------------------
+.restaurant_type{
+  @include section;
+
+  ol{
+    @include list-grid-5_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      @include tablet-7inch-max{
+        padding: 0 10px 20px;
+
+        h4{
+          margin-top: 10px;
+        }
+      }
+      img{
+        max-width: 150px;
+      }
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) img {
+          @include img('solution/restaurant/restaurant_type-#{$i}.png');
+        }
+      }
+    }
+  }
+}
+
+
+
+//-----------------------------------------------------------------------------
+// 智能餐飲 - 流程圖
+//-----------------------------------------------------------------------------
+.restaurant_solution_flow{
+  // display: none;
+  @include section;
+  background-color: $section-bg;
+
+  ol{
+    @include list-grid-4_desktop;
+    @include list-grid-1_mobile;
+
+    li{
+      &:nth-child(1) figure > picture img {
+        @include img('solution/restaurant/flow-webmenu.png');
+      }
+      &:nth-child(2) figure > picture img {
+        @include img('solution/restaurant/flow-kiosk.png');
+      }
+      &:nth-child(3) figure > picture img {
+        @include img('solution/restaurant/flow-mobile-pos.png');
+      }
+      &:nth-child(4) figure > picture img {
+        @include img('solution/restaurant/flow-pos.png');
+      }
+      &:nth-child(5) figure > picture img {
+        @include img('solution/restaurant/flow-kds.png');
+      }
+      &:nth-child(6) figure > picture img {
+        @include img('solution/restaurant/flow-lds.png');
+      }
+      &:nth-child(7) figure > picture img {
+        @include img('solution/restaurant/flow-jabezpos.png');
+      }
+      &:nth-child(8) figure > picture img {
+        @include img('solution/restaurant/flow-member.png');
+      }
+      &:hover,&.active{
+        h4{
+          color: #fff;
+          background-color: #fda42d;
+          border-radius: 50px;  
+        }
+      } 
+      &:hover{
+        // top: -10px;
+        opacity: .8;
+      }
+      a{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      > picture{
+        display: none;
+        position: absolute;
+        right: -25px;
+        top: 25%;
+        width: 50px;
+        z-index: 5;
+        img{
+          @include img('solution/restaurant/flow-arrow.png');
+        }
+        @include tablet-7inch-max{
+          right: 40%;
+          top: 100%;
+          transform: rotate(90deg);
+
+        }
+      }
+      &:nth-child(4),&:nth-child(7){
+        > picture img{
+          display: none;
+        }
+      }
+      &:nth-child(4){
+        > picture img{
+           @include tablet-7inch-max{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+//-----------------------------------------------------------------------------
+// 智能餐飲 - 影音介紹
+//-----------------------------------------------------------------------------
+
+// Layout
+
+// 章節 1
+.restaurant-solution_overview_video{
+  @include scale-2x1_desktop; // 設定 section 比例
+
+
+  // 圖文區塊
+  figure{
+    
+    blockquote{
+      padding: 15% 0;
+      
+      button{
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+
+
+.restaurant-solution_overview_video-list{
+  display: none; 
+  ul{
+    // 平板
+    @include tablet-7inch{
+      max-width: 1200px; // 限制最大內容寬度
+      margin: 0 auto; // 內容置中
+    }
+    li{
+      // 手機
+      width: 100%;
+      
+      // 平板
+      @include tablet-7inch{
+        width: 50%; // 圖片區塊寬度
+        vertical-align: top; // 內容垂直置中
+      }
+      
+      // 圖文區塊
+      figure{
+        //display: none;
+        overflow: hidden;
+        padding: 10px;
+
+        > a {
+          // 圖片區塊整塊連結
+          display: none; 
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          cursor: pointer;
+          z-index: 999;
+
+        }
+        // 圖片標題
+        figcaption{
+          display: none;
+        }
+
+
+        // 圖片
+        picture{
+          @include scale-3x2; // 圖片比例
+          background-repeat: no-repeat;
+          background-size: cover;
+          
+          img{
+            display: none;
+          }
+          button{
+            width: 100px;
+            height: 100px;
+            margin-top: 24%;
+          }
+        }
+        
+        // 內文
+        blockquote{
+          display: block;
+          margin: 10px;
+        }
+      }
+    }
+  } 
+}
+
+
+// Behavior 事件效果 / 顏色框線樣式
+
+.restaurant-solution_overview_video{
+    
+    blockquote{
+      color: #fff; // 內文文字顏色
+
+      button{
+        @extend %text-hide; // 隱藏文字
+        background-color: transparent;
+        transition: .3s ease;
+        transform-origin: 50% 0;
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
+    }
+}
+
+
+
+.restaurant-solution_overview_video-list{
+  background-color: #eee; // section 背景色
+  
+  figure{
+    background-color: #fff;
+    border-radius: 3px;
+    margin: 20px;
+    
+    picture{
+      button{
+        @extend %text-hide; // 隱藏文字
+        background-color: transparent;
+        transition: .5s ease;
+        transform-origin: 50% 0;
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
+    }
+        
+  }
+  
+}
+
+
+// 圖片
+
+// 章節 1
+.restaurant-solution_overview_video{
+  background-image: url('../../image/solution/restaurant/overview_video-01.jpg'); // 主要影片圖片
+  
+  blockquote{
+    
+    button{
+      background-image: url('../../image/_global/play.svg'); // 按鈕圖片
+    }
+  }
+}
+
+
+.restaurant-solution_overview_video-list{
+  ul{
+    li{
+      &:nth-child(1){
+        picture{
+          background-image: url('../../image/solution/restaurant/overview_video-02.jpg'); // 第 1 個影片圖片
+        }
+      }
+      &:nth-child(2){
+        picture{
+          background-image: url('../../image/solution/restaurant/overview_video-03.jpg'); // 第 2 個影片圖片
+        }
+      }
+    }
+  }
+  // 圖片
+  picture{
+    button{
+      background-image: url('../../image/_global/play.svg'); // 按鈕圖片
+    }
+  }
+  
+  
+}
+
+
+
+//------------------------------------------------------------------------------
+// 功能模組
+//------------------------------------------------------------------------------
+.module_feature{
+    &.jabezpos_restaurant{
+    background-color: #f8f8f8;
+  }
+  &.reataurant_purchase{
+
+  }
+}
+
+
+
+
+//------------------------------------------------------------------------------
+// 硬體推薦
+//------------------------------------------------------------------------------
+.recommend_hardware{
+  @include section;
+  
+  ul{
+    @include tablet-7inch{
+      max-width: 1200px; // 限制桌面版內容寬度
+      margin: 0 auto; // 內容置中
+    }
+    li{
+      display: block;
+      background-color: #eee;
+      margin: 20px 10px;
+
+      // 圖文區塊
+      figure{
+        padding: 10px 0;
+
+        // 內文
+        blockquote{
+          h3{
+            color: #36c;
+
+            &:before{
+              content:'';
+              display: inline-block;
+              vertical-align: text-bottom;
+              width: 1.2em;
+              height: 1.2em;
+              margin-right: 5px;
+            }
+          }
+        }
+        // 項目二
+        ol{
+          padding: 10px;
+          @include tablet-7inch{
+            // 去除 inline-block 預設間距
+            @include grid-group;
+          }
+          li{
+            display: block;
+            // text-align: left;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            position: relative;
+            transition: .3s;
+            @include tablet-7inch{
+              // 去除 inline-block 預設間距
+              @include grid-group;
+              display: inline-block;
+              width: calc(50% - 20px);
+            }
+
+            &:hover{
+              opacity: .9;
+              transform: translate(3px, 3px);
+            }
+            > a{
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              cursor: pointer;
+            }
+            picture,blockquote{
+              vertical-align: middle;
+            }
+            picture{
+              display: inline-block;
+              width: 32%;
+              margin: 0 3%;
+            }
+            blockquote{
+              display: inline-block;
+              width: 60%;
+              // text-align: center;
+
+              > a{
+                color: #36c;
+              }
+            }
+          }
+        }
+      }     
+    }
+  }
+
+}
+.reataurant_recommend{
+  $color: #36c;
+  ul{
+    li{
+      &:nth-child(1){
+        h3{
+          &:before{
+            @include svg_take-out($color);
+          }
+        }
+        ol{
+          li{
+            &:nth-child(1){
+              img{
+                @include img('jmenu/bp-t3bh.jpg');
+              }
+            }
+            &:nth-child(2){
+              img{
+                @include img('hardware/hardware_v1_invoice.jpg');
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(2){
+        h3{
+          &:before{
+            @include svg_drink($color);
+          }
+        }
+        ol{
+          li{
+            &:nth-child(1){
+              img{
+                @include img('jmenu/godex-dt2.jpg');
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(3){
+        h3{
+          &:before{
+            @include svg_invoice($color);
+          }
+        }
+        ol{
+          li{
+            &:nth-child(1){
+              img{
+                @include img('jmenu/invoice-printer.jpg');
+              }
+            }
+            &:nth-child(2){
+              img{
+                @include img('hardware/hardware_v1_invoice.jpg');
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(4){
+        h3{
+          &:before{
+            @include svg_money2($color);
+          }
+        }
+        ol{
+          li{
+            &:nth-child(1){
+              img{
+                @include img('jmenu/cashbox.jpg');
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.temp{
+  img{
+    height: 100%;
+    padding-bottom: 0;
+  }
+}

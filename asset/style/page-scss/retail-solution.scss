@@ -1,0 +1,809 @@
+@import "../css-framework/02_import";
+
+//-----------------------------------------------------------------------------
+// 智能零售 - 概觀
+//------ -----------------------------------------------------------------------
+
+.retail-solution_overview_banner {
+  @extend %banner_restaurant-solution;
+  background-image: url('../../image/_global/cloud-bg.png'), url("../../image/_global/bg-blue.jpg");
+  @include tablet-7inch-max {
+    background-size: 240%,cover;
+  }
+  @include mobile-3inch {
+    background-size: 335%,cover;
+  }
+  color: white;
+
+  hgroup {
+    img {
+      @include img('solution/retail/title.png');
+      max-width: 350px;
+    }
+  }
+
+  ol{
+    @include list-grid-5_desktop;
+    @include list-grid-3_mobile;
+    color: $black;
+    margin-top: 30px;
+    @include tablet-7inch-max {
+      padding-top: 0;
+    }
+
+     li {
+      &:nth-child(1) img {
+        @include img('_global/banner-item-3.png');
+      }
+
+      &:nth-child(2) img {
+        @include img('_global/banner-item-4.png');
+      }
+
+      &:nth-child(3) img {
+        @include img('_global/banner-item-6.png');
+      }
+      .img,
+      img {
+        margin-bottom: 10px;
+        transition: all 0.3s ease-in-out;
+        @include scale-4x3_mobile;
+      }
+
+      figure:hover {
+        cursor: pointer;
+
+        .img,
+        img {
+          transform: translateY(-10px);
+        }
+
+        h6 {
+          color: $color-main;
+        }
+      }
+
+      a[data-type="button"] {
+        @include btn-full;
+      }
+    }
+  }
+}
+
+.retail-solution_overview_case {
+  @include section;
+  background-color: #f6f8f7;
+
+  ol:nth-of-type(1) {
+    @include list-grid-3_desktop;
+
+    li {
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) img {
+          @include bg('solution/retail/case-case-photo-#{$i}.jpg');
+        }
+      }
+
+      img {
+        @include scale-16x9;
+      }
+
+      figure {
+        background-color: white;
+        padding: 10px;
+        margin: 15px;
+        @include tablet-7inch-max {
+          margin: 15px 0;
+        }
+
+        h4 {
+          font-weight: bold;
+          padding: 10px 0;
+          border-bottom: solid 1px #ddd;
+        }
+
+        p {
+          margin: 15px 0;
+          @include h6;
+        }
+      }
+    }
+  }
+
+  ol:nth-of-type(2) {
+    @include list-grid-5_desktop;
+    @include list-grid-3_mobile;
+    margin-top: 60px;
+
+    li {
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) img {
+          @include img('solution/retail/case-case-logo-#{$i}.png');
+        }
+      }
+
+      img {
+        @include scale-4x3;
+      }
+
+      figure {
+        padding: 0 10% 15px;
+        @include tablet-7inch-max {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.retail-solution_overview_solve {
+  @include section;
+
+  ol {
+    @extend %event;
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) img {
+          @include img('solution/retail/solve-#{$i}.png');
+        }
+      }
+
+      h5 {
+        color: #3071b9;
+      }
+    }
+  }
+}
+
+.retail-solution_overview_mobile {
+  @include section-long;
+  @include bg_desktop('solution/retail/bg-mobile.jpg');
+  @include bg_mobile('solution/retail/bg-mobile_mobile.jpg');
+  @extend %square-block;
+
+  > article > figure {
+    @include tablet-7inch {
+      float: right;
+    }
+  }
+  color: white;
+  $color: #00b9ef;
+
+  hgroup em {
+    color: $color;
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-3_mobile;
+    max-width: inherit;
+
+    li {
+      span {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include svg_payment($color);
+      }
+
+      &:nth-child(2) img {
+        @include svg_multivariate($color);
+      }
+
+      &:nth-child(3) img {
+        @include svg_invoice($color);
+      }
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-light;
+  }
+}
+
+.retail-solution_overview_counter {
+  @include section-long;
+  @include bg_desktop('solution/retail/bg-counter.jpg');
+  @include bg_mobile('solution/retail/bg-counter_mobile.jpg');
+  @extend %square-block;
+
+  > article > figure {
+    @include tablet-7inch {
+      float: right;
+    }
+  }
+  color: $black;
+  $color: #3071b9;
+
+  hgroup em {
+    color: $color;
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-3_mobile;
+    max-width: inherit;
+
+    li {
+      span {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include svg_pos($color);
+      }
+
+      &:nth-child(2) img {
+        @include svg_monitor($color);
+      }
+
+      &:nth-child(3) img {
+        @include svg_tickets($color);
+      }
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-dark;
+  }
+}
+
+.retail-solution_overview_backstage {
+  @include section-long;
+  @include bg_desktop('_global/bg-cloud.jpg');
+  @include bg_mobile('_global/bg-cloud_mobile.jpg');
+  @extend %square-block;
+
+  > article > figure {
+    @include tablet-7inch {
+      float: right;
+    }
+  }
+  color: $black;
+  $color: #3071b9;
+
+  hgroup em {
+    color: $color;
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-3_mobile;
+    max-width: inherit;
+
+    li {
+      span {
+        background-color: $color;
+      }
+      $color: white;
+
+      &:nth-child(1) img {
+        @include svg_analysis($color);
+      }
+
+      &:nth-child(2) img {
+        @include svg_management-store($color);
+      }
+
+      &:nth-child(3) img {
+        @include svg_member($color);
+      }
+    }
+  }
+
+  a[data-type="button"] {
+    @extend %button-dark;
+  }
+}
+
+.retail-solution_overview_feature {
+  .webmenu {
+    display: none;
+  }
+}
+//-----------------------------------------------------------------------------
+// 行動商務 - 概觀
+//------ -----------------------------------------------------------------------
+
+.retail-solution_mobile_banner {
+  // @extend .mobile-pos_banner;
+  @extend %banner_restaurant-solution;
+  background-image: url('../../image/_global/cloud-bg.png'), url("../../image/_global/bg-blue-light.jpg");
+  $color: white;
+
+  article {
+    padding-bottom: 0;
+
+    hgroup img {
+      @include img('product/mobile-pos/title.png');
+    }
+
+    > ol {
+      @extend %banner_main-svg;
+
+      li {
+        &:nth-child(1) span img {
+          @include svg_payment($color);
+        }
+
+        &:nth-child(2) span img {
+          @include svg_multivariate($color);
+        }
+
+        &:nth-child(3) span img {
+          @include svg_invoice($color);
+        }
+      }
+    }
+
+    nav.product-nav-img {
+      @extend %mobile-pos-nav;
+      margin-top: 55px;
+      @include tablet-7inch-max {
+        margin-top: 10%;
+      }
+
+      article {
+        @include tablet-7inch-max {
+          padding: 0;
+        }
+      }
+
+      li {
+        span img {
+          @include scale-4x3;
+        }
+
+        &:nth-child(1) {
+          span img {
+            @include img('product/mobile-pos/v1-banner.png');
+          }
+        }
+
+        &:nth-child(2) {
+          span img {
+            @include img('product/mobile-pos/x990-banner.png');
+          }
+        }
+
+        a[data-type="button"] {
+          @include btn-full;
+        }
+      }
+    }
+  }
+}
+
+body.retail-solution {
+  nav.mobile-pos-nav a {
+    &.active,
+    &:hover {
+      $color: #00b9f6;
+      color: $color;
+      border-color: $color;
+    }
+  }
+}
+
+.retail-solution_mobile_overview_situation {
+  @include section;
+  background-color: $section-bg;
+  $color: #0dbcef;
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-3_mobile;
+
+    li {
+      &:nth-child(1) img {
+        @include svg_restaurant($color);
+      }
+
+      &:nth-child(2) img {
+        @include svg_retail($color);
+      }
+
+      &:nth-child(3) img {
+        @include svg_dog($color);
+      }
+
+      &:nth-child(4) img {
+        @include svg_drug($color);
+      }
+
+      &:nth-child(5) img {
+        @include svg_pay($color);
+      }
+
+      &:nth-child(6) img {
+        @include svg_home-delivery($color);
+      }
+
+      &:nth-child(7) img {
+        @include svg_cooperation($color);
+      }
+
+      &:nth-child(8) img {
+        @include svg_pig($color);
+      }
+
+      &:nth-child(9) img {
+        @include svg_e-supplier($color);
+      }
+
+      &:nth-child(10) img {
+        @include svg_delivery-2($color);
+      }
+
+      &:nth-child(11) img {
+        @include svg_business-circles($color);
+      }
+
+      &:nth-child(12) img {
+        @include svg_medicine-box($color);
+      }
+
+      figure {
+        padding: 10% 15%;
+      }
+
+      span {
+        text-align: right;
+        width: 60px;
+      }
+
+      img {
+        @include scale(60px,60px);
+      }
+    }
+  }
+}
+
+body.retail-solution {
+  // 行動商務 - 軟體介紹
+  .mecr_software_banner {
+    //(文字色,背景色左,背景色右)
+    @include banner-gradient(white,#53cdf4,#01c0f4);
+  }
+  // 行動商務 - 簡易掃碼版 - 硬體介紹
+  .v1_hardware_banner {
+    //(文字色,背景色左,背景色右)
+    @include banner-gradient(white,#53cdf4,#01c0f4);
+
+    figure {
+      text-align: center;
+
+      hgroup ol {
+        @include block-v1(rgba(0, 184, 235, 0.99));
+      }
+    }
+  }
+  // 行動商務 - 進階感應版 - 硬體介紹
+  .x990_hardware_banner {
+    //(文字色,背景色左,背景色右)
+    @include banner-gradient(white,#53cdf4,#01c0f4);
+
+    figure {
+      hgroup ol {
+        @include block-x990(rgba(0, 184, 235, 0.99));
+      }
+    }
+  }
+  // 櫃檯 - 單機專業版
+  .b1pos_overview_content > figure:nth-child(1) > article > figure > figure img {
+    @include img('solution/retail/b1pos-img.png');
+  }
+}
+//-----------------------------------------------------------------------------
+// 櫃檯 - 概觀
+//------ -----------------------------------------------------------------------
+
+.retail-solution_counter_banner {
+  // @extend .counter_banner;
+  @extend %banner_restaurant-solution;
+  background-image: url('../../image/_global/cloud-bg.png'), url("../../image/_global/bg-blue-dark.jpg");
+  $color: white;
+  color: $color;
+
+  article {
+    padding-bottom: 0;
+
+    hgroup img {
+      @include img('product/pos/title.png');
+    }
+    > ol {
+      @extend %banner_main-svg;
+
+      li {
+        $color: white;
+
+        &:nth-child(1) span img {
+          @include svg_safety($color);
+        }
+
+        &:nth-child(2) span img {
+          @include svg_expand($color);
+        }
+
+        &:nth-child(3) span img {
+          @include svg_operating($color);
+        }
+      }
+    }
+    nav.product-nav-img {
+      @extend %counter-nav;
+      margin-top: 55px;
+      @include tablet-7inch-max {
+        margin-top: 22%;
+      }
+
+      article {
+        @include tablet-7inch-max {
+          padding: 0;
+        }
+      }
+
+      li {
+        span img {
+          @include scale-4x3;
+        }
+
+        &:nth-child(1) {
+          span img {
+            @include img('product/pos/bpos.png');
+          }
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          span img {
+            @include img('solution/retail/b1pos.png');
+          }
+        }
+        a[data-type="button"] {
+          @include btn-full;
+        }
+      }
+    }
+    nav > ol li {
+      
+
+      &.active,
+      &:hover {
+        &:nth-child(1) h5,
+        &:nth-child(2) h5,
+        &:nth-child(3) h5 {
+          $color: #2b6ebd;
+          color: $color;
+          border-color: $color;
+          background-color: $section-bg;
+        }
+      }
+    }
+  }
+}
+
+.retail-solution_counter_overview_situation {
+  // @extend .counter_overview_situation;
+  @include section;
+  background-color: $section-bg;
+  margin-bottom: 0;
+
+  hgroup {
+    h4 {
+      color: #999999;
+    }
+  }
+
+  ol {
+    @include list-grid-3_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      margin-top: 35px;
+
+      img {
+        @include scale(150px,150px);
+        margin-bottom: 10px;
+      }
+      &:nth-child(1) img {
+        @include img('_global/it-1.jpg');
+      }
+
+      &:nth-child(2) img {
+        @include img('_global/it-3.jpg');
+      }
+
+      &:nth-child(3) img {
+        @include img('_global/it-6.jpg');
+      }
+    }
+  }
+}
+
+.retail-solution_counter_overview_b1pos-cloud {
+  // @extend .counter_overview_b1pos-cloud;
+  @include section;
+  @include section-img-left;
+  @include section-img-up_mobile;
+  @include bg('_global/cloud-gray.jpg');
+  background-position: top;
+  margin-bottom: 0;
+  $color: #4b63a9;
+
+  article {
+    @include tablet-7inch {
+      padding-bottom: 0;
+    }
+  }
+  figure {
+    hgroup {
+      h2 {
+        color: $color;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          vertical-align: text-bottom;
+          margin-right: 20px;
+          @include scale(50px,50px);
+          @include svg_cloud3($color);
+        }
+      }
+
+      ol {
+        @extend %circle-block;
+        @include list-grid-4;
+        margin: 25px 0;
+
+        li {
+          span {
+            background-color: white;
+          }
+
+          &:nth-child(1) img {
+            @include svg_window($color);
+          }
+
+          &:nth-child(2) img {
+            @include svg_upload($color);
+          }
+
+          &:nth-child(3) img {
+            @include svg_date1(#4b63a9);
+          }
+
+          &:nth-child(4) img {
+            @include svg_date1($color);
+          }
+        }
+      }
+
+      a[data-type="button"] {
+        @extend %button-dark;
+      }
+    }
+
+    figure figure {
+      img {
+        @include img('solution/retail/b1pos-img.png');
+      }
+    }
+  }
+}
+
+.retail-solution_counter_overview_b1pos {
+  // @extend .counter_overview_b1pos;
+  @include section;
+  @include section-img-left;
+  @include section-img-up_mobile;
+  @include bg('_global/cloud-white.jpg');
+  background-position: top;
+  $color: #4b63a9;
+
+  article {
+    @include tablet-7inch {
+      padding-bottom: 0;
+    }
+  }
+
+  figure {
+    hgroup {
+      h2 {
+        color: $color;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          vertical-align: text-bottom;
+          margin-right: 20px;
+          @include scale(50px,50px);
+          @include svg_desk($color);
+        }
+      }
+
+      ol {
+        @extend %circle-block;
+        @include list-grid-4;
+        margin: 25px 0;
+
+        li {
+          span {
+            background-color: $section-bg;
+          }
+
+          &:nth-child(1) img {
+            @include svg_window($color);
+          }
+
+          &:nth-child(2) img {
+            @include svg_copy($color);
+          }
+
+          &:nth-child(3) img {
+            @include svg_money1(#4b63a9);
+          }
+
+          &:nth-child(4) img {
+            @include svg_money1($color);
+          }
+        }
+      }
+
+      a[data-type="button"] {
+        @extend %button-dark;
+      }
+    }
+
+    figure figure {
+      img {
+        @include img('solution/retail/b1pos-img.png');
+      }
+    }
+  }
+}
+
+body.retail-solution {
+  // 櫃檯 - BPOS 軟體介紹
+  .counter_bpos_software_banner {
+    // 文字顏色,背景色左,背景色右
+    @include banner-gradient(white,#3f9fd9,#378fce);
+  }
+  // 櫃檯 - B1POS 軟體介紹
+  .b1pos_software_banner {
+    // 文字顏色,背景色左,背景色右
+    @include banner-gradient(white,#3f9fd9,#378fce);
+  }
+  // 櫃檯 - BPOS 硬體介紹
+  .bpos_hardware_banner {
+    // 文字顏色,背景色左,背景色右
+    @include banner-gradient(white,#3f9fd9,#378fce);
+
+    figure {
+      text-align: center;
+
+      hgroup ol {
+        @include block-t1(rgba(55, 143, 206, 0.99));
+      }
+    }
+  }
+  // 櫃檯 - B1POS 硬體介紹
+  .counter_b1pos_hardware_banner {
+    $color: #89b22b;
+    // 文字顏色,背景色左,背景色右
+    @include banner-gradient(white,#3f9fd9,#378fce);
+
+    figure {
+      text-align: center;
+
+      hgroup ol {
+        @include block-t80(rgba(55, 143, 206, 0.99));
+      }
+    }
+  }
+}

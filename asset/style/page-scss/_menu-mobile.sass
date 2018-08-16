@@ -1,0 +1,191 @@
+
+.cd-nav-trigger
+  float: left
+  z-index: 9999
+  left: 0
+  top: 5px
+  height: 50px
+  width: 50px
+  /* image replacement */
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+  -webkit-transition: -webkit-transform 0.5s
+  -moz-transition: -moz-transform 0.5s
+  transition: transform 0.5s
+  .cd-nav-icon
+    /* icon created in CSS */
+    position: absolute
+    left: 50%
+    top: 50%
+    bottom: auto
+    right: auto
+    -webkit-transform: translateX(-50%) translateY(-50%)
+    -moz-transform: translateX(-50%) translateY(-50%)
+    -ms-transform: translateX(-50%) translateY(-50%)
+    -o-transform: translateX(-50%) translateY(-50%)
+    transform: translateX(-50%) translateY(-50%)
+    width: 22px
+    height: 2px
+    background-color: #032fa2
+    &::before, &:after
+      /* upper and lower lines of the menu icon */
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      width: 100%
+      height: 100%
+      background-color: inherit
+      /* Force Hardware Acceleration in WebKit */
+      -webkit-transform: translateZ(0)
+      -moz-transform: translateZ(0)
+      -ms-transform: translateZ(0)
+      -o-transform: translateZ(0)
+      transform: translateZ(0)
+      -webkit-backface-visibility: hidden
+      backface-visibility: hidden
+      -webkit-transition: -webkit-transform 0.5s, width 0.5s, top 0.3s
+      -moz-transition: -moz-transform 0.5s, width 0.5s, top 0.3s
+      transition: transform 0.5s, width 0.5s, top 0.3s
+    &::before
+      -webkit-transform-origin: right top
+      -moz-transform-origin: right top
+      -ms-transform-origin: right top
+      -o-transform-origin: right top
+      transform-origin: right top
+      -webkit-transform: translateY(-6px)
+      -moz-transform: translateY(-6px)
+      -ms-transform: translateY(-6px)
+      -o-transform: translateY(-6px)
+      transform: translateY(-6px)
+    &::after
+      -webkit-transform-origin: right bottom
+      -moz-transform-origin: right bottom
+      -ms-transform-origin: right bottom
+      -o-transform-origin: right bottom
+      transform-origin: right bottom
+      -webkit-transform: translateY(6px)
+      -moz-transform: translateY(6px)
+      -ms-transform: translateY(6px)
+      -o-transform: translateY(6px)
+      transform: translateY(6px)
+.no-touch .cd-nav-trigger:hover .cd-nav-icon::after
+  top: 2px
+
+.no-touch .cd-nav-trigger:hover .cd-nav-icon::before
+  top: -2px
+
+.navigation-is-open .cd-nav-trigger .cd-nav-icon
+  background-color: transparent
+.navigation-is-open .cd-nav-trigger .cd-nav-icon::after,
+.navigation-is-open .cd-nav-trigger .cd-nav-icon::before
+  /* animate arrow --> from hamburger to arrow */
+  /*width: 50% */
+  background-color: #032fa2
+  -webkit-transition: -webkit-transform 0.5s, width 0.5s
+  -moz-transition: -moz-transform 0.5s, width 0.5s
+  transition: transform 0.5s, width 0.5s
+.navigation-is-open .cd-nav-trigger .cd-nav-icon::before
+  -webkit-transform: translateX(-46%) translateY(6px) rotate(45deg)
+  -moz-transform: translateX(-46%) translateY(6px) rotate(45deg)
+  -ms-transform: translateX(-46%) translateY(6px) rotate(45deg)
+  -o-transform: translateX(-46%) translateY(6px) rotate(45deg)
+  transform: translateX(-46%) translateY(6px) rotate(45deg)
+.navigation-is-open .cd-nav-trigger .cd-nav-icon::after
+  -webkit-transform: translateX(-50%) translateY(-10px) rotate(-45deg)
+  -moz-transform: translateX(-50%) translateY(-10px) rotate(-45deg)
+  -ms-transform: translateX(-50%) translateY(-10px) rotate(-45deg)
+  -o-transform: translateX(-50%) translateY(-10px) rotate(-45deg)
+  transform: translateX(-50%) translateY(-10px) rotate(-45deg)
+
+.no-touch .navigation-is-open .cd-nav-trigger:hover .cd-nav-icon::after, .no-touch .navigation-is-open .cd-nav-trigger:hover .cd-nav-icon::before
+  top: 0
+
+.cd-nav
+  position: fixed
+  z-index: 999
+  top: 60px
+  left: 0
+  height: calc(100% - 60px)
+  width: 100%
+  // background-color: #f8f8f8
+  visibility: hidden
+  -webkit-transition: visibility 0s 0.7s
+  -moz-transition: visibility 0s 0.7s
+  transition: visibility 0s 0.7s
+  .cd-navigation-wrapper
+    /* all navigation content */
+    height: 100%
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+    /*padding: 40px 5% 40px calc(5% + 80px) */
+    padding: 0
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0)
+    -moz-transform: translateZ(0)
+    -ms-transform: translateZ(0)
+    -o-transform: translateZ(0)
+    transform: translateZ(0)
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+    -webkit-transform: translateX(-50%)
+    -moz-transform: translateX(-50%)
+    -ms-transform: translateX(-50%)
+    -o-transform: translateX(-50%)
+    transform: translateX(-50%)
+    -webkit-transition: -webkit-transform 0.7s
+    -moz-transition: -moz-transform 0.7s
+    transition: transform 0.7s
+    -webkit-transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78)
+    -moz-transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78)
+    transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78)
+.cd-primary-nav
+  text-align: left
+  dt
+    background-color: #eee
+    // background-image: url(../image/header/category_bg.jpg)
+    //background-repeat: repeat-x
+    height: 30px
+    line-height: 30px
+    font-size: 14px
+    a
+      background-color: #888
+      color: #fff
+    b
+      padding-left: 10%
+
+  dd
+    background-color: #FFF
+    border-bottom: 1px solid #ddd
+    a
+      height: 50px
+      line-height: 50px
+      font-size: 14px
+      background-color: transparent
+      transition: all 0.3s ease
+      &:hover,&:focus
+        color: #FFF
+        background-color: #36c
+  a
+    display: block
+    padding-left: 10%
+    
+
+.navigation-is-open .cd-nav
+  visibility: visible
+  -webkit-transition: visibility 0s 0s
+  -moz-transition: visibility 0s 0s
+  transition: visibility 0s 0s
+.navigation-is-open .cd-nav .cd-navigation-wrapper
+  -webkit-transform: translateX(0)
+  -moz-transform: translateX(0)
+  -ms-transform: translateX(0)
+  -o-transform: translateX(0)
+  transform: translateX(0)
+  -webkit-transition: -webkit-transform 0.5s
+  -moz-transition: -moz-transform 0.5s
+  transition: transform 0.5s
+  -webkit-transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78)
+  -moz-transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78)
+  transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78)

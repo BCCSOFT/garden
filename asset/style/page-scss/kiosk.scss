@@ -1,0 +1,204 @@
+@import "../css-framework/02_import";
+
+//-----------------------------------------------------------------------------
+// 點餐機 - 概觀
+//-----------------------------------------------------------------------------
+
+.kiosk_banner {
+  @extend %banner_restaurant-solution;
+  background-image: url('../../image/_global/cloud-bg.png'), url("../../image/_global/bg-orange-light.jpg");
+  $color: white;
+  color: $color;
+
+  > article {
+    padding-bottom: 0;
+
+    > hgroup img{
+        @include img('product/kiosk/title.png');
+    }
+
+    h3{
+      padding-bottom: 20px;
+      em{
+        text-shadow: 0 0 5px rgba(51,51,51,.3);
+      }
+    }
+    h5{
+      color: #9a4901;
+      opacity: 1;
+    }
+
+    > figure img {
+      @include img('product/kiosk/banner-item.png');
+      @include scale-3x1_desktop;
+      @include scale-4x3_mobile;
+    }
+  }
+
+}
+
+.kiosk_overview_feature {
+  @include section;
+  background-color: $section-bg;
+
+  hgroup > p{
+    color: #666;
+  }
+
+  ol {
+    @extend %event;
+    margin: 0;
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      @for $i from 1 through 8 {
+        &:nth-child(#{$i}) img {
+          @include img('product/kiosk/overview-feature-#{$i}.png');
+        }
+      }
+    }
+  }
+
+  h4 {
+    margin-top: 20px;
+  }
+}
+
+.kiosk_overview_situation{
+  @include section;
+
+  > article{
+    > figure img {
+      @include img('product/kiosk/overview-situation.jpg');
+      @include scale-4x3_desktop;
+    }
+  }
+}
+
+.kiosk_overview_contrast{
+  @include section;
+  background-color: $section-bg;
+
+  > article{
+    > hgroup img {
+      @include img('product/kiosk/overview-contrast.png');
+      @include scale-8x1_desktop;
+      @include scale-4x1_mobile;
+    }
+  }
+
+  table{
+    width: 100%;
+
+    caption{
+      display: none;
+    }
+
+    th,td{
+      padding: 10px 5px;
+      border: 1px solid #ddd;
+    }
+    thead{
+      background-color: #eee;
+      th:nth-child(2){
+        background-color: #ccc;
+      }
+      th:nth-child(3){
+        background-color: #f99f27;
+        color: #fff;
+      }
+    }
+    tbody{
+      th{
+        background-color: #f2ede9;
+        &:nth-child(even){
+          background-color: #e4dbd3;
+        }
+      }
+      tr{
+        &:nth-child(even){
+          background-color: #eee;
+        }
+
+      }
+    }
+  }
+}
+
+.kiosk_overview_hardware{
+  @include section;
+
+  > article{
+    > figure img {
+      @include img('product/kiosk/overview-hardware.png');
+      @include scale-2x1_desktop;
+    }
+  }
+}
+
+.kiosk_overview_hardware-spec{
+  background-color: $section-bg;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  > article{
+    @include content;
+  }
+  table{
+    width: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+    @include tablet-7inch{
+      width: 60%;
+    }
+
+    caption{
+      margin-bottom: 20px;
+    }
+    th,td{
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    th{
+      background-color: #eee;
+      text-align: right;
+    }
+    td{
+      text-align: left;
+    }
+  }
+}
+
+.kiosk_overview_equipment{
+  @include section;
+
+  ol{
+    @include list-grid-3_desktop;
+
+    li{
+      padding: 10px;
+      > figure{
+        @include grid-group;
+        // background-color: #eee;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+
+        > figure{
+          @include col-4;
+          padding: 10px;
+        }
+        > hgroup{
+          @include col-8;
+          margin-bottom: 0;
+          text-align: left;
+        }
+      }
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) img {
+          @include img('product/kiosk/overview-equipment-#{$i}.png');
+        }
+      }
+    }
+  }
+}

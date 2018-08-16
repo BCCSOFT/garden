@@ -1,0 +1,73 @@
+//------------------------------------------------------------------------------
+// header
+//------------------------------------------------------------------------------
+
+#header {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  @include clearfix;
+  > article {
+    @include content;
+    @include tablet-7inch-max {
+      padding: 0;
+    }
+  }
+
+  .logo {
+    height: 0;
+    @extend %text-hide;
+    @include bg("header/logo.png");
+    @include scale(160px,60px);
+    background-size: 100%;
+    vertical-align: middle;
+  }
+
+  .signin {
+    @extend %button-nomal;
+    @include small;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding: 4px 8px;
+  }
+}
+
+nav.desktop {
+  display: inline-block;
+  width: calc(100% - 270px);
+  vertical-align: bottom;
+  margin-left: 20px;
+  @include tablet-7inch-max {
+    display: none;
+  }
+
+  ul {
+    li {
+      display: inline-block;
+    }
+
+    a {
+      font-size: 16px;
+      text-align: center;
+      height: 60px;
+      line-height: 63px;
+      padding: 0 11px;
+
+      &.active,
+      &.at {
+        color: $color-main;
+        border-bottom: 3px solid $color-main;
+
+        i.bcc-down {
+          color: $color-main;
+        }
+      }
+    }
+
+    i.bcc-down {
+      @include small;
+      color: #dbdbdb;
+      padding-left: 10px;
+    }
+  }
+}

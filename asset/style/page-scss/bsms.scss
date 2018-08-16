@@ -1,0 +1,244 @@
+@import "../css-framework/02_import";
+
+//-----------------------------------------------------------------------------
+// bsms
+//-----------------------------------------------------------------------------
+
+.bsms_banner {
+  @include section-mid;
+  @include bg('software/bsms/bsms.jpg');
+  @include tablet-7inch-max {
+    background-position-x: 60%;
+  }
+
+  hgroup {
+    @include col-6_desktop;
+    @include tablet-7inch {
+      float: left;
+    }
+  }
+}
+
+.bsms_application{
+  display: none;
+  img {
+    @include img_desktop('software/bsms/bsms_application.jpg');
+    @include img_mobile('software/bsms/bsms_application_xs.jpg');
+    @include scale-3x2_desktop;
+    @include scale-1x2_mobile;
+  }
+}
+
+.bsms_feature-1{
+  display: none;
+  @include section;
+  @include bg('software/bsms/bsms_feature_bg-1.jpg');
+   article{
+    padding-bottom: 0;
+  }
+
+  img{
+    @include img('software/bsms/bsms_feature-1.png');
+    @include scale-4x1_desktop;
+    @include scale-2x1_mobile;
+  }
+}
+.bsms_feature-2{
+  display: none;
+  @include section;
+  @include bg('software/bsms/bsms_feature_bg-2.jpg');
+  article{
+    padding-bottom: 0;
+  }
+
+  img{
+    @include img('software/bsms/bsms_feature-2.png');
+    @include scale-4x1_desktop;
+    @include scale-3x1_mobile;
+  }
+}
+.bsms_feature-3{
+  display: none;
+  @include section;
+  @include bg('software/bsms/bsms_feature_bg-3.jpg');
+  article{
+    padding-bottom: 0;
+  }
+
+  img{
+    @include img('software/bsms/bsms_feature-3.png');
+    @include scale-4x1_desktop;
+    @include scale-2x1_mobile;
+  }
+}
+.bsms_feature_intro{
+  display: none;
+  @include section;
+  background-color: #f8f8f8;
+
+  ol{
+    @include list-grid-2_desktop;
+
+    li:nth-child(1){
+      img{
+        @include img('software/bsms/bsms_feature_intro-1.jpg');
+      }
+    }
+    li:nth-child(2){
+      img{
+        @include img('software/bsms/bsms_feature_intro-2.jpg');
+      }
+    }
+  }
+}
+.bsms_report_nav{
+  display: none;
+  @include nav(50px);
+  z-index: 1;
+  border-bottom: solid 1px #ddd;
+  border-top:  solid 1px #ddd;
+
+  a {
+    padding: 0 15px;
+
+    &.active,
+    &:hover {
+      @include tablet-7inch {
+        color: $color-main;
+        box-shadow: 0 -2px $color-main inset, 0 2px $color-main;
+        background-color: #eee;
+
+        &::before {
+          display: inline-block;
+        }
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid $color-main;
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      display: none;
+    }
+  }
+  article{
+    @include content;
+  }
+}
+
+.bsms_report-1, .bsms_report-2{
+  display: none;
+  @include section;
+  background-color: #f8f8f8;
+  ol{
+    @include list-grid-4_desktop;
+    // @include list-grid-2_mobile;
+    li{
+      padding-bottom: 20px;
+
+      &:nth-child(1){
+        img{
+          @include img('software/bsms/bsms_report-1.jpg');
+        }
+      }
+      &:nth-child(2){
+        img{
+          @include img('software/bsms/bsms_report-2.jpg');
+        }
+      }
+      &:nth-child(3){
+        img{
+          @include img('software/bsms/bsms_report-3.jpg');
+        }
+      }
+      &:nth-child(4){
+        img{
+          @include img('software/bsms/bsms_report-4.jpg');
+        }
+      }
+    }
+  }
+}
+[data-tab-content].active{
+  display: none;
+}
+
+.bsms_structure {
+  @include section;
+
+  img {
+    @include img('software/bsms/bsms-1.jpg');
+    @include scale-3x2_desktop;
+    @include scale-1x1_mobile;
+  }
+}
+
+.bsms_target {
+  @include section;
+  background-color: $section-bg;
+
+  img {
+    @include img('software/bsms/bsms-2.jpg');
+    @include scale-3x1_desktop;
+    @include scale-2x1_mobile;
+  }
+}
+
+.bsms_spec{
+  display: none;
+  article{
+    @include content;
+  }
+  img {
+    @include img('software/bsms/bsms_spec.jpg');
+    @include scale-4x3;
+  }
+}
+
+.bsms_faq{
+  display: none;
+  background-color: #f5f5f5;
+  article{
+    @include content;
+  }
+  img {
+    @include img_desktop('software/bsms/bsms_faq.jpg');
+    @include img_mobile('software/bsms/bsms_faq_xs.jpg');
+    @include scale-1x1_desktop;
+    @include scale-1x3_mobile;
+  }
+}
+
+.service{
+  display: none;
+  article{
+    @include content;
+  }
+  img {
+    @include img('software/bsms/service.jpg');
+  }
+}
+
+.contact-info{
+  display: none;
+  background-color: #f2f2f2;
+  article{
+    @include content;
+  }
+  img {
+    @include img('software/bsms/contact-info.jpg');
+    @include scale-2x1;
+  }
+}
+
+body#retail-solution-bsms .bsms_feature .webmenu {
+  display: none;
+}

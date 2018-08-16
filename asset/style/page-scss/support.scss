@@ -1,0 +1,227 @@
+@import "../css-framework/02_import";
+
+//------------------------------------------------------------------------------
+// banner
+//------------------------------------------------------------------------------
+
+.support_banner {
+  @include banner-normal;
+  @include bg('support/support_banner.jpg');
+}
+//------------------------------------------------------------------------------
+// 型錄下載
+//------------------------------------------------------------------------------
+
+.support-catalogue {
+  @include section;
+  background-color: $section-bg;
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    .bcc-download {
+      @include h4;
+      color: $color-main;
+    }
+
+    a {
+      @include btn-full;
+    }
+
+    img {
+      @include scale-1x1-4;
+      transition: all 0.3s ease-in-out;
+    }
+
+    figure {
+      padding: 0 15%;
+      @include tablet-7inch-max {
+        padding: 0 5%;
+      }
+    }
+
+    li:hover {
+      img {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 8px rgba(0,0,0,.3);
+      }
+    }
+
+    li:nth-child(1) {
+      img {
+        @include img('download/2018_智能餐飲_概觀_A4雙面_DM_v17-01.jpg');
+      }
+    }
+
+    li:nth-child(2) {
+      img {
+        @include img('download/2018_雲端後台_概觀_A4雙面_DM_v13-01.jpg');
+      }
+    }
+
+    li:nth-child(3) {
+      img {
+        @include img('download/2018_行動收銀_概觀_A4雙面_DM(x990)_v13-01.jpg');
+      }
+    }
+
+    li:nth-child(4) {
+      img {
+        @include img('download/2018_行動收銀_概觀_A4雙面_DM(V1)_v16-01.jpg');
+      }
+    }
+
+    li:nth-child(5) {
+      img {
+        @include img('support/dm1.jpg');
+      }
+    }
+
+    li:nth-child(6) {
+      img {
+        @include img('support/dm2.jpg');
+      }
+    }
+
+    li:nth-child(7) {
+      img {
+        @include img('support/dm3.jpg');
+      }
+    }
+
+    li:nth-child(8) {
+      img {
+        @include img('support/dm4.jpg');
+      }
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 線上教學
+//------------------------------------------------------------------------------
+
+.support-online-teaching {
+  @include section;
+
+  ol {
+    @include list-grid-3_desktop;
+    @include list-grid-1_mobile;
+
+    a {
+      @include btn-full;
+    }
+
+    img {
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+    }
+
+    li:hover {
+      img {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 8px rgba(0,0,0,.3);
+      }
+    }
+
+    figure {
+      padding: 0 25% 35px;
+    }
+
+    h5 {
+      margin-top: 15px;
+    }
+
+    li:nth-child(1) {
+      img {
+        @include img('support/guide_erp.png');
+      }
+    }
+
+    li:nth-child(2) {
+      img {
+        @include img('support/guide_pos.png');
+      }
+    }
+
+    li:nth-child(3) {
+      img {
+        @include img('support/guide_video.png');
+      }
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 顧問輔導
+//------------------------------------------------------------------------------
+
+.support-counseling {
+  @include section;
+  @include bg('support/adviser_bg.png');
+  color: white;
+
+  .bccsoft {
+    display: inline-block;
+    height: 0;
+    @include img('support/bccsoft.png');
+    @extend %text-hide;
+    @include scale(140px,19px);
+  }
+}
+//------------------------------------------------------------------------------
+// 售後服務
+//------------------------------------------------------------------------------
+
+.support-service {
+  @include section;
+
+  > article {
+    @include grid-group;
+
+    > figure {
+      @include col-6_desktop;
+      @include col-12_mobile;
+      vertical-align: top;
+
+      > section {
+        border: 1px solid #ccc;
+        margin: 10px;
+
+        hgroup {
+          margin: 25px 0;
+        }
+
+        ol {
+          background-color: $section-bg;
+          @include scale-1x1_desktop;
+          list-style: inherit;
+          text-align: left;
+          padding-left: 15%;
+          padding-right: 10%;
+          padding-top: 5%;
+
+          li {
+            padding: 3% 0;
+            @include p;
+          }
+        }
+      }
+
+      img {
+        @include scale(40px,40px);
+      }
+
+      &.warranty {
+        img {
+          @include svg_time2($color-main);
+        }
+      }
+
+      &.maintain {
+        img {
+          @include svg_fix($color-main);
+        }
+      }
+    }
+  }
+}

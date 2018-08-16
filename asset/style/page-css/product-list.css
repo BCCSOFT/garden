@@ -1,0 +1,658 @@
+@charset "UTF-8";
+[class*='scale'] {
+  overflow: hidden; }
+
+.img,
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  position: relative;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  top: 0;
+  height: 0;
+  padding-bottom: 100%; }
+
+* {
+  font: "Helvetica", "Arial", "微軟正黑體" ,"Microsoft JhengHei",sans-serif;
+  font-family: "Helvetica", "Arial", "微軟正黑體" ,"Microsoft JhengHei",sans-serif;
+  word-break: break-all; }
+
+body {
+  font-size: 100%; }
+
+p {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 18px;
+  line-height: 1.125rem; }
+  @media screen and (min-width: 769px) {
+    p {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 24px;
+      line-height: 1.5rem; } }
+
+h1 {
+  font-size: 44px;
+  font-size: 2.75rem;
+  line-height: 66px;
+  line-height: 4.125rem; }
+  @media screen and (min-width: 769px) {
+    h1 {
+      font-size: 56px;
+      font-size: 3.5rem;
+      line-height: 84px;
+      line-height: 5.25rem; } }
+  @media screen and (min-width: 1200px) {
+    h1 {
+      font-size: 64px;
+      font-size: 4rem;
+      line-height: 96px;
+      line-height: 6rem; } }
+
+h2 {
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 54px;
+  line-height: 3.375rem; }
+  @media screen and (min-width: 769px) {
+    h2 {
+      font-size: 44px;
+      font-size: 2.75rem;
+      line-height: 66px;
+      line-height: 4.125rem; } }
+
+h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+  @media screen and (min-width: 769px) {
+    h3 {
+      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 36px;
+      line-height: 2.25rem; } }
+  @media screen and (min-width: 1200px) {
+    h3 {
+      font-size: 36px;
+      font-size: 2.25rem;
+      line-height: 54px;
+      line-height: 3.375rem; } }
+
+h4 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+  @media screen and (min-width: 769px) {
+    h4 {
+      font-size: 20px;
+      font-size: 1.25rem;
+      line-height: 24px;
+      line-height: 1.5rem; } }
+  @media screen and (min-width: 1200px) {
+    h4 {
+      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 36px;
+      line-height: 2.25rem; } }
+
+h5 {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 21px;
+  line-height: 1.3125rem; }
+  @media screen and (min-width: 769px) {
+    h5 {
+      font-size: 20px;
+      font-size: 1.25rem;
+      line-height: 30px;
+      line-height: 1.875rem; } }
+
+h6 {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 20px;
+  line-height: 1.25rem; }
+  @media screen and (min-width: 769px) {
+    h6 {
+      font-size: 15px;
+      font-size: 0.9375rem;
+      line-height: 22px;
+      line-height: 1.375rem; } }
+
+small {
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 18px;
+  line-height: 1.125rem; }
+
+@font-face {
+  font-family: "bccFont";
+  src: url("../../fonts/bccFont.eot");
+  src: url("../../fonts/bccFont.eot?#iefix") format("eot"), url("../../fonts/bccFont.woff") format("woff"), url("../../fonts/bccFont.ttf") format("truetype"), url("../../fonts/bccFont.svg#bccFont") format("svg"); }
+
+.bcc-add:before, .bcc-back:before, .bcc-battery:before, .bcc-blog:before, .bcc-booking:before, .bcc-call:before, .bcc-chain:before, .bcc-chart:before, .bcc-check:before, .bcc-close:before, .bcc-cloud:before, .bcc-coupon:before, .bcc-cpu:before, .bcc-date:before, .bcc-down:before, .bcc-download:before, .bcc-email:before, .bcc-expan:before, .bcc-fb:before, .bcc-fix:before, .bcc-guide:before, .bcc-help:before, .bcc-internet:before, .bcc-inventory:before, .bcc-invoice:before, .bcc-lang:before, .bcc-language:before, .bcc-list:before, .bcc-mail:before, .bcc-maintain:before, .bcc-map:before, .bcc-member:before, .bcc-money:before, .bcc-nav:before, .bcc-new:before, .bcc-next:before, .bcc-next2:before, .bcc-offline:before, .bcc-payment:before, .bcc-pos:before, .bcc-printer:before, .bcc-purchase:before, .bcc-report:before, .bcc-right:before, .bcc-sale:before, .bcc-scan:before, .bcc-screen:before, .bcc-search:before, .bcc-service:before, .bcc-speaker:before, .bcc-sturdy:before, .bcc-table:before, .bcc-taste:before, .bcc-time:before, .bcc-time2:before, .bcc-up:before, .bcc-webmenu:before, .bcc-wholesale:before, .bcc-youtube:before {
+  font-family: "bccFont";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none; }
+
+.bcc-add:before {
+  content: ""; }
+
+.bcc-back:before {
+  content: ""; }
+
+.bcc-battery:before {
+  content: ""; }
+
+.bcc-blog:before {
+  content: ""; }
+
+.bcc-booking:before {
+  content: ""; }
+
+.bcc-call:before {
+  content: ""; }
+
+.bcc-chain:before {
+  content: ""; }
+
+.bcc-chart:before {
+  content: ""; }
+
+.bcc-check:before {
+  content: ""; }
+
+.bcc-close:before {
+  content: ""; }
+
+.bcc-cloud:before {
+  content: ""; }
+
+.bcc-coupon:before {
+  content: ""; }
+
+.bcc-cpu:before {
+  content: ""; }
+
+.bcc-date:before {
+  content: ""; }
+
+.bcc-down:before {
+  content: ""; }
+
+.bcc-download:before {
+  content: ""; }
+
+.bcc-email:before {
+  content: ""; }
+
+.bcc-expan:before {
+  content: ""; }
+
+.bcc-fb:before {
+  content: ""; }
+
+.bcc-fix:before {
+  content: ""; }
+
+.bcc-guide:before {
+  content: ""; }
+
+.bcc-help:before {
+  content: ""; }
+
+.bcc-internet:before {
+  content: ""; }
+
+.bcc-inventory:before {
+  content: ""; }
+
+.bcc-invoice:before {
+  content: ""; }
+
+.bcc-lang:before {
+  content: ""; }
+
+.bcc-language:before {
+  content: ""; }
+
+.bcc-list:before {
+  content: ""; }
+
+.bcc-mail:before {
+  content: ""; }
+
+.bcc-maintain:before {
+  content: ""; }
+
+.bcc-map:before {
+  content: ""; }
+
+.bcc-member:before {
+  content: ""; }
+
+.bcc-money:before {
+  content: ""; }
+
+.bcc-nav:before {
+  content: ""; }
+
+.bcc-new:before {
+  content: ""; }
+
+.bcc-next:before {
+  content: ""; }
+
+.bcc-next2:before {
+  content: ""; }
+
+.bcc-offline:before {
+  content: ""; }
+
+.bcc-payment:before {
+  content: ""; }
+
+.bcc-pos:before {
+  content: ""; }
+
+.bcc-printer:before {
+  content: ""; }
+
+.bcc-purchase:before {
+  content: ""; }
+
+.bcc-report:before {
+  content: ""; }
+
+.bcc-right:before {
+  content: ""; }
+
+.bcc-sale:before {
+  content: ""; }
+
+.bcc-scan:before {
+  content: ""; }
+
+.bcc-screen:before {
+  content: ""; }
+
+.bcc-search:before {
+  content: ""; }
+
+.bcc-service:before {
+  content: ""; }
+
+.bcc-speaker:before {
+  content: ""; }
+
+.bcc-sturdy:before {
+  content: ""; }
+
+.bcc-table:before {
+  content: ""; }
+
+.bcc-taste:before {
+  content: ""; }
+
+.bcc-time:before {
+  content: ""; }
+
+.bcc-time2:before {
+  content: ""; }
+
+.bcc-up:before {
+  content: ""; }
+
+.bcc-webmenu:before {
+  content: ""; }
+
+.bcc-wholesale:before {
+  content: ""; }
+
+.bcc-youtube:before {
+  content: ""; }
+
+section {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  /* 章節寬度 */
+  margin: 0 auto;
+  /* 章節水平置中 */
+  text-align: center; }
+
+ul, ol {
+  letter-spacing: -0.31em;
+  /* webkit: collapse white-space between units */
+  *letter-spacing: normal;
+  /* reset IE < 8 */
+  *word-spacing: -0.43em;
+  /* IE < 8 && gecko: collapse white-space between units */ }
+  @media screen and (min-width: 769px) {
+    ul li, ol li {
+      display: inline-block; } }
+
+ul, ol, picture, figure {
+  position: relative; }
+
+picture {
+  display: block;
+  width: 100%;
+  overflow: hidden; }
+
+picture, blockquote {
+  vertical-align: middle;
+  text-align: center;
+  letter-spacing: initial;
+  word-spacing: initial; }
+
+button {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 12px;
+  background-color: #36c;
+  color: #fff;
+  opacity: 1;
+  margin: 10px 0;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s; }
+
+button:hover {
+  opacity: .9; }
+
+.select-style {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-top: 10px; }
+  .select-style:after {
+    position: absolute;
+    content: "";
+    top: 22px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #bbb transparent transparent transparent; }
+  .select-style select {
+    -webkit-appearance: none;
+    line-height: 50px;
+    padding: 0 10px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    width: 100%;
+    color: #032fa2; }
+
+.product_retail_banner hgroup, .product_restaurant_banner hgroup, .product_software_banner hgroup, .product_hardware_banner hgroup {
+  padding: 80px 0;
+  color: white; }
+  @media screen and (max-width: 768px) {
+    .product_retail_banner hgroup, .product_restaurant_banner hgroup, .product_software_banner hgroup, .product_hardware_banner hgroup {
+      padding: 40px 0; } }
+  .product_retail_banner hgroup > *, .product_restaurant_banner hgroup > *, .product_software_banner hgroup > *, .product_hardware_banner hgroup > * {
+    font-weight: normal; }
+
+.product_retail_banner {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../image/product/retail_banner_bg.jpg"); }
+
+.product_restaurant_banner {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../image/product/restaurant_banner_bg.jpg"); }
+
+.product_software_banner {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../image/product/software_banner_bg.jpg"); }
+
+.product_hardware_banner {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../image/product/hardware_banner_bg.jpg"); }
+
+.retail_product-list, .restaurant_product-list, .software_product-list, .hardware_product-list {
+  background-color: #f8f8f8;
+  padding: 40px 0; }
+  @media screen and (max-width: 768px) {
+    .retail_product-list, .restaurant_product-list, .software_product-list, .hardware_product-list {
+      padding: 20px 0; } }
+  .retail_product-list article, .restaurant_product-list article, .software_product-list article, .hardware_product-list article {
+    max-width: 1200px;
+    margin: 0 auto;
+    float: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    *zoom: 1; }
+    .retail_product-list article:after, .restaurant_product-list article:after, .software_product-list article:after, .hardware_product-list article:after {
+      clear: both;
+      content: "";
+      display: table; }
+    .retail_product-list article:before, .restaurant_product-list article:before, .software_product-list article:before, .hardware_product-list article:before {
+      content: "";
+      display: table; }
+    @media screen and (max-width: 768px) {
+      .retail_product-list article, .restaurant_product-list article, .software_product-list article, .hardware_product-list article {
+        padding-left: 10px;
+        padding-right: 10px; } }
+    .retail_product-list article ol, .restaurant_product-list article ol, .software_product-list article ol, .hardware_product-list article ol {
+      letter-spacing: -0.31em;
+      /* webkit: collapse white-space between units */
+      *letter-spacing: normal;
+      /* reset IE < 8 */
+      *word-spacing: -0.43em;
+      /* IE < 8 && gecko: collapse white-space between units */
+      letter-spacing: -0.31em;
+      /* webkit: collapse white-space between units */
+      *letter-spacing: normal;
+      /* reset IE < 8 */
+      *word-spacing: -0.43em;
+      /* IE < 8 && gecko: collapse white-space between units */ }
+      @media screen and (min-width: 769px) {
+        .retail_product-list article ol > *, .restaurant_product-list article ol > *, .software_product-list article ol > *, .hardware_product-list article ol > * {
+          display: inline-block;
+          box-sizing: border-box;
+          zoom: 1;
+          *display: inline;
+          letter-spacing: normal;
+          word-spacing: normal;
+          width: 25%; } }
+      @media screen and (max-width: 768px) {
+        .retail_product-list article ol > *, .restaurant_product-list article ol > *, .software_product-list article ol > *, .hardware_product-list article ol > * {
+          display: inline-block;
+          box-sizing: border-box;
+          zoom: 1;
+          *display: inline;
+          letter-spacing: normal;
+          word-spacing: normal;
+          width: 50%; } }
+      .retail_product-list article ol li a, .restaurant_product-list article ol li a, .software_product-list article ol li a, .hardware_product-list article ol li a {
+        display: block;
+        background-color: #fff;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        margin: 10px;
+        padding: 10px;
+        transition: all 0.3s ease; }
+        @media screen and (max-width: 768px) {
+          .retail_product-list article ol li a, .restaurant_product-list article ol li a, .software_product-list article ol li a, .hardware_product-list article ol li a {
+            padding: 5px;
+            margin: 5px; } }
+        .retail_product-list article ol li a:hover, .restaurant_product-list article ol li a:hover, .software_product-list article ol li a:hover, .hardware_product-list article ol li a:hover {
+          border: 2px solid #36c;
+          box-shadow: 0px 0px 8px rgba(51, 51, 51, 0.3);
+          transform: translateY(-10px); }
+      .retail_product-list article ol li hgroup, .restaurant_product-list article ol li hgroup, .software_product-list article ol li hgroup, .hardware_product-list article ol li hgroup {
+        border-top: 1px solid #ddd;
+        margin-top: 10px;
+        padding-top: 10px; }
+        .retail_product-list article ol li hgroup h5, .restaurant_product-list article ol li hgroup h5, .software_product-list article ol li hgroup h5, .hardware_product-list article ol li hgroup h5 {
+          color: #36c; }
+        .retail_product-list article ol li hgroup span, .restaurant_product-list article ol li hgroup span, .software_product-list article ol li hgroup span, .hardware_product-list article ol li hgroup span {
+          font-size: 14px;
+          font-size: 0.875rem;
+          line-height: 18px;
+          line-height: 1.125rem;
+          display: block;
+          padding: 20px 0 10px;
+          color: #36c; }
+          @media screen and (min-width: 769px) {
+            .retail_product-list article ol li hgroup span, .restaurant_product-list article ol li hgroup span, .software_product-list article ol li hgroup span, .hardware_product-list article ol li hgroup span {
+              font-size: 16px;
+              font-size: 1rem;
+              line-height: 24px;
+              line-height: 1.5rem; } }
+          .retail_product-list article ol li hgroup span:after, .restaurant_product-list article ol li hgroup span:after, .software_product-list article ol li hgroup span:after, .hardware_product-list article ol li hgroup span:after {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg fill='#36c' version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='200px' height='200px' viewBox='0 0 200 200' enable-background='new 0 0 200 200' xml:space='preserve'%3E%3Cpolygon points='60.371,189.44 49.981,179.054 129.249,99.786 49.981,20.518 60.371,10.131 150.022,99.786 '/%3E%3C/svg%3E");
+            width: 14px;
+            padding-bottom: 14px;
+            content: " ";
+            padding-left: 10px;
+            vertical-align: midden; }
+
+.retail_product-list article ol li:nth-child(1) img {
+  background-image: url("../../image/jmenu/prod_payment.jpg"); }
+
+.retail_product-list article ol li:nth-child(2) img {
+  background-image: url("../../image/jmenu/prod_x990_payment.jpg"); }
+
+.retail_product-list article ol li:nth-child(3) img {
+  background-image: url("../../image/jmenu/prod_bpos_t1.jpg"); }
+
+.retail_product-list article ol li:nth-child(4) img {
+  background-image: url("../../image/jmenu/prod_b1pos_t80_retail.jpg"); }
+
+.retail_product-list article ol li:nth-child(5) img {
+  background-image: url("../../image/jmenu/prod_b1pos_t80_retail.jpg"); }
+
+.retail_product-list article ol li:nth-child(6) img {
+  background-image: url("../../image/jmenu/bsms.jpg"); }
+
+.restaurant_product-list article ol li:nth-child(1) img {
+  background-image: url("../../image/jmenu/prod_payment.jpg"); }
+
+.restaurant_product-list article ol li:nth-child(2) img {
+  background-image: url("../../image/jmenu/prod_x990_payment.jpg"); }
+
+.restaurant_product-list article ol li:nth-child(3) img {
+  background-image: url("../../image/jmenu/prod_bpos_t1.jpg"); }
+
+.restaurant_product-list article ol li:nth-child(4) img {
+  background-image: url("../../image/jmenu/prod_b1pos_t80_retail.jpg"); }
+
+.restaurant_product-list article ol li:nth-child(5) img {
+  background-image: url("../../image/jmenu/prod_b1pos_t80_retail.jpg"); }
+
+.restaurant_product-list article ol li:nth-child(6) img {
+  background-image: url("../../image/jmenu/prod_kds.jpg"); }
+
+.restaurant_product-list article ol li:nth-child(7) img {
+  background-image: url("../../image/jmenu/bsms.jpg"); }
+
+.software_product-list article ol li:nth-child(1) img {
+  background-image: url("../../image/jmenu/mECR-icon.jpg"); }
+
+.software_product-list article ol li:nth-child(2) img {
+  background-image: url("../../image/jmenu/bpos-icon.jpg"); }
+
+.software_product-list article ol li:nth-child(3) img {
+  background-image: url("../../image/jmenu/b1pos-icon.jpg"); }
+
+.software_product-list article ol li:nth-child(4) img {
+  background-image: url("../../image/jmenu/webmenu_icon.jpg"); }
+
+.software_product-list article ol li:nth-child(5) img {
+  background-image: url("../../image/jmenu/kds_icon.jpg"); }
+
+.software_product-list article ol li:nth-child(6) img {
+  background-image: url("../../image/jmenu/jabezpos-icon.jpg"); }
+
+.software_product-list article ol li:nth-child(7) img {
+  background-image: url("../../image/jmenu/cloud2erp-icon.jpg"); }
+
+.software_product-list article ol li:nth-child(8) img {
+  background-image: url("../../image/product/BMenu.png"); }
+
+.software_product-list article ol li:nth-child(9) img {
+  background-image: url("../../image/product/BOrder.png"); }
+
+.software_product-list article ol li:nth-child(10) img {
+  background-image: url("../../image/product/BLike.png"); }
+
+.software_product-list article ol li:nth-child(11) img {
+  background-image: url("../../image/product/BBrochure.png"); }
+
+.software_product-list article ol li:nth-child(12) img {
+  background-image: url("../../image/product/BCollector.png"); }
+
+.software_product-list article ol li:nth-child(13) img {
+  background-image: url("../../image/product/BBarcodePrinter.png"); }
+
+.software_product-list article ol li:nth-child(14) img {
+  background-image: url("../../image/product/LohasVIP.png"); }
+
+.software_product-list article ol li:nth-child(15) img {
+  background-image: url("../../image/product/pet18.png"); }
+
+.hardware_product-list article ol li:nth-child(1) img {
+  background-image: url("../../image/jmenu/mobile_pos.jpg"); }
+
+.hardware_product-list article ol li:nth-child(2) img {
+  background-image: url("../../image/jmenu/prod_invoice.jpg"); }
+
+.hardware_product-list article ol li:nth-child(3) img {
+  background-image: url("../../image/jmenu/APOS_A8.jpg"); }
+
+.hardware_product-list article ol li:nth-child(4) img {
+  background-image: url("../../image/product/hardware_t80.jpg"); }
+
+.hardware_product-list article ol li:nth-child(5) img {
+  background-image: url("../../image/product/hardware_t1.jpg"); }
+
+.hardware_product-list article ol li:nth-child(6) img {
+  background-image: url("../../image/product/hardware_h10.jpg"); }
+
+.hardware_product-list article ol li:nth-child(7) img {
+  background-image: url("../../image/product/hardware_v8.jpg"); }
+
+.hardware_product-list article ol li:nth-child(8) img {
+  background-image: url("../../image/product/hardware_receipt-printer.jpg"); }
+
+.hardware_product-list article ol li:nth-child(9) img {
+  background-image: url("../../image/product/hardware_label-printer.jpg"); }
+
+.hardware_product-list article ol li:nth-child(10) img {
+  background-image: url("../../image/product/hardware_invoice-printer.jpg"); }
+
+.hardware_product-list article ol li:nth-child(11) img {
+  background-image: url("../../image/product/hardware_barcode-scanner.jpg"); }
+
+.hardware_product-list article ol li:nth-child(12) img {
+  background-image: url("../../image/product/hardware_cash-drawer.jpg"); }

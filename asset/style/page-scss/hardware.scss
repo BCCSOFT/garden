@@ -1,0 +1,310 @@
+@import "../css-framework/02_import";
+
+@mixin dl-hardware-spec {
+  @extend %hardware_spec;
+
+  dl {
+    @include dl;
+    @include grid-group;
+
+    dt {
+      @include col-2_desktop;
+      @include col-4_mobile;
+    }
+
+    dd {
+      @include col-10_desktop;
+      @include col-8_mobile;
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// APOS A8
+//-----------------------------------------------------------------------------
+
+.aposA8_hardware-banner img {
+  @include bg_desktop('hardware/aposA8_banner.jpg');
+  @include scale-3x1_desktop;
+  @include bg_mobile('hardware/a8_banner_xs.jpg');
+  @include scale-2x3_mobile;
+}
+
+.aposA8_hardware-operating {
+  @include section;
+  @include section-img-left;
+
+  img {
+    @include img('hardware/aposA8_design.png');
+    @include scale-4x3;
+  }
+}
+
+.aposA8_hardware-support {
+  @include section-normal;
+  @include bg('hardware/aposA8_bg.jpg');
+  color: white;
+  text-align: right;
+
+  figure {
+    @include col-6_desktop;
+  }
+
+  ol {
+    @include list-grid-3;
+
+    li {
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) img {
+          @include img('hardware/a8_0#{$i}.png');
+        }
+      }
+    }
+  }
+}
+
+.aposA8_hardware-high {
+  @include section;
+  @include section-img-right;
+
+  img {
+    @include img('hardware/aposA8_design_00.png');
+    @include scale-4x3;
+  }
+}
+
+.aposA8_hardware-machine {
+  @include section;
+  @include section-img-left;
+  background-color: $section-bg;
+
+  article {
+    padding-bottom: 0;
+  }
+
+  img {
+    @include img('hardware/aposA8_design_01.png');
+    @include scale-4x3;
+  }
+}
+
+.aposA8_hardware-spec {
+  @include dl-hardware-spec;
+}
+//-----------------------------------------------------------------------------
+// V8
+//-----------------------------------------------------------------------------
+
+.v8_hardware-banner img {
+  @include bg_desktop('hardware/v8_banner.jpg');
+  @include scale-3x1_desktop;
+  @include bg_mobile('hardware/v8_banner_xs.jpg');
+  @include scale-2x3_mobile;
+}
+
+.v8_hardware-capacitive {
+  @include section;
+
+  article {
+    padding-bottom: 0;
+  }
+
+  img {
+    @include img('hardware/v8_vertical.png');
+    @include scale-3x1;
+  }
+}
+
+.v8_hardware-machine {
+  @include section;
+  @include section-img-right;
+  @include section-img-up_mobile;
+  background-color: $section-bg;
+
+  article {
+    padding-top: 0;
+  }
+
+  img {
+    @include img('hardware/v8_printer.png');
+    @include scale-4x3;
+  }
+}
+
+.v8_hardware-spec {
+  @include dl-hardware-spec;
+}
+//-----------------------------------------------------------------------------
+// H10
+//-----------------------------------------------------------------------------
+
+.h10_hardware-banner {
+  @include bg_desktop('hardware/h10_banner.jpg');
+  @include scale-3x1_desktop;
+  @include bg_mobile('hardware/h10_banner_xs.jpg');
+  @include scale-2x3_mobile;
+}
+
+.h10_hardware-capacitive {
+  @include section;
+  @include section-img-left;
+
+  hgroup img {
+    @include img('hardware/h10_power_pic.png');
+    @include scale-3x1;
+  }
+
+  figure figure img {
+    @include img('hardware/h10_power.png');
+    @include scale-4x3;
+  }
+}
+
+.h10_hardware-machine {
+  @include section;
+  @include section-img-right;
+  @include section-img-up_mobile;
+  background-color: $section-bg;
+
+  article {
+    padding-top: 0;
+  }
+
+  img {
+    @include img('hardware/h10_printer.png');
+    @include scale-4x3;
+  }
+}
+
+.h10_hardware-spec {
+  @include dl-hardware-spec;
+}
+//-----------------------------------------------------------------------------
+// 周邊設備
+//-----------------------------------------------------------------------------
+@mixin peripherals-item {
+  text-align: left;
+
+  > span {
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    @include tablet-7inch-max {
+      position: relative;
+      width: 100%;
+      display: table-footer-group;
+    }
+
+    img {
+      background-position: left;
+      @include scale-3x2_mobile;
+    }
+  }
+
+  article {
+    @include content;
+    @include tablet-7inch-max {
+      display: table-header-group;
+    }
+  }
+
+  figure {
+    @include col-6_desktop;
+    padding: 5%;
+
+    h5 {
+      color: #f15800;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      border-bottom: solid 1px #ddd;
+      margin-top: 5%;
+    }
+
+    dl {
+      @include dl;
+      @include grid-group;
+
+      dt {
+        @include col-4_desktop;
+        @include col-5_mobile;
+        margin-bottom: 0;
+        margin-top: 10px;
+      }
+
+      dd {
+        @include col-8_desktop;
+        @include col-7_mobile;
+        margin-bottom: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.peripherals_banner {
+  @include banner-normal;
+  @include bg('hardware/peripherals_banner.jpg');
+}
+
+.receipt-printer {
+  @include peripherals-item;
+
+  img {
+    @include bg('hardware/thermal_printer.jpg');
+    @include tablet-7inch {
+      padding-bottom: 550px;
+    }
+  }
+}
+
+.label-printer {
+  background-color: #282828;
+  @include peripherals-item;
+  color: white;
+
+  img {
+    @include bg('hardware/barcode_printer.jpg');
+    @include tablet-7inch {
+      padding-bottom: 550px;
+    }
+  }
+}
+
+.invoice-printer {
+  @include peripherals-item;
+
+  img {
+    @include bg('hardware/electronic_invoice.jpg');
+    @include tablet-7inch {
+      padding-bottom: 500px;
+    }
+  }
+}
+
+.barcode-scanner {
+  background-color: #282828;
+  @include peripherals-item;
+  color: white;
+
+  img {
+    @include bg('hardware/scanner.jpg');
+    @include tablet-7inch {
+      padding-bottom: 670px;
+    }
+  }
+}
+
+.cash-drawer {
+  @include peripherals-item;
+
+  img {
+    @include bg('hardware/cashbox.jpg');
+    @include tablet-7inch {
+      padding-bottom: 550px;
+    }
+  }
+}

@@ -1,0 +1,952 @@
+@import "../css-framework/02_import";
+
+//-----------------------------------------------------------------------------
+// 服務生 - 概觀
+//-----------------------------------------------------------------------------
+
+.mobile-pos_banner {
+  @extend %banner_restaurant-solution;
+  background-image: url('../../image/_global/cloud-bg.png'), url("../../image/_global/bg-orange.jpg");
+  $color: white;
+  color: $color;
+
+  article {
+    padding-bottom: 0;
+
+    hgroup img {
+      @include img('product/mobile-pos/title.png');
+    }
+
+    > ol {
+      @extend %banner_main-svg;
+      @include list-grid-5;
+      max-width: 550px;
+      @include tablet-7inch-max {
+        max-width: 300px;
+      }
+
+      li {
+        $color: white;
+
+        &:nth-child(1) span img {
+          @include svg_mobile-order($color);
+        }
+
+        &:nth-child(2) span img {
+          @include svg_chair($color);
+        }
+
+        &:nth-child(3) span img {
+          @include svg_payment_gateway($color);
+        }
+
+        &:nth-child(4) span img {
+          @include svg_invoice($color);
+        }
+
+        &:nth-child(5) span img {
+          @include svg_mobile-print($color);
+        }
+
+        figure {
+          padding: 15% 20%;
+          @include tablet-7inch-max {
+            padding: 14% 0;
+          }
+        }
+      }
+    }
+
+    nav.product-nav-img {
+      @extend %mobile-pos-nav;
+      margin-top: 55px;
+      @include tablet-7inch-max {
+        margin-top: 10%;
+      }
+
+      article {
+        @include tablet-7inch-max {
+          padding: 0;
+        }
+      }
+
+      li {
+        span img {
+          @include scale-4x3;
+        }
+
+        &:nth-child(1) {
+          span img {
+            @include img('product/mobile-pos/v1-banner.png');
+          }
+        }
+
+        &:nth-child(2) {
+          span img {
+            @include img('product/mobile-pos/x990-banner.png');
+          }
+        }
+
+        a[data-type="button"] {
+          @include btn-full;
+        }
+      }
+    }
+  }
+}
+
+nav.mobile-pos-nav {
+  @extend %mobile-pos-nav;
+
+  article {
+    @include tablet-7inch-max {
+      padding: 0;
+    }
+  }
+
+  li {
+    a[data-type="button"] {
+      @include h5;
+      font-weight: bold;
+      z-index: 5;
+      display: block;
+      color: $black;
+      border-bottom: solid 5px transparent;
+      padding: 10px 0 7px;
+      @include tablet-7inch-max {
+        padding: 16px 0 7px;
+      }
+
+      &.active,
+      &:hover {
+        $color: #ec6629;
+        color: $color;
+        border-color: $color;
+        background-color: $section-bg;
+      }
+
+      &.effect_fixed {
+        @include col-6;
+        background-color: $section-bg;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.mobile-pos_overview_situation {
+  @include section;
+  background-color: $section-bg;
+  $color: #ec682b;
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-3_mobile;
+
+    li {
+      &:nth-child(1) img {
+        @include svg_restaurant($color);
+      }
+
+      &:nth-child(2) img {
+        @include svg_retail($color);
+      }
+
+      &:nth-child(3) img {
+        @include svg_dog($color);
+      }
+
+      &:nth-child(4) img {
+        @include svg_drug($color);
+      }
+
+      &:nth-child(5) img {
+        @include svg_pay($color);
+      }
+
+      &:nth-child(6) img {
+        @include svg_home-delivery($color);
+      }
+
+      &:nth-child(7) img {
+        @include svg_cooperation($color);
+      }
+
+      &:nth-child(8) img {
+        @include svg_pig($color);
+      }
+
+      &:nth-child(9) img {
+        @include svg_e-supplier($color);
+      }
+
+      &:nth-child(10) img {
+        @include svg_delivery-2($color);
+      }
+
+      &:nth-child(11) img {
+        @include svg_business-circles($color);
+      }
+
+      &:nth-child(12) img {
+        @include svg_medicine-box($color);
+      }
+
+      figure {
+        padding: 10% 15%;
+      }
+
+      span {
+        text-align: right;
+        width: 60px;
+      }
+
+      img {
+        @include scale(60px,60px);
+      }
+    }
+  }
+}
+
+
+
+.mobile-pos_overview_v1 {
+  @include section;
+  @include section-img-left;
+  @include section-img-up_mobile;
+  @include bg('_global/cloud-gray.jpg');
+  background-position: top;
+  margin-bottom: 0;
+  //$color: #ec6629;
+  $color: rgba(236, 102, 41, 0.99);
+
+  article {
+    @include tablet-7inch {
+      padding-bottom: 0;
+    }
+  }
+
+  figure {
+    hgroup {
+      h2 {
+        color: $color;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          vertical-align: text-bottom;
+          margin-right: 20px;
+          @include scale(50px,50px);
+          @include svg_code($color);
+        }
+      }
+
+      ol {
+        @include block-v1(rgba(236, 102, 41, 0.99));
+      }
+
+      a[data-type="button"] {
+        @extend %button-dark;
+      }
+    }
+
+    figure {
+      img {
+        @include img('product/mobile-pos/v1.png');
+      }
+    }
+  }
+}
+//
+
+//
+
+.mobile-pos_overview_x990 {
+  @include section;
+  @include section-img-left;
+  @include section-img-up_mobile;
+  @include bg('_global/cloud-white.jpg');
+  background-position: top;
+  //$color: #00b9ef;
+  //$color: #ec6629;
+  $color: rgba(236, 102, 41, 0.99);
+
+  article {
+    @include tablet-7inch {
+      padding-bottom: 0;
+    }
+  }
+
+  figure {
+    hgroup {
+      h2 {
+        color: $color;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          vertical-align: text-bottom;
+          margin-right: 20px;
+          @include scale(55px,55px);
+          @include svg_sound($color);
+        }
+      }
+
+      ol {
+        //@extend %block-x990;
+        @include block-x990(rgba(236, 102, 41, 0.99));
+      }
+
+      a[data-type="button"] {
+        @extend %button-dark;
+      }
+    }
+
+    figure {
+      img {
+        @include img('product/mobile-pos/x990.png');
+      }
+    }
+  }
+}
+
+.mobile-pos_overview_feature {
+  display: none;
+  background-color: $section-bg;
+  // .webmenu {
+  //   display: none;
+  // }
+}
+
+.mobile-pos_overview_video-intro {
+  display: none;
+
+  ol {
+    @include list-grid-3_desktop;
+    @include list-grid-1_mobile;
+
+    li {
+      @include video;
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          @include bg('product/mobile-pos/video-#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// 服務生 - (簡易掃碼版 & 進階感應版)- 概觀
+//-----------------------------------------------------------------------------
+
+.v1_overview_banner,
+.x990_overview_banner {
+  @include section;
+
+  ol {
+    @extend %event;
+    @include list-grid-5_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) img {
+          @include img('product/mobile-pos/w-#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+
+.v1_overview_content {
+  > figure {
+    &:nth-child(1) {
+      @include section-long;
+      @include bg_desktop('_global/mobile-pos.jpg');
+      @include bg_mobile('_global/mobile-pos_xs.jpg');
+      background-position: bottom;
+      color: white;
+
+      hgroup {
+        @include col-5_desktop;
+        @include tablet-7inch {
+          float: left;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      @include section;
+      @include section-img-left;
+      background-color: $section-bg;
+
+      > article {
+        @include tablet-7inch {
+          padding-top: 0;
+        }
+        padding-bottom: 0;
+      }
+
+      img {
+        @include img('hardware/v1/overview-img-1.jpg');
+      }
+    }
+
+    &:nth-child(3) {
+      @include section-long;
+      @include bg_desktop('hardware/v1/overview-bg-2.jpg');
+      @include bg_mobile('hardware/v1/overview-bg-2_mobile.jpg');
+      color: white;
+
+      hgroup {
+        @include col-6_desktop;
+        @include tablet-7inch {
+          float: left;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      @include section;
+      @include section-img-left;
+      @include bg('hardware/v1/overview-bg-3.jpg');
+
+      img {
+        @include img('hardware/v1/overview-img-2.png');
+        @include scale-4x3_desktop;
+      }
+
+      hgroup em {
+        background-color: #fc6b21;
+        color: white;
+        margin-top: 25px;
+      }
+    }
+
+    &:nth-child(5) {
+      @include section-long;
+      @include bg_desktop('hardware/v1/overview-bg-4.jpg');
+      @include bg_mobile('hardware/v1/overview-bg-4_mobile.jpg');
+      background-position-y: 95%;
+      display: none;
+    }
+
+    &:nth-child(6) {
+      @include section-long;
+      @include bg_desktop('hardware/v1/overview-bg-5.jpg');
+      @include bg_mobile('hardware/v1/overview-bg-5_mobile.jpg');
+      background-position: bottom;
+
+      hgroup {
+        @include col-6_desktop;
+        @include tablet-7inch {
+          float: right;
+        }
+      }
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// 服務生 - 進階感應版 - 概觀
+//-----------------------------------------------------------------------------
+
+.x990_overview_content {
+  figure {
+    @include tablet-7inch {
+      text-align: left;
+    }
+  }
+
+  > figure {
+    &:nth-child(1) {
+      @include section-long;
+      @include bg_desktop('hardware/x990/overview-bg-1.jpg');
+      @include bg_mobile('hardware/x990/overview-bg-1_mobile.jpg');
+      @include tablet-7inch {
+        background-position: top left;
+      }
+      @include tablet-7inch-max {
+        background-position-y: 60%;
+      }
+
+      hgroup {
+        @include col-5_desktop;
+        @include tablet-7inch {
+          float: right;
+        }
+      }
+    }
+
+    &:nth-child(even):not(:first-child) {
+      @include section-img-left;
+      background-color: $section-bg;
+    }
+
+    &:nth-child(odd):not(:first-child) {
+      @include section-img-right;
+    }
+
+    &:nth-child(n):not(:first-child) {
+      > article {
+        @include tablet-7inch {
+          padding-top: 0;
+        }
+        padding-bottom: 0;
+      }
+    }
+
+    &:nth-child(2) {
+      @include section;
+
+      img {
+        @include img('hardware/x990/overview-img-1.jpg');
+      }
+    }
+
+    &:nth-child(3) {
+      @include section;
+
+      > article {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      img {
+        @include img_desktop('hardware/x990/overview-img-2.jpg');
+        @include img_mobile('hardware/x990/overview-img-2_mobile.jpg');
+      }
+    }
+
+    &:nth-child(4) {
+      @include section;
+      display: none;
+
+      img {
+        @include img('hardware/x990/overview-img-3.jpg');
+      }
+    }
+
+    &:nth-child(5) {
+      @include section;
+
+      img {
+        @include img('hardware/x990/overview-img-4.jpg');
+      }
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// 服務生 - (簡易掃碼版 & 進階感應版)- 軟體介紹
+//-----------------------------------------------------------------------------
+
+.mecr_software_banner {
+  // 文字顏色,背景色左,背景色右
+  @include banner-gradient(#ec6629,#fcd68c,#fab153);
+
+  figure img {
+    @include img('software/mecr/mecr.png');
+    background-position: bottom;
+  }
+
+  a[data-type="button"] {
+    @extend %button-app;
+  }
+}
+
+.mecr_software_content {
+  figure {
+    @include tablet-7inch {
+      text-align: left;
+    }
+  }
+
+  > figure {
+    &:nth-child(even) {
+      @include section-img-left;
+      background-color: #fff2eb;
+    }
+
+    &:nth-child(odd) {
+      @include section-img-right;
+      background-color: $section-bg;
+    }
+
+    &:nth-child(n) {
+      @include section;
+    }
+
+    &:nth-child(1) {
+      img {
+        @include img('software/mecr/img-1.png');
+      }
+    }
+
+    &:nth-child(2) {
+      figure img {
+        @include img('software/mecr/img-2.png');
+      }
+
+      hgroup img {
+        @include img('_global/logos.png');
+        @include scale-2x1;
+      }
+    }
+
+    &:nth-child(3) {
+      img {
+        @include img('software/mecr/img-3.png');
+      }
+    }
+
+    &:nth-child(4) {
+      display: none;
+
+      img {
+        @include img('software/mecr/img-4.png');
+      }
+    }
+
+    &:nth-child(5) {
+      img {
+        @include img('software/mecr/img-5.png');
+      }
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// 服務生 - 簡易掃碼版 - 硬體介紹
+//-----------------------------------------------------------------------------
+
+.v1_hardware_banner {
+  // 文字顏色,背景色左,背景色右
+  @include banner-gradient(#ec6629,#fcd68c,#fab153);
+
+  figure {
+    text-align: center;
+
+    hgroup ol {
+      @include block-v1(rgba(236, 102, 41, 0.99));
+    }
+
+    figure img {
+      @include img('hardware/v1/v1.png');
+    }
+  }
+}
+
+.v1_hardware_nav {
+  @include section;
+  background-color: $section-bg;
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      @for $i from 1 through 8 {
+        &:nth-child(#{$i}) img {
+          @include img('hardware/v1/hardware-s-#{$i}.svg');
+        }
+      }
+
+      img {
+        opacity: 0.4;
+        @include scale-3x1_desktop;
+        @include scale-2x1_mobile
+      }
+
+      figure {
+        padding: 20% 0;
+      }
+
+      h5 {
+        margin-top: 15px;
+        @include tablet-7inch-max {
+          font-size: 45%;
+          margin: 0 4px;
+        }
+      }
+    }
+  }
+}
+
+.v1_hardware_content {
+  figure {
+    @include tablet-7inch {
+      text-align: left;
+    }
+  }
+
+  > figure {
+    &:nth-child(even):not(:nth-child(4)) {
+      @include section-img-left;
+      background-color: $section-bg;
+    }
+
+    &:nth-child(4),
+    &:nth-child(odd) {
+      @include section-img-right;
+    }
+
+    &:nth-child(n) {
+      @include section;
+    }
+
+    &:nth-child(1) {
+      figure img {
+        @include img('hardware/v1/hardware-img-1.png');
+      }
+
+      hgroup img {
+        @include img('hardware/v1/hardware-pic-1.png');
+        @include scale-3x1;
+      }
+    }
+
+    &:nth-child(2) {
+      img {
+        @include img('hardware/v1/hardware-img-2.png');
+        @include scale-4x3;
+      }
+    }
+
+    &:nth-child(3) {
+      figure img {
+        @include img('hardware/v1/hardware-img-3.png');
+      }
+
+      hgroup ol {
+        @include list-grid-3;
+        margin-top: 60px;
+      }
+    }
+
+    &:nth-child(4) {
+      background-color: $section-bg;
+
+      img {
+        @include img('hardware/v1/hardware-img-4.png');
+        @include scale-3x1;
+      }
+
+      figure ol {
+        @include list-grid-2;
+      }
+    }
+
+    &:nth-child(5) {
+      article {
+        padding-bottom: 0;
+      }
+
+      img {
+        @include img('hardware/v1/hardware-img-5.png');
+      }
+    }
+
+    &:nth-child(6) {
+      text-align: center;
+
+      article {
+        padding-bottom: 0;
+      }
+
+      img {
+        @include img('hardware/v1/hardware-img-6.png');
+        @include scale-3x1;
+      }
+    }
+
+    &:nth-child(7) {
+      hgroup ol {
+        @include list-grid-4;
+
+        li {
+          @for $i from 1 through 4 {
+            &:nth-child(#{$i}) img {
+              @include img('hardware/v1/hardware-t-#{$i}.jpg');
+            }
+          }
+
+          figure {
+            text-align: center;
+          }
+
+          img {
+            @include scale(80px,80px);
+          }
+        }
+      }
+
+      figure img {
+        @include img('hardware/v1/hardware-img-7.png');
+      }
+    }
+
+    &:nth-child(8) {
+      img {
+        @include img('hardware/v1/hardware-img-8.png');
+      }
+    }
+  }
+}
+
+.v1_hardware_spec {
+  @extend %hardware_spec;
+
+  dl {
+    @include dl;
+    @include grid-group;
+
+    dt {
+      @include col-2_desktop;
+      @include col-5_mobile;
+    }
+
+    dd {
+      @include col-10_desktop;
+      @include col-7_mobile;
+    }
+  }
+}
+//-----------------------------------------------------------------------------
+// 服務生 - 進階感應版 - 硬體介紹
+//-----------------------------------------------------------------------------
+
+.x990_hardware_banner {
+  // 文字顏色,背景色左,背景色右
+  @include banner-gradient(#ec6629,#fcd68c,#fab153);
+
+  figure {
+    text-align: center;
+
+    hgroup ol {
+      @include block-x990(rgba(236, 102, 41, 0.99));
+    }
+
+    figure img {
+      @include img('hardware/x990/x990.png');
+    }
+
+    a[data-type="button"] {
+      @extend %button-app;
+    }
+  }
+}
+
+.x990_hardware_content {
+  figure {
+    @include tablet-7inch {
+      text-align: left;
+    }
+  }
+
+  > figure {
+    &:nth-child(even) {
+      @include section-img-right;
+      background-color: $section-bg;
+    }
+
+    &:nth-child(odd):not(:nth-child(1)) {
+      @include section-img-left;
+    }
+
+    &:nth-child(n) {
+      @include section;
+
+      article {
+        padding-bottom: 0;
+      }
+    }
+
+    &:nth-child(1) {
+      $color-a: white;
+      $color-b: $section-bg;
+      $list-1: $color-a 0%, $color-a 80%, $color-b 80%, $color-b 100%;
+      @include gradient(top, $list-1);
+      margin-bottom: 0;
+
+      figure {
+        text-align: center;
+      }
+
+      img {
+        @include img('hardware/x990/hardware-img-1.png');
+        @include scale-2x1_desktop;
+      }
+    }
+
+    &:nth-child(2) {
+      figure img {
+        @include img('hardware/x990/hardware-img-2.jpg');
+      }
+
+      hgroup > ol {
+        @include list-grid-4_desktop;
+        @include list-grid-3_mobile;
+
+        figure {
+          text-align: center;
+          color: #21c1f1;
+        }
+
+        li {
+          img {
+            @include scale(80px,80px);
+          }
+
+          &:nth-child(1) img {
+            @include img('hardware/x990/hardware-a-1.jpg');
+          }
+
+          &:nth-child(2) img {
+            @include img('hardware/x990/hardware-a-2.jpg');
+          }
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      figure img {
+        @include img('hardware/x990/hardware-img-3.jpg');
+      }
+
+      hgroup > ol {
+        @include list-grid-4_desktop;
+        @include list-grid-3_mobile;
+
+        figure {
+          text-align: center;
+          color: #21c1f1;
+        }
+
+        li {
+          img {
+            @include scale(80px,80px);
+          }
+
+          &:nth-child(1) img {
+            @include img('hardware/x990/hardware-a-3.jpg');
+          }
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      article {
+        @include tablet-7inch {
+          padding-top: 0;
+        }
+      }
+
+      figure img {
+        @include img('hardware/x990/hardware-img-4.jpg');
+        background-position: bottom;
+      }
+    }
+  }
+}
+
+.x990_hardware_spec {
+  @extend .v1_hardware_spec;
+}

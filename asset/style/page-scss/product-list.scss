@@ -1,0 +1,259 @@
+@import "../css-framework/02_import";
+
+//------------------------------------------------------------------------------
+// banner
+//------------------------------------------------------------------------------
+%list_banner{
+
+	hgroup {
+		padding: 80px 0;
+		color: white;
+		@include tablet-7inch-max{
+			padding: 40px 0;
+		}
+
+		> * {
+		  font-weight: normal;
+		}
+	}
+}
+
+.product_retail_banner{
+	@include bg('product/retail_banner_bg.jpg');
+	@extend %list_banner;
+}
+.product_restaurant_banner{
+	@include bg('product/restaurant_banner_bg.jpg');
+	@extend %list_banner;
+}
+.product_software_banner{
+	@include bg('product/software_banner_bg.jpg');
+	@extend %list_banner;
+}
+.product_hardware_banner{
+	@include bg('product/hardware_banner_bg.jpg');
+	@extend %list_banner;
+}
+
+//------------------------------------------------------------------------------
+// list
+//------------------------------------------------------------------------------
+%product-list_link{
+	background-color: #f8f8f8;
+	padding: 40px 0;
+	@include tablet-7inch-max{
+		padding: 20px 0;
+	}
+	article{
+		@include content;
+
+		ol{
+			@include list-grid-4_desktop;
+			@include list-grid-2_mobile;
+
+			li{
+				a{
+					display: block;
+					background-color: #fff;
+					border-radius: 3px;
+					border: 1px solid #ddd;
+					margin: 10px;
+					padding: 10px;
+					transition: all 0.3s ease;
+					@include tablet-7inch-max{
+						padding: 5px;
+						margin: 5px;
+					}
+
+					&:hover{
+						border: 2px solid #36c;
+						box-shadow: 0px 0px 8px rgba(51,51,51,.3);
+						transform: translateY(-10px);
+					}
+				}
+				hgroup{
+					border-top: 1px solid #ddd;
+					margin-top: 10px;
+					padding-top: 10px;
+
+					h5{
+						color: #36c;
+					}
+					span{
+						@include p;
+						display: block;
+						padding: 20px 0 10px;
+						color: #36c;
+						&:after{
+							@include svg_next(#36c);
+							@include scale(14px,14px);
+							content: " ";
+							padding-left: 10px;
+							vertical-align: midden;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.retail_product-list{
+	@extend %product-list_link;
+	article{
+		ol{
+			li{
+				&:nth-child(1) img{
+					@include img('jmenu/prod_payment.jpg');
+				}
+				&:nth-child(2) img{
+					@include img('jmenu/prod_x990_payment.jpg');
+				}
+				&:nth-child(3) img{
+					@include img('jmenu/prod_bpos_t1.jpg');
+				}
+				&:nth-child(4) img{
+					@include img('jmenu/prod_b1pos_t80_retail.jpg');
+				}
+				&:nth-child(5) img{
+					@include img('jmenu/prod_b1pos_t80_retail.jpg');
+				}
+				&:nth-child(6) img{
+					@include img('jmenu/bsms.jpg');
+				}
+			}
+		}
+	}
+}
+
+.restaurant_product-list{
+	@extend %product-list_link;
+	article{
+		ol{
+			li{
+				&:nth-child(1) img{
+					@include img('jmenu/prod_payment.jpg');
+				}
+				&:nth-child(2) img{
+					@include img('jmenu/prod_x990_payment.jpg');
+				}
+				&:nth-child(3) img{
+					@include img('jmenu/prod_bpos_t1.jpg');
+				}
+				&:nth-child(4) img{
+					@include img('jmenu/prod_b1pos_t80_retail.jpg');
+				}
+				&:nth-child(5) img{
+					@include img('jmenu/prod_b1pos_t80_retail.jpg');
+				}
+				&:nth-child(6) img{
+					@include img('jmenu/prod_kds.jpg');
+				}
+				&:nth-child(7) img{
+					@include img('jmenu/bsms.jpg');
+				}
+			}
+		}
+	}
+}
+
+.software_product-list{
+	@extend %product-list_link;
+	article{
+		ol{
+			li{
+				&:nth-child(1) img{
+					@include img('jmenu/mECR-icon.jpg');
+				}
+				&:nth-child(2) img{
+					@include img('jmenu/bpos-icon.jpg');
+				}
+				&:nth-child(3) img{
+					@include img('jmenu/b1pos-icon.jpg');
+				}
+				&:nth-child(4) img{
+					@include img('jmenu/webmenu_icon.jpg');
+				}
+				&:nth-child(5) img{
+					@include img('jmenu/kds_icon.jpg');
+				}
+				&:nth-child(6) img{
+					@include img('jmenu/jabezpos-icon.jpg');
+				}
+				&:nth-child(7) img{
+					@include img('jmenu/cloud2erp-icon.jpg');
+				}
+				&:nth-child(8) img{
+					@include img('product/BMenu.png');
+				}
+				&:nth-child(9) img{
+					@include img('product/BOrder.png');
+				}
+				&:nth-child(10) img{
+					@include img('product/BLike.png');
+				}
+				&:nth-child(11) img{
+					@include img('product/BBrochure.png');
+				}
+				&:nth-child(12) img{
+					@include img('product/BCollector.png');
+				}
+				&:nth-child(13) img{
+					@include img('product/BBarcodePrinter.png');
+				}
+				&:nth-child(14) img{
+					@include img('product/LohasVIP.png');
+				}
+				&:nth-child(15) img{
+					@include img('product/pet18.png');
+				}
+			}
+		}
+	}
+}
+
+.hardware_product-list{
+	@extend %product-list_link;
+	article{
+		ol{
+			li{
+				&:nth-child(1) img{
+					@include img('jmenu/mobile_pos.jpg');
+				}
+				&:nth-child(2) img{
+					@include img('jmenu/prod_invoice.jpg');
+				}
+				&:nth-child(3) img{
+					@include img('jmenu/APOS_A8.jpg');
+				}
+				&:nth-child(4) img{
+					@include img('product/hardware_t80.jpg');
+				}
+				&:nth-child(5) img{
+					@include img('product/hardware_t1.jpg');
+				}
+				&:nth-child(6) img{
+					@include img('product/hardware_h10.jpg');
+				}
+				&:nth-child(7) img{
+					@include img('product/hardware_v8.jpg');
+				}
+				&:nth-child(8) img{
+					@include img('product/hardware_receipt-printer.jpg');
+				}
+				&:nth-child(9) img{
+					@include img('product/hardware_label-printer.jpg');
+				}
+				&:nth-child(10) img{
+					@include img('product/hardware_invoice-printer.jpg');
+				}
+				&:nth-child(11) img{
+					@include img('product/hardware_barcode-scanner.jpg');
+				}
+				&:nth-child(12) img{
+					@include img('product/hardware_cash-drawer.jpg');
+				}
+			}
+		}
+	}
+}

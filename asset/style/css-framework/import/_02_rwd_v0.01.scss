@@ -1,0 +1,1482 @@
+//------------------------------------------------------------------------------
+// scale 比例框
+//------------------------------------------------------------------------------
+
+[class*='scale'] {
+  overflow: hidden;
+}
+@mixin scale($width,$height) {
+  width: $width;
+  padding-bottom: $height;
+}
+
+@mixin scale-global($value) {
+  top: 0;
+  height: 0;
+  padding-bottom: $value;
+}
+@mixin scale-desktop($value) {
+  @include tablet-7inch{
+    top: 0;
+    height: 0;
+    padding-bottom: $value;
+  }
+}
+@mixin scale-mobile($value) {
+ @include tablet-7inch-max {
+   top: 0;
+   height: 0;
+   padding-bottom: $value;
+ }
+}
+// 比例框- (10*1)
+@mixin scale-10x1 {
+  @include scale-global(10%);
+}
+@mixin scale-10x1_desktop {
+  @include scale-desktop(10%);
+}
+@mixin scale-10x1_mobile {
+  @include scale-mobile(10%);
+}
+// 比例框- (8*1)
+@mixin scale-8x1 {
+  @include scale-global(12.5%);
+}
+@mixin scale-8x1_desktop {
+  @include scale-desktop(12.5%);
+}
+@mixin scale-8x1_mobile {
+  @include scale-mobile(12.5%);
+}
+// 比例框- (7*1)
+@mixin scale-7x1 {
+  @include scale-global(14%);
+}
+@mixin scale-7x1_desktop {
+  @include scale-desktop(14%);
+}
+@mixin scale-7x1_mobile {
+  @include scale-mobile(14%);
+}
+// 比例框- (6*1)
+@mixin scale-6x1 {
+  @include scale-global(16.666%);
+}
+@mixin scale-6x1_desktop {
+  @include scale-desktop(16.666%);
+}
+@mixin scale-6x1_mobile {
+  @include scale-mobile(16.666%);
+}
+// 比例框- (5*1)
+@mixin scale-5x1 {
+  @include scale-global(20%);
+}
+@mixin scale-5x1_desktop {
+  @include scale-desktop(20%);
+}
+@mixin scale-5x1_mobile {
+  @include scale-mobile(20%);
+}
+// 比例框- (4*1)
+@mixin scale-4x1 {
+  @include scale-global(25%);
+}
+@mixin scale-4x1_desktop {
+  @include scale-desktop(25%);
+}
+@mixin scale-4x1_mobile {
+  @include scale-global(25%);
+}
+// 比例框- (3*1)
+@mixin scale-3x1 {
+  @include scale-global(33.333%);
+}
+@mixin scale-3x1_desktop {
+  @include scale-desktop(33.333%);
+}
+@mixin scale-3x1_mobile {
+  @include scale-mobile(33.333%);
+}
+// 比例框- (2.5*1)
+@mixin scale-2-5x1 {
+  @include scale-global(40%);
+}
+@mixin scale-2-5x1_desktop {
+  @include scale-desktop(40%);
+}
+@mixin scale-2-5x1_mobile {
+  @include scale-mobile(40%);
+}
+// 比例框- (2*1)
+@mixin scale-2x1 {
+  @include scale-global(50%);
+}
+@mixin scale-2x1_desktop {
+  @include scale-desktop(50%);
+}
+@mixin scale-2x1_mobile {
+  @include scale-mobile(50%);
+}
+// 比例框- (16*9)
+@mixin scale-16x9 {
+  @include scale-global(57%);
+}
+@mixin scale-16x9_desktop {
+  @include scale-desktop(57%);
+}
+@mixin scale-16x9_mobile {
+  @include scale-mobile(57%);
+}
+// 比例框- (3*2)
+@mixin scale-3x2 {
+  @include scale-global(66.666%);
+}
+@mixin scale-3x2_desktop {
+  @include scale-desktop(66.666%);
+}
+@mixin scale-3x2_mobile {
+  @include scale-mobile(66.666%);
+}
+// 比例框- (4*3)
+@mixin scale-4x3 {
+  @include scale-global(75%);
+}
+@mixin scale-4x3_desktop {
+  @include scale-desktop(75%);
+}
+@mixin scale-4x3_mobile {
+  @include scale-mobile(75%);
+}
+// 比例框- (1*1)
+@mixin scale-1x1 {
+  @include scale-global(100%);
+}
+@mixin scale-1x1_desktop {
+  @include scale-desktop(100%);
+}
+@mixin scale-1x1_mobile {
+  @include scale-mobile(100%);
+}
+// 比例框- (1*1.1)
+@mixin scale-1x1-1 {
+  @include scale-global(110%);
+}
+@mixin scale-1x1-1_desktop {
+  @include scale-desktop(110%);
+}
+@mixin scale-1x1-1_mobile {
+  @include scale-mobile(110%);
+}
+// 比例框- (1*1.2)
+@mixin scale-1x1-2 {
+  @include scale-global(120%);
+}
+@mixin scale-1x1-2_desktop {
+  @include scale-desktop(120%);
+}
+@mixin scale-1x1-2_mobile {
+  @include scale-mobile(120%);
+}
+// 比例框- (3*4)
+@mixin scale-3x4 {
+  @include scale-global(130%);
+}
+@mixin scale-3x4_desktop {
+  @include scale-desktop(130%);
+}
+@mixin scale-3x4_mobile {
+  @include scale-mobile(130%);
+}
+// 比例框- (1*1.4)
+@mixin scale-1x1-4 {
+  @include scale-global(140%);
+}
+@mixin scale-1x1-4_desktop {
+  @include scale-desktop(140%);
+}
+@mixin scale-1x1-4_mobile {
+  @include scale-mobile(140%);
+}
+// 比例框- (2*3)
+@mixin scale-2x3 {
+  @include scale-global(150%);
+}
+@mixin scale-2x3_desktop {
+  @include scale-desktop(150%);
+}
+@mixin scale-2x3_mobile {
+  @include scale-mobile(150%);
+}
+// 比例框- (4*7)
+@mixin scale-4x7 {
+  @include scale-global(175%);
+}
+@mixin scale-4x7_desktop {
+  @include scale-desktop(175%);
+}
+@mixin scale-4x7_mobile {
+  @include scale-mobile(175%);
+}
+// 比例框- (1*2)
+@mixin scale-1x2 {
+  @include scale-global(200%);
+}
+@mixin scale-1x2_desktop {
+  @include scale-desktop(200%);
+}
+@mixin scale-1x2_mobile {
+  @include scale-mobile(200%);
+}
+// 比例框- (1*3)
+@mixin scale-1x3 {
+  @include scale-global(300%);
+}
+@mixin scale-1x3_desktop {
+  @include scale-desktop(300%);
+}
+@mixin scale-1x3_mobile {
+  @include scale-mobile(300%);
+}
+
+
+
+//------------------------------------------------------------------------------
+// content
+//------------------------------------------------------------------------------
+$content: 1200px;
+@mixin content {
+  max-width: $content;
+  margin: 0 auto;
+  float: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  @include clearfix;
+ @include tablet-7inch-max{
+   padding-left: 10px;
+   padding-right: 10px;
+ }
+}
+
+//------------------------------------------------------------------------------
+// 清除浮動
+//------------------------------------------------------------------------------
+@mixin clearfix {
+  *zoom: 1;
+
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+
+  &:before {
+    content: "";
+    display: table;
+  }
+}
+
+//------------------------------------------------------------------------------
+// list-grid
+//------------------------------------------------------------------------------
+@mixin grid-group {
+  letter-spacing: -0.31em;
+  /* webkit: collapse white-space between units */
+  *letter-spacing: normal;
+  /* reset IE < 8 */
+  *word-spacing: -0.43em;
+  /* IE < 8 && gecko: collapse white-space between units */
+}
+@mixin grid-block {
+  display: inline-block;
+  box-sizing: border-box;
+  zoom: 1;
+  *display: inline;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+//
+@mixin grid-global($value) {
+  @include grid-block;
+  width: #{$value};
+}
+@mixin grid-desktop($value) {
+ @include tablet-7inch {
+   @include grid-block;
+   width: #{$value};
+ }
+}
+@mixin grid-mobile($value) {
+ @include tablet-7inch-max {
+   @include grid-block;
+   width: #{$value};
+ }
+}
+// list-grid-1
+@mixin list-grid-1 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(100%);
+  }
+}
+@mixin list-grid-1_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(100%);
+  }
+}
+@mixin list-grid-1_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(100%);
+  }
+}
+// list-grid-2
+@mixin list-grid-2 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(50%);
+  }
+}
+@mixin list-grid-2_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(50%);
+  }
+}
+@mixin list-grid-2_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(50%);
+  }
+}
+// list-grid-3
+@mixin list-grid-3 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(33.33333%);
+  }
+}
+@mixin list-grid-3_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(33.33333%);
+  }
+}
+@mixin list-grid-3_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(33.33333%);
+  }
+}
+// list-grid-4
+@mixin list-grid-4 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(25%);
+  }
+}
+@mixin list-grid-4_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(25%);
+  }
+}
+@mixin list-grid-4_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(25%);
+  }
+}
+// list-grid-5
+@mixin list-grid-5 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(20%);
+  }
+}
+@mixin list-grid-5_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(20%);
+  }
+}
+@mixin list-grid-5_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(20%);
+  }
+}
+// list-grid-6
+@mixin list-grid-6 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(16.6666%);
+  }
+}
+@mixin list-grid-6_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(16.6666%);
+  }
+}
+@mixin list-grid-6_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(16.6666%);
+  }
+}
+// list-grid-7
+@mixin list-grid-7 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(14.2857%);
+  }
+}
+@mixin list-grid-7_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(14.2857%);
+  }
+}
+@mixin list-grid-7_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(14.2857%);
+  }
+}
+// list-grid-8
+@mixin list-grid-8 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(12.5%);
+  }
+}
+@mixin list-grid-8_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(12.5%);
+  }
+}
+@mixin list-grid-8_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(12.5%);
+  }
+}
+// list-grid-9
+@mixin list-grid-9 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(11.1111%);
+  }
+}
+@mixin list-grid-9_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(11.1111%);
+  }
+}
+@mixin list-grid-9_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(11.1111%);
+  }
+}
+// list-grid-2of5
+@mixin list-grid-2of5 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(40%);
+  }
+}
+@mixin list-grid-2of5_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(40%);
+  }
+}
+@mixin list-grid-2of5_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(40%);
+  }
+}
+// list-grid-3of5
+@mixin list-grid-3of5 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(60%);
+  }
+}
+@mixin list-grid-3of5_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(60%);
+  }
+}
+@mixin list-grid-3of5_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(60%);
+  }
+}
+// list-grid-2of3
+@mixin list-grid-2of3 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(66.66666%);
+  }
+}
+@mixin list-grid-2of3_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(66.66666%);
+  }
+}
+@mixin list-grid-2of3_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(66.66666%);
+  }
+}
+// list-grid-3of4
+@mixin list-grid-3of4 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(75%);
+  }
+}
+@mixin list-grid-3of4_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(75%);
+  }
+}
+@mixin list-grid-3of4_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(75%);
+  }
+}
+// list-grid-4of5
+@mixin list-grid-4of5 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(80%);
+  }
+}
+@mixin list-grid-4of5_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(80%);
+  }
+}
+@mixin list-grid-4of5_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(80%);
+  }
+}
+// list-grid-5of6
+@mixin list-grid-5of6 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(83.3333%);
+  }
+}
+@mixin list-grid-5of6_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(83.3333%);
+  }
+}
+@mixin list-grid-5of6_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(83.3333%);
+  }
+}
+// list-grid-11of12
+@mixin list-grid-11of12 {
+  @include grid-group;
+
+  > * {
+    @include grid-global(91.6666%);
+  }
+}
+@mixin list-grid-11of12_desktop {
+  @include grid-group;
+
+  > * {
+    @include grid-desktop(91.6666%);
+  }
+}
+@mixin list-grid-11of12_mobile {
+  @include grid-group;
+
+  > * {
+    @include grid-mobile(91.6666%);
+  }
+}
+// 五個為一組, 前兩個2格, 後三格3格
+@mixin list-grid-23_desktop {
+  @include grid-group;
+
+  > * {
+    &:nth-child(5n+1),
+    &:nth-child(5n+2) {
+      @include col-6_desktop;
+    }
+
+    &:nth-child(5n+3),
+    &:nth-child(5n+4),
+    &:nth-child(5n+5) {
+      @include col-4_desktop;
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// col-set @mixin
+//------------------------------------------------------------------------------
+@mixin col-block {
+  display: inline-block;
+  box-sizing: border-box;
+  zoom: 1;
+  *display: inline;
+  // letter-spacing: normal;
+  // word-spacing: normal;
+}
+@mixin col-global($value) {
+  @include col-block;
+  width: #{$value};
+}
+@mixin col-desktop($value) {
+ @include tablet-7inch {
+   @include col-block;
+   width: #{$value};
+ }
+}
+@mixin col-mobile($value) {
+ @include tablet-7inch-max {
+   @include col-block;
+   width: #{$value};
+ }
+}
+// col-1
+@mixin col-1 {
+  @include col-global(8.33%);
+}
+@mixin col-1_desktop {
+  @include col-desktop(8.33%);
+}
+@mixin col-1_mobile {
+  @include col-mobile(8.33%);
+}
+// col-2
+@mixin col-2 {
+  @include col-global(16.66%);
+}
+@mixin col-2_desktop {
+  @include col-desktop(16.66%);
+}
+@mixin col-2_mobile {
+  @include col-mobile(16.66%);
+}
+// col-3
+@mixin col-3 {
+  @include col-global(25%);
+}
+@mixin col-3_desktop {
+  @include col-desktop(25%);
+}
+@mixin col-3_mobile {
+  @include col-mobile(25%);
+}
+// col-4
+@mixin col-4 {
+  @include col-global(33.33%);
+}
+@mixin col-4_desktop {
+  @include col-desktop(33.33%);
+}
+@mixin col-4_mobile {
+  @include col-mobile(33.33%);
+}
+// col-5
+@mixin col-5 {
+  @include col-global(41.66%);
+}
+@mixin col-5_desktop {
+  @include col-desktop(41.66%);
+}
+@mixin col-5_mobile {
+  @include col-mobile(41.66%);
+}
+// col-6
+@mixin col-6 {
+  @include col-global(50%);
+}
+@mixin col-6_desktop {
+  @include col-desktop(50%);
+}
+@mixin col-6_mobile {
+  @include col-mobile(50%);
+}
+// col-7
+@mixin col-7 {
+  @include col-global(58.33%);
+}
+@mixin col-7_desktop {
+  @include col-desktop(58.33%);
+}
+@mixin col-7_mobile {
+  @include col-mobile(58.33%);
+}
+// col-8
+@mixin col-8 {
+  @include col-global(66.66%);
+}
+@mixin col-8_desktop {
+  @include col-desktop(66.66%);
+}
+@mixin col-8_mobile {
+  @include col-mobile(66.66%);
+}
+// col-9
+@mixin col-9 {
+  @include col-global(75%);
+}
+@mixin col-9_desktop {
+  @include col-desktop(75%);
+}
+@mixin col-9_mobile {
+  @include col-mobile(75%);
+}
+// col-10
+@mixin col-10 {
+  @include col-global(83.33%);
+}
+@mixin col-10_desktop {
+  @include col-desktop(83.33%);
+}
+@mixin col-10_mobile {
+  @include col-mobile(83.33%);
+}
+// col-11
+@mixin col-11 {
+  @include col-global(91.66%);
+}
+@mixin col-11_desktop {
+  @include col-desktop(91.66%);
+}
+@mixin col-11_mobile {
+  @include col-mobile(91.66%);
+}
+// col-12
+@mixin col-12 {
+  @include col-global(100%);
+}
+@mixin col-12_desktop {
+  @include col-desktop(100%);
+}
+@mixin col-12_mobile {
+  @include col-mobile(100%);
+}
+//------------------------------------------------------------------------------
+// 上下位置調換 (table-grid)
+//------------------------------------------------------------------------------
+@mixin section-img-up {
+  article > figure {
+    display: table;
+    width: 100%;
+
+    > :last-child {
+      display: table-header-group;
+      float: none;
+    }
+  }
+}
+@mixin section-img-up_desktop {
+ @include tablet-7inch {
+   article > figure {
+     display: table;
+     width: 100%;
+
+     > :last-child {
+       display: table-header-group;
+       float: none;
+     }
+   }
+ }
+}
+@mixin section-img-up_mobile {
+ @include tablet-7inch-max {
+   article > figure {
+     display: table;
+     width: 100%;
+
+     > :last-child {
+       display: table-header-group;
+       float: none;
+     }
+   }
+ }
+}
+//------------------------------------------------------------------------------
+// 左右位置調換 (position)
+//------------------------------------------------------------------------------
+@mixin position-right {
+  position: relative;
+  right: -50%;
+}
+@mixin position-right_desktop {
+ @include tablet-7inch {
+   position: relative;
+   right: -50%;
+ }
+}
+@mixin position-right_mobile {
+ @include tablet-7inch-max {
+   position: relative;
+   right: -50%;
+ }
+}
+@mixin position-left {
+  position: relative;
+  left: -50%;
+}
+@mixin position-left_desktop {
+ @include tablet-7inch {
+   position: relative;
+   left: -50%;
+ }
+}
+@mixin position-left_mobile {
+ @include tablet-7inch-max {
+   position: relative;
+   left: -50%;
+ }
+}
+//------------------------------------------------------------------------------
+// img
+//------------------------------------------------------------------------------
+
+.img,
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  position: relative;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  @include scale-1x1;
+}
+@mixin img($url) {
+  background-image: url("../../image/#{$url}");
+}
+@mixin img_desktop($url) {
+ @include tablet-7inch {
+   background-image: url("../../image/#{$url}");
+ }
+}
+@mixin img_mobile($url) {
+ @include tablet-7inch-max {
+   background-image: url("../../image/#{$url}");
+ }
+}
+@mixin half-img-left {
+  width: 165%;
+  z-index: 0;
+  right: 65%;
+  background-size: cover;
+  position: relative;
+  max-width: inherit;
+}
+@mixin half-img-left_desktop {
+ @include tablet-7inch {
+   width: 165%;
+   z-index: 0;
+   right: 65%;
+   background-size: cover;
+   position: relative;
+   max-width: inherit;
+ }
+}
+@mixin half-img-left_mobile {
+ @include tablet-7inch-max {
+   width: 165%;
+   z-index: 0;
+   right: 65%;
+   background-size: cover;
+   position: relative;
+   max-width: inherit;
+ }
+}
+//
+@mixin half-img-right {
+  width: 165%;
+  z-index: 0;
+  right: 0;
+  background-size: cover;
+  position: relative;
+  max-width: inherit;
+}
+@mixin half-img-right_desktop {
+ @include tablet-7inch {
+   width: 165%;
+   z-index: 0;
+   right: 0;
+   background-size: cover;
+   position: relative;
+   max-width: inherit;
+ }
+}
+@mixin half-img-right_mobile {
+ @include tablet-7inch-max {
+   width: 165%;
+   z-index: 0;
+   right: 0;
+   background-size: cover;
+   position: relative;
+   max-width: inherit;
+ }
+}
+//------------------------------------------------------------------------------
+// svg
+//------------------------------------------------------------------------------
+@mixin svgcolor($color: transparent) {
+  path {
+    fill: $color !important;
+  }
+}
+@mixin svg-default {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+@mixin svg($url) {
+  @include svg-default;
+  background-image: url($url);
+}
+@mixin svg_desktop($url) {
+  @include svg-default;
+ @include tablet-7inch {
+   background-image: url($url);
+ }
+}
+@mixin svg_mobile($url) {
+  @include svg-default;
+ @include tablet-7inch-max {
+   background-image: url($url);
+ }
+}
+//------------------------------------------------------------------------------
+// bg
+//------------------------------------------------------------------------------
+@mixin bg-default {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin bg($url) {
+  @include bg-default;
+  background-image: url("../../image/#{$url}");
+}
+@mixin bg_desktop($url) {
+  @include bg-default;
+ @include tablet-7inch {
+   background-image: url("../../image/#{$url}");
+ }
+}
+@mixin bg_mobile($url) {
+  @include bg-default;
+ @include tablet-7inch-max {
+   background-image: url("../../image/#{$url}");
+ }
+}
+//------------------------------------------------------------------------------
+// bg-color
+//------------------------------------------------------------------------------
+// 漸層色
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+}
+// 用法:
+// $color-a: white;
+// $color-b: #f8f8f8;
+// $list-1: $color-a 0%, $color-a 80%, $color-b 80%, $color-b 100%;
+// @include gradient(top, $list-1);
+//
+//
+// 線性漸層
+@mixin hr-gradient($from, $to) {
+  background: -moz-linear-gradient(top, $from 0%, $from 50%, $to 50%, $to 100%);
+  background: -webkit-linear-gradient(top, $from 0%, $from 50%, $to 50%, $to 100%);
+  background: -o-linear-gradient(to bottom, $from 0%, $from 50%, $to 50%, $to 100%);
+  background: -ms-linear-gradient(to bottom, $from 0%, $from 50%, $to 50%, $to 100%);
+  background: linear-gradient(to bottom, $from 0%, $from 50%, $to 50%, $to 100%);
+  background-color: $from;
+}
+//
+// 中心圓漸層
+@mixin radial-gradient($from, $to) {
+  background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
+  background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
+  background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
+  background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
+  background: radial-gradient(center, circle cover, $from 0%, $to 100%);
+  background-color: $from;
+}
+//------------------------------------------------------------------------------
+// video
+//------------------------------------------------------------------------------
+@mixin video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+  overflow: hidden;
+}
+@mixin video_desktop {
+ @include tablet-7inch {
+   position: relative;
+   padding-bottom: 56.25%;
+   padding-top: 0;
+   height: 0;
+   overflow: hidden;
+ }
+}
+@mixin video_mobile {
+ @include tablet-7inch-max {
+   position: relative;
+   padding-bottom: 56.25%;
+   padding-top: 0;
+   height: 0;
+   overflow: hidden;
+ }
+}
+//------------------------------------------------------------------------------
+// button
+//------------------------------------------------------------------------------
+@mixin btn($height, $padding, $color-font, $color-bg, $radius) {
+  line-height: $height;
+  width: 100%;
+  color: $color-font;
+  background-color: $color-bg;
+  border-radius: $radius;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 $padding;
+  letter-spacing: 1.5px;
+  text-shadow: 0 -1px 0 rgba(100, 100, 100, .5);
+  text-align: center !important;
+
+  &.active,
+  &:hover {
+    background-color: lighten($color-bg, 3%);
+    color: $color-white;
+  }
+
+  &.disabled {
+    background-color: lighten($color-bg, 35%);
+  }
+}
+@mixin text($height, $padding, $color-font, $radius) {
+  line-height: $height;
+  width: 100%;
+  color: $color-font;
+  background: transparent !important;
+  border-radius: $radius;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 $padding;
+  letter-spacing: 1.5px;
+  text-align: center !important;
+
+  &.active,
+  &:hover {
+    //color: lighten($color-font, 3%);
+    color: $color-main;
+    background: transparent !important;
+  }
+
+  &.disabled {
+    color: lighten($color-font, 35%);
+    background: transparent !important;
+  }
+}
+$btn-height: 45px;
+$btn-padding: 20px;
+@mixin btn-simple($color-bg) {
+  @include btn($btn-height, $btn-padding, white, $color-bg, 0)
+}
+@mixin btn-default($color-bg) {
+  @include btn($btn-height, $btn-padding, white, $color-bg, 4px)
+}
+@mixin btn-circle($color-bg) {
+  @include btn($btn-height, $btn-padding, white, $color-bg, 25px)
+}
+@mixin btn-text($color-font) {
+  @include text(inherit, 10px, $color-font, 0)
+}
+// 滿版按鈕
+@mixin btn-full {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100% !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent !important;
+  margin: 0;
+  border: none;
+  z-index: 0;
+  @extend %text-hide;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+@mixin btn-full_desktop {
+ @include tablet-7inch {
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100% !important;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: transparent !important;
+   margin: 0;
+   border: none;
+   z-index: 0;
+   white-space: nowrap;
+   text-indent: -99999px;
+   overflow: hidden;
+   height: 0;
+
+   &:hover {
+     cursor: pointer;
+   }
+ }
+}
+@mixin btn-full_mobile {
+ @include tablet-7inch-max {
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100% !important;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: transparent !important;
+   margin: 0;
+   border: none;
+   z-index: 0;
+   white-space: nowrap;
+   text-indent: -99999px;
+   overflow: hidden;
+   height: 0;
+
+   &:hover {
+     cursor: pointer;
+   }
+ }
+}
+//------------------------------------------------------------------------------
+// dl
+//------------------------------------------------------------------------------
+@mixin dl {
+  $width: 100px;
+  $space: 15px;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  text-align: left;
+
+  dt {
+    text-align: right;
+    padding-right: $space;
+    margin-bottom: $space;
+    white-space: nowrap;
+    vertical-align: middle;
+    // @include h5;
+  }
+
+  dd {
+    border-left: solid 1px #ddd;
+    padding-left: $space;
+    margin-bottom: $space;
+    vertical-align: middle;
+    // @include h5;
+  }
+}
+@mixin dl-grid-2 {
+  > *:nth-child(1n) {
+    @include col-2;
+  }
+
+  > *:nth-child(2n) {
+    @include col-4;
+  }
+}
+@mixin dl-grid-2_desktop {
+  > *:nth-child(1n) {
+    @include col-2_desktop;
+  }
+
+  > *:nth-child(2n) {
+    @include col-4_desktop;
+  }
+}
+@mixin dl-grid-2_mobile {
+  > *:nth-child(1n) {
+    @include col-2_mobile;
+  }
+
+  > *:nth-child(2n) {
+    @include col-4_mobile;
+  }
+}
+@mixin dl-grid-3 {
+  > *:nth-child(1n) {
+    @include col-2;
+  }
+
+  > *:nth-child(2n) {
+    @include col-2;
+  }
+}
+@mixin dl-grid-3_desktop {
+  > *:nth-child(1n) {
+    @include col-2_desktop;
+  }
+
+  > *:nth-child(2n) {
+    @include col-2_desktop;
+  }
+}
+@mixin dl-grid-3_mobile {
+  > *:nth-child(1n) {
+    @include col-2_mobile;
+  }
+
+  > *:nth-child(2n) {
+    @include col-2_mobile;
+  }
+}
+//------------------------------------------------------------------------------
+// 隱藏文字
+//------------------------------------------------------------------------------
+
+%text-hide {
+  &,
+  & > * {
+    white-space: nowrap;
+    text-indent: -99999px;
+    overflow: hidden;
+    height: 0;
+  }
+}
+//------------------------------------------------------------------------------
+// 文字對齊外匡
+//------------------------------------------------------------------------------
+
+%text-full {
+  text-align: justify;
+  text-justify: inter-ideograph;
+  -ms-text-justify: inter-ideograph;
+  -webkit-text-align-last: justify;
+  -moz-text-align-last: justify;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+//------------------------------------------------------------------------------
+// 文字省略...
+//------------------------------------------------------------------------------
+
+%ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+%ellipsis-webkit-box {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+@mixin text-ellipsis-1 {
+  @extend %ellipsis;
+  white-space: nowrap;
+}
+@mixin text-ellipsis-2 {
+  @extend %ellipsis;
+  @extend %ellipsis-webkit-box;
+  -webkit-line-clamp: 2;
+}
+@mixin text-ellipsis-3 {
+  @extend %ellipsis;
+  @extend %ellipsis-webkit-box;
+  -webkit-line-clamp: 3;
+}
+@mixin text-ellipsis-4 {
+  @extend %ellipsis;
+  @extend %ellipsis-webkit-box;
+  -webkit-line-clamp: 4;
+}
+@mixin text-ellipsis-5 {
+  @extend %ellipsis;
+  @extend %ellipsis-webkit-box;
+  -webkit-line-clamp: 5;
+}
+//------------------------------------------------------------------------------
+// table
+//------------------------------------------------------------------------------
+@mixin table {
+  width: 100%;
+  text-align: left;
+  background-color: white;
+
+  &,
+  td,
+  th {
+    border: 1px solid #dddddd;
+  }
+
+  th {
+    padding: 15px;
+   @include tablet-7inch-max {
+     padding: 15px 5px;
+   }
+  }
+
+  td {
+    padding: 8px 15px;
+   @include tablet-7inch-max {
+     padding: 8px 5px;
+     width: 2%;
+   }
+  }
+}
+//------------------------------------------------------------------------------
+// nav
+//------------------------------------------------------------------------------
+@mixin nav($link-height) {
+  @include clearfix;
+  clear: both;
+  width: 100%;
+
+  article {
+    @include content;
+    @include clearfix;
+   @include tablet-7inch-max {
+     padding: 0;
+   }
+  }
+
+  a[data-type="button"] {
+    @include btn-text(#333333);
+    float: right;
+    height: $link-height;
+    line-height: $link-height;
+    display: none;
+   @include tablet-7inch-max {
+     display: inline-block;
+     padding-right: 15px;
+   }
+
+    img {
+      $color: #888888;
+      @include svg("data:image/svg+xml,%3Csvg fill='#{$color}' version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='200px' height='200px' viewBox='0 0 200 200' enable-background='new 0 0 200 200' xml:space='preserve'%3E%3Cpath d='M108.932,147.827c-4.97,5.708-13.111,5.708-18.102,0L12.711,58.568c-4.97-5.692-2.842-10.351,4.699-10.351h164.944 c7.574,0,9.685,4.666,4.692,10.351L108.932,147.827z'/%3E%3C/svg%3E");
+      @include scale(15px,15px);
+      position: relative;
+      top: -4px;
+      margin-left: 3px;
+    }
+  }
+
+  h1 {
+    height: $link-height;
+    line-height: $link-height;
+   @include tablet-7inch-max {
+     margin-left: 15px;
+   }
+  }
+
+  ol {
+   @include tablet-7inch-max {
+     text-align: center;
+     clear: both;
+   }
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        height: $link-height;
+        line-height: $link-height;
+      }
+    }
+  }
+}

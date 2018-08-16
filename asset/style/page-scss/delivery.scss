@@ -1,0 +1,323 @@
+@import "../css-framework/02_import";
+
+
+//-----------------------------------------------------------------------------
+// 自動送餐  - 概觀
+//-----------------------------------------------------------------------------
+.delivery_banner{
+  @extend %banner_restaurant-solution;
+  background-image: url('../../image/_global/cloud-bg.png'), url("../../image/_global/bg-yellow.jpg");
+  padding-bottom: 180px;
+  background-position: center 260%,center;
+  @include desktop-max {
+    background-position: center 280%;
+  }
+  @include tablet-7inch-max {
+    padding-bottom: 150px;
+    background-size: 100%,cover;
+    background-position: center bottom;
+  }
+  @include mobile-3inch {
+    padding-bottom: 100px;
+    background-size: contain,cover;
+    background-position: center bottom;
+  }
+  $color: white;
+  color: $color;
+
+  article {
+    padding-bottom: 0;
+
+    > hgroup img {
+      @include img('product/delivery/title.png');
+      max-width: 350px;
+    }
+
+    > hgroup{
+      h5{
+        color: #e68622;
+      }
+    }
+
+    // > figure img {
+    //   @include img('product/delivery/banner-item.png');
+    //   @include scale-3x1_desktop;
+    //   @include scale-4x3_mobile;
+    // }
+  }
+
+  ol {
+    @extend %banner_main-svg;
+
+    li {
+      &:nth-child(1) span img {
+        @include img('product/delivery/cost-down.svg');
+      }
+
+      &:nth-child(2) span img {
+        @include svg_mobile-order($color);
+      }
+
+      &:nth-child(3) span img {
+        @include img('product/delivery/hot-food.svg');
+      }
+
+      &:nth-child(4) span img {
+        @include img('product/delivery/turnover.svg');
+      }
+    }
+  }
+}
+
+.delivery_overview_problem{
+  @include section;
+  background-color: $section-bg;
+
+  ol{
+    @include list-grid-4_desktop;
+    @include list-grid-2-mobile;
+
+    li{
+      padding: 10px;
+      img{
+        max-width: 150px;
+      }
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) img {
+          @include img('product/delivery/overview_problem-#{$i}.png');
+        }
+      }
+    }
+  }
+}
+.delivery_overview_solution{
+  @include section;
+  padding-bottom: 0;
+
+  > article{
+    padding-bottom: 0;
+    @include tablet-7inch-max{
+      padding-bottom: 0;
+    }
+  }
+
+  ol{
+    @include list-grid-3_desktop;
+
+    li{
+      h3{
+        color: #fda42d;
+      }
+      p{
+        margin: 20px 0;
+      }
+      img{
+        @include scale-2x1;
+        background-position: center bottom;
+      }
+      &:nth-child(1) img{
+        @include img('product/delivery/overview_solution-1.png');
+      }
+       &:nth-child(2) {
+        h3,p{
+          display: none;
+        }
+        img{
+          @include img_desktop('product/delivery/overview_solution-arrow.png');
+          @include img_mobile('product/delivery/overview_solution-arrow-xs.png');
+          @include tablet-7inch-max{
+            max-width: 200px;
+          }
+       }
+      }
+      &:nth-child(3) {
+        @include tablet-7inch-max{
+          margin-top: 20px;
+        }
+        img{
+          @include img('product/delivery/overview_solution-2.png');
+        }
+      }
+    }
+  }
+}
+.delivery_overview_feature{
+  @include section;
+  background-color: $section-bg;
+
+  ol{
+    @include list-grid-5_desktop;
+    @include list-grid-2-mobile;
+
+    li{
+      padding: 10px;
+      img{
+        max-width: 150px;
+      }
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) img {
+          @include img('product/delivery/overview_feature-#{$i}.png');
+        }
+      }
+    }
+  }
+}
+
+.delivery_overview_content-1,.delivery_overview_content-2,.delivery_overview_content-4{
+  padding: 40px 0;
+  > article{
+    @include content;
+    @include grid-group;
+
+    figure{
+      @include col-6_desktop;
+
+      &:nth-child(1){
+        img{
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        img{
+          @include img('product/delivery/overview_content-1.png');
+        }
+        h3,p{
+          display: none;
+        }
+      }
+        
+    }
+  }
+}
+.delivery_overview_content-2{
+  > article{
+    figure{
+      &:nth-child(2) {
+        img{
+          @include img('product/delivery/overview_content-2.png');
+        }
+      }
+    }
+  }
+  
+}
+.delivery_overview_content-3,.delivery_overview_content-5{
+  @include bg('_global/cloud-white.jpg');
+  padding: 40px 0;
+  > article{
+    @include content;
+    @include grid-group;
+
+    figure{
+      @include col-6_desktop;
+
+      &:nth-child(1){
+        @include position-right_desktop;
+        img{
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        @include position-left_desktop;
+        img{
+          @include img('product/delivery/overview_content-3.png');
+        }
+        h3,p{
+          display: none;
+        }
+      }
+    }
+  }
+}
+.delivery_overview_content-4{
+  background-color: $section-bg;
+  > article{
+    figure{
+        &:nth-child(2) {
+        img{
+          @include img('product/delivery/overview_content-4.png');
+        }
+      }
+    }
+  }
+}
+.delivery_overview_content-5{
+  background-image: none;
+  > article{
+    figure{
+        &:nth-child(2) {
+        img{
+          @include img('product/delivery/overview_content-5.png');
+        }
+      }
+    }
+  }
+}
+
+.delivery_overview_cost-down{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: $section-bg;
+  > article{
+    @include content;
+
+    hgroup{
+      strong{
+        color: #c92e27;
+      }
+    }
+
+    ol{
+      @include list-grid-2_desktop;
+
+      li{
+        padding: 0 10px;
+
+        h4{
+          padding: 5px 10px;
+          border-radius: 20px;
+          color: #fff;
+          width: 50%;
+          margin: 20px auto;
+        }
+        img{
+          @include scale-2x1;
+        }
+        &:nth-child(1){
+          h4{
+            background-color: #989898;
+          }
+          img{
+            @include img('product/delivery/overview_cost-down-1.png');
+          }
+        }
+        &:nth-child(2){
+          h4{
+            background-color: #fda42d;
+          }
+          img{
+            @include img('product/delivery/overview_cost-down-2.png');
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.delivery_overview_video{
+  display: none;
+  @include bg('product/delivery/overview_video.jpg');
+  @include scale-4x1_desktop;
+
+  figure{
+    color: #fff;
+    padding: 60px 0;
+
+    img{
+      @include scale(120px,120px);
+      @include svg_play(#ffffff);
+    }
+  }
+}

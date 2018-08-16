@@ -1,0 +1,785 @@
+@import "../css-framework/02_import";
+
+//------------------------------------------------------------------------------
+// banner
+//------------------------------------------------------------------------------
+
+.case_banner {
+  @include banner-normal;
+  @include bg('case/case_banner.jpg');
+  color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+//------------------------------------------------------------------------------
+// nav
+//------------------------------------------------------------------------------
+
+.case-nav {
+  background-color: #3a3f42;
+
+  article {
+    max-width: 990px;
+    margin: 0 auto;
+  }
+
+  ol {
+    @include list-grid-5;
+
+    li a {
+      font-size: 1.25rem;
+      color: white;
+      text-align: center;
+      height: 60px;
+      line-height: 60px;
+      @include tablet-7inch-max {
+        line-height: 82px;
+      }
+
+      &.active,
+      &:hover {
+        background-color: #202020;
+
+        &:before {
+          display: inline-block;
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -7px;
+          margin: 0 auto;
+          @include scale(20px,20px);
+          @include svg_up(white);
+        }
+      }
+    }
+  }
+  // nav svg icon
+  img {
+    @include scale(25px,25px);
+    margin-right: 10px;
+    @include tablet-7inch-max {
+      margin-right: 0;
+      vertical-align: top;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 3px auto;
+    }
+  }
+
+  img.business-circle {
+    @include svg_business-circle(white);
+  }
+
+  img.food {
+    @include svg_restaurant2(white);
+  }
+
+  img.shop {
+    @include svg_retail2(white);
+  }
+
+  img.pharmacy {
+    @include svg_drug1(white);
+  }
+
+  img.pet {
+    @include svg_pet(white);
+  }
+}
+//------------------------------------------------------------------------------
+// @mixin major-banner()
+//------------------------------------------------------------------------------
+// major-banner(背景顏色,背景圖片路徑)
+@mixin major-banner($bg-color,$bg-src) {
+  $color-a: $bg-color;
+  @include bg($bg-src);
+  background-size: 65%;
+  background-color: $color-a;
+  text-align: left;
+  @include scale-4x7_mobile;
+  @include desktop-max {
+    background-size: 70%;
+  }
+  @include tablet-7inch-max {
+    background-position: bottom;
+    background-size: 180%;
+  }
+
+  article {
+    @include content;
+    @include tablet-7inch-max {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  figure {
+    @include col-6_desktop;
+    padding: 5% 0;
+    $color-b: transparent;
+    $list-1: $color-a 0%, $color-a 90%, $color-b 90%, $color-b 100%;
+    @include gradient(83deg, $list-1);
+    @include tablet-7inch-max {
+      @include gradient(185deg, $list-1);
+      padding: 5% 0 0;
+    }
+
+    p {
+      margin: 1% 0;
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// @mixin case-picitem
+//------------------------------------------------------------------------------
+@mixin case-picitem {
+  @include section;
+
+  ol {
+    @include list-grid-6_desktop;
+    @include list-grid-3_mobile;
+
+    li {
+      margin-bottom: 5%;
+
+      figure > span {
+        display: block;
+        padding: 0 10%;
+      }
+    }
+
+    h5 {
+      color: #888;
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// @mixin case-item
+//------------------------------------------------------------------------------
+@mixin case-item {
+  @include section;
+
+  article:before {
+    content: '';
+    @include svg_down(white);
+    @include scale(35px,35px);
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  hgroup {
+    background: white;
+    padding: 80px 0;
+    margin-bottom: 0;
+    @include tablet-7inch-max {
+      padding: 50px 0;
+    }
+  }
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-2_mobile;
+    text-align: left;
+    color: white;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    h5 {
+      font-weight: lighter;
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 商圈發展
+//------------------------------------------------------------------------------
+
+.case_business-circle-service {
+  @include section;
+
+  > article {
+    @include grid-group;
+  }
+
+  hgroup {
+    @include col-3_desktop;
+    @include tablet-7inch-max {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      background-color: #81c2e2;
+      color: white;
+      @include tablet-7inch {
+        border-radius: 50%;
+        @include scale(150px,150px);
+        height: 0;
+        font-size: 1.25rem;
+        margin: 0 auto;
+        line-height: 150px;
+      }
+    }
+  }
+
+  ol {
+    @include col-9_desktop;
+    @include list-grid-5_desktop;
+    color: white;
+    counter-reset: item;
+
+    li {
+      counter-increment: item;
+
+      &:before {
+        margin-right: 12px;
+        content: counter(item);
+        border-radius: 100%;
+        color: #000;
+        width: 1.3em;
+        border: 1px solid #000;
+        display: inline-block;
+        position: absolute;
+        left: 15%;
+        top: -20px;
+        background-color: #fff;
+        z-index: 1;
+        @include tablet-7inch-max {
+          top: 12px;
+          left: 7%;
+        }
+      }
+
+      h5 {
+        position: relative;
+        z-index: 0;
+        @include tablet-7inch-max {
+          height: 45px;
+          line-height: 45px;
+        }
+
+        &::after {
+          content: '';
+          display: inline-block;
+          margin: 0 auto;
+          position: absolute;
+          top: -28px;
+          z-index: -1;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          @include tablet-7inch {
+            border-radius: 50%;
+            @include scale(120px,120px);
+            height: 0;
+          }
+          @include tablet-7inch-max {
+            top: 0;
+          }
+        }
+      }
+    }
+
+    li:nth-child(1) {
+      &:before {
+        color: #fbcf54;
+        border-color: #fbcf54;
+      }
+
+      h5::after {
+        $color-a: #fbcf54;
+        $color-b: #f5ba42;
+        $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+        @include gradient(135deg, $list-1);
+      }
+    }
+
+    li:nth-child(2) {
+      &:before {
+        color: #97d568;
+        border-color: #97d568;
+      }
+
+      h5::after {
+        $color-a: #97d568;
+        $color-b: #82c250;
+        $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+        @include gradient(135deg, $list-1);
+      }
+    }
+
+    li:nth-child(3) {
+      &:before {
+        color: #48cfc1;
+        border-color: #48cfc1;
+      }
+
+      h5::after {
+        $color-a: #48cfc1;
+        $color-b: #3abeb0;
+        $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+        @include gradient(135deg, $list-1);
+      }
+    }
+
+    li:nth-child(4) {
+      &:before {
+        color: #9298ec;
+        border-color: #9298ec;
+      }
+
+      h5::after {
+        $color-a: #9298ec;
+        $color-b: #7277d5;
+        $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+        @include gradient(135deg, $list-1);
+      }
+    }
+
+    li:nth-child(5) {
+      &:before {
+        color: #ed5665;
+        border-color: #ed5665;
+      }
+
+      h5::after {
+        $color-a: #ed5665;
+        $color-b: #d9434e;
+        $list-1: $color-a 0%, $color-a 50%, $color-b 50%, $color-b 100%;
+        @include gradient(135deg, $list-1);
+      }
+    }
+  }
+
+  figure img {
+    @include img('case/business-circle/item-1.png');
+    @include scale-5x1;
+  }
+}
+@mixin business-circle-content {
+  img {
+    @include scale-4x3;
+  }
+
+  article {
+    @include tablet-7inch-max {
+      padding-top: 60px;
+    }
+  }
+
+  hgroup {
+    @include tablet-7inch-max {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.case_business-circle-description {
+  @include section;
+  @include section-img-right;
+  background-color: $section-bg;
+
+  img {
+    @include img('case/business-circle/pic_1.png');
+  }
+}
+
+.case_business-circle-payment {
+  @include section-img-left;
+  @include business-circle-content;
+  background-color: #82c1e4;
+  color: white;
+
+  img {
+    @include bg('case/business-circle/bg_pos.jpg');
+    @include scale-4x3;
+  }
+}
+
+.case_business-circle-alipay {
+  @include section-img-right;
+  @include business-circle-content;
+
+  img {
+    @include img('case/business-circle/phone.png');
+  }
+}
+
+.case_business-circle-many {
+  @include section-img-left;
+  @include business-circle-content;
+  background-color: $section-bg;
+
+  img {
+    @include img('case/business-circle/mobilepos.png');
+  }
+}
+@mixin business-circle-banner {
+  margin-bottom: 0;
+  color: white;
+  padding: 10% 0;
+}
+
+.case_taipei-picitem {
+  @include case-picitem;
+
+  hgroup {
+    @include bg('case/business-circle/bg-taipei.jpg');
+    @include business-circle-banner;
+  }
+
+  ol {
+    li {
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) img {
+          @include img('case/business-circle/taipei-#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+
+.case_taichung-picitem {
+  @include case-picitem;
+
+  hgroup {
+    @include bg('case/business-circle/bg-taichung.jpg');
+    @include business-circle-banner;
+  }
+
+  ol {
+    li {
+      @for $i from 1 through 2 {
+        &:nth-child(#{$i}) img {
+          @include img('case/business-circle/taichung-#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+
+.case_kaohsiung-picitem {
+  @include case-picitem;
+
+  hgroup {
+    @include bg('case/business-circle/bg-Kaohsiung.jpg');
+    @include business-circle-banner;
+  }
+
+  ol {
+    li {
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) img {
+          @include img('case/business-circle/kaohsiung-#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+//------------------------------------------------------------------------------
+// 餐飲業
+//------------------------------------------------------------------------------
+
+.case_restaurant-banner {
+  // major-banner(背景顏色,背景圖片路徑)
+  @include major-banner(#e5e5e5,'case/restaurant/restaurant.jpg');
+  @include tablet-7inch {
+    background-position: top right;
+  }
+
+  .popoice img {
+    @include img('case/restaurant/popoice.png');
+    @include scale-3x1;
+  }
+
+  .KDS img {
+    @include img('case/restaurant/KDS.png');
+    @include scale-6x1_desktop;
+    @include scale-4x1_mobile;
+  }
+}
+
+.case_restaurant-picitem {
+  @include section;
+  background-color: #f8f8f8;
+  // @include case-picitem;
+
+  h5{
+    color: #888;
+    font-weight: 300;
+  }
+
+  ol:nth-of-type(1) {
+    @include list-grid-3_desktop;
+
+    li {
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) img {
+          @include bg('case/restaurant/case-photo-#{$i}.jpg');
+        }
+      }
+
+      img {
+        @include scale-16x9;
+      }
+
+      figure {
+        background-color: white;
+        padding: 10px;
+        margin: 15px;
+        @include tablet-7inch-max {
+          margin: 15px 0;
+        }
+
+        h4 {
+          font-weight: bold;
+          padding: 10px 0;
+          border-bottom: solid 1px #ddd;
+        }
+
+        p {
+          margin: 15px 0;
+          @include h6;
+        }
+      }
+    }
+  }
+  ol:nth-of-type(2) {
+    @include list-grid-6_desktop;
+    @include list-grid-3_mobile;
+    margin-top: 60px;
+
+    li {
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) img {
+          @include img('case/restaurant/food-#{$i}.png');
+        }
+      }
+
+      img {
+        @include scale-4x3;
+      }
+
+      figure {
+        padding: 0 10% 15px;
+        @include tablet-7inch-max {
+          padding: 0;
+        }
+      }
+    }
+  }
+  // 更多 按鈕
+  a[data-type="button"] {
+    display: none;
+    @extend %button-main;
+    max-width: 300px;
+    margin: 30px auto;
+  }
+}
+
+.case_restaurant-item {
+  @include bg('case/restaurant/bg_food.jpg');
+  @include case-item;
+}
+//------------------------------------------------------------------------------
+// 零售業
+//------------------------------------------------------------------------------
+
+nav.case-sub-nav {
+  article {
+    @include content;
+    max-width: 950px;
+    @include tablet-7inch-max {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    li {
+      display: inline-block;
+      border-left: solid 1px #ddd;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      a {
+        padding: 0 9px;
+        height: 50px;
+        line-height: 50px;
+      }
+    }
+  }
+}
+
+.case_retail-banner {
+  // major-banner(背景顏色,背景圖片路徑)
+  @include major-banner(#e5e5e5,'case/retail/retail_taroko.jpg');
+  @include tablet-7inch {
+    background-position: right;
+  }
+
+  .department img {
+    @include img('case/retail/department-item-1.png');
+    @include scale-3x1;
+  }
+
+  .erp img {
+    @include img('case/erp-logo.png');
+    @include scale-6x1_desktop;
+    @include scale-4x1_mobile;
+  }
+}
+
+.case_retail-banner-2 {
+  // major-banner(背景顏色,背景圖片路徑)
+  @include major-banner(#e5e5e5,'case/retail/retail_gogoro.jpg');
+  @include tablet-7inch {
+    background-position: right;
+  }
+
+  .department img {
+    @include img('case/retail/gogoro.png');
+    @include scale-3x1;
+  }
+
+  .erp img {
+    @include img('case/erp-logo.png');
+    @include scale-6x1_desktop;
+    @include scale-4x1_mobile;
+  }
+}
+
+.case_department-picitem {
+  @include case-picitem;
+
+  ol {
+    li {
+      @for $i from 1 through 21 {
+        &:nth-child(#{$i}) img {
+          @include img('case/retail/department-#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+
+.case_department-item {
+  @include bg('case/retail/bg-department.jpg');
+  @include case-item;
+}
+
+.case_bioryme-item {
+  @include bg('case/retail/bg-boutique.jpg');
+  @include case-item;
+}
+
+.case_clothes-picitem {
+  @include case-picitem;
+
+  ol {
+    li {
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) img {
+          @include img('case/retail/clothes-#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+
+.case_clothes-item {
+  @include bg('case/retail/bg-clothes.jpg');
+  @include case-item;
+}
+
+.case_supermarket-item {
+  @include bg('case/retail/bg-clothes.jpg');
+  @include case-item;
+}
+//------------------------------------------------------------------------------
+// 藥妝業
+//------------------------------------------------------------------------------
+
+.case_drug-banner {
+  // major-banner(背景顏色,背景圖片路徑)
+  @include major-banner(#e5e5e5,'case/pharmacy/drug.jpg');
+  @include tablet-7inch {
+    background-position: top right;
+  }
+
+  .norbelbaby img {
+    @include img('case/pharmacy/banner-item-1.png');
+    @include scale-3x1;
+  }
+
+  .erp img {
+    @include img('case/erp-logo.png');
+    @include scale-6x1_desktop;
+    @include scale-4x1_mobile;
+  }
+}
+
+.case_drug-picitem {
+  @include case-picitem;
+
+  ol {
+    li {
+      @for $i from 1 through 11 {
+        &:nth-child(#{$i}) img {
+          @include img('case/pharmacy/drug-#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+
+.case_drug-item {
+  @include bg('case/pharmacy/bg-drug.jpg');
+  @include case-item;
+}
+//------------------------------------------------------------------------------
+// 寵物業
+//------------------------------------------------------------------------------
+
+.case_pet-banner {
+  // major-banner(背景顏色,背景圖片路徑)
+  @include major-banner(#e5e5e5,'case/pet/pet.jpg');
+  @include tablet-7inch {
+    background-position: right;
+  }
+
+  .oscar img {
+    @include img('case/pet/oscar.png');
+    @include scale-3x1;
+  }
+
+  .erp img {
+    @include img('case/erp-logo.png');
+    @include scale-6x1_desktop;
+    @include scale-4x1_mobile;
+  }
+}
+
+.case_pet-picitem {
+  @include case-picitem;
+
+  ol {
+    li {
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) img {
+          @include img('case/pet/pet-#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+
+.case_pet-item {
+  @include bg('case/pet/bg_pet.jpg');
+  @include case-item;
+}
