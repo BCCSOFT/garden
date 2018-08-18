@@ -3251,6 +3251,160 @@ button:hover {
     .jabezpos_price .mobile {
       display: table-row-group; } }
 
+.price-tab-nav {
+  margin: 5%;
+  display: none;
+  border-radius: 4px;
+  overflow: hidden; }
+  @media screen and (max-width: 768px) {
+    .price-tab-nav {
+      display: block;
+      margin: 5% 0; } }
+  .price-tab-nav ul {
+    border: solid 1px #3b4952;
+    border-radius: 6px;
+    display: table;
+    width: 100%; }
+    .price-tab-nav ul li {
+      display: inline-block;
+      width: 25%;
+      border-left: solid 1px #252d30; }
+      .price-tab-nav ul li:first-child {
+        border-left: none; }
+      .price-tab-nav ul li a {
+        display: block;
+        text-align: center;
+        padding: 15px 0;
+        color: #fff;
+        background-color: #5e7885; }
+      .price-tab-nav ul li a.price-a.active, .price-tab-nav ul li a.price-a:hover {
+        background-color: #3b4952; }
+      .price-tab-nav ul li a.price-b.active, .price-tab-nav ul li a.price-b:hover {
+        background-color: #3590c7; }
+      .price-tab-nav ul li a.price-c.active, .price-tab-nav ul li a.price-c:hover {
+        background-color: #f19149; }
+      .price-tab-nav ul li a.price-d.active, .price-tab-nav ul li a.price-d:hover {
+        background-color: #ea8336; }
+
+.side-nav {
+  background-color: #fff; }
+
+.version-free {
+  background-color: #fff; }
+
+.version-retail {
+  background-color: #eee; }
+
+.version-food-before {
+  background-color: #fff; }
+
+.version-food-after {
+  background-color: #eee; }
+
+#side_nav {
+  display: table-cell;
+  background-color: #f8f8f8; }
+  @media screen and (max-width: 768px) {
+    #side_nav {
+      display: none; } }
+
+#version_free {
+  background-color: #3b4952; }
+  #version_free h3 {
+    display: none; }
+  #version_free a {
+    background-color: #5f7886; }
+
+#version_retail {
+  background-color: #3590c7; }
+  #version_retail a {
+    background-color: #1f5f9f; }
+
+#version_food_before {
+  background-color: #f19149; }
+  #version_food_before a {
+    background-color: #cc6633; }
+
+#version_food_after {
+  background-color: #ea8336; }
+  #version_food_after a {
+    background-color: #cc6633; }
+
+.tooltip-font, .tooltip-back {
+  display: inline-block;
+  z-index: 0; }
+
+*[data-tooltip] {
+  position: relative; }
+  @media screen and (max-width: 768px) {
+    *[data-tooltip]:hover:before, *[data-tooltip]:hover:after {
+      display: none; }
+    *[data-tooltip].active:before, *[data-tooltip].active:after {
+      display: block; } }
+  *[data-tooltip]::before {
+    content: attr(data-tooltip);
+    display: block;
+    float: left;
+    color: #fff;
+    background: #3b4a51;
+    padding: 8px;
+    position: absolute;
+    font-size: 0.8em;
+    border-radius: 4px;
+    width: 160px;
+    display: none;
+    z-index: 5; }
+  *[data-tooltip]::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    display: none;
+    z-index: 5; }
+  *[data-tooltip]:hover:before, *[data-tooltip]:hover:after {
+    display: block; }
+
+*[data-tooltip=""]::before, *[data-tooltip=""]::after, *[data-tooltip=""]:hover:before, *[data-tooltip=""]:hover:after {
+  display: none; }
+
+*[data-placement="top"]::before {
+  bottom: 100%; }
+
+*[data-placement="top"]::after {
+  border-width: 5px 5px 0 5px;
+  border-top-color: #3b4a51;
+  top: 0;
+  left: 50%; }
+
+*[data-placement="bottom"]::before {
+  top: 100%; }
+
+*[data-placement="bottom"]::after {
+  border-width: 0 5px 5px 5px;
+  border-bottom-color: #3b4a51;
+  bottom: 0;
+  left: 50%; }
+
+*[data-placement="left"]::before {
+  right: 100%; }
+
+*[data-placement="left"]::after {
+  border-width: 5px 0 5px 5px;
+  border-left-color: #3b4a51;
+  top: 60%; }
+
+*[data-placement="right"]::before {
+  left: 100%; }
+
+*[data-placement="right"]::after {
+  border-width: 5px 5px 5px 0;
+  border-right-color: #3b4a51;
+  right: 0;
+  top: 60%; }
+
 .jabezpos-introduction_banner {
   background-position: 50%;
   background-repeat: no-repeat;
@@ -3349,7 +3503,8 @@ button:hover {
     /* reset IE < 8 */
     *word-spacing: -0.43em;
     /* IE < 8 && gecko: collapse white-space between units */
-    max-width: 600px; }
+    max-width: 600px;
+    text-align: center; }
     .nav_intro ol > * {
       display: inline-block;
       box-sizing: border-box;

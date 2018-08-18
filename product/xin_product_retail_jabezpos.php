@@ -3,7 +3,6 @@
 <?php include("../asset/head/_all/xin_all_link.php"); ?>
 <link rel="stylesheet" type="text/css" href="../asset/style/page-css/restaurant-solution.css">
 <link rel="stylesheet" type="text/css" href="../asset/style/page-css/jabezpos.css">
-<link rel="stylesheet" type="text/css" href="../asset/style/page-css/jabezpos-price.css">
 <?php include("../asset/head/_all/xin_all_script.php"); ?>
 
 <body id="gx jabezpos" class="xin">

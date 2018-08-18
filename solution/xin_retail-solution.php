@@ -1,7 +1,6 @@
 <?php include("../asset/head/_all/xin_all_front.php"); ?>
 <?php include("../asset/head/solution/xin_head_retail-solution.php"); ?>
 <?php include("../asset/head/_all/xin_all_link.php"); ?>
-<link rel="stylesheet" type="text/css" href="../asset/style/page-css/restaurant-solution.css">
 <link rel="stylesheet" type="text/css" href="../asset/style/page-css/retail-solution.css">
 <?php include("../asset/head/_all/xin_all_script.php"); ?>
 
@@ -155,19 +154,19 @@
               <ol>
                 <li>
                   <figure>
-                    <span><img alt="" src="../asset/image/img.png"></span>
+                    <picture><img alt="" src="../asset/image/img.png"></picture>
                     <h6>行動收銀</h6>
                   </figure>
                 </li>
                 <li>
                   <figure>
-                    <span><img alt="" src="../asset/image/img.png"></span>
+                    <picture><img alt="" src="../asset/image/img.png"></picture>
                     <h6>多元支付</h6>
                   </figure>
                 </li>
                 <li>
                   <figure>
-                    <span><img alt="" src="../asset/image/img.png"></span>
+                    <picture><img alt="" src="../asset/image/img.png"></picture>
                     <h6>電子發票</h6>
                   </figure>
                 </li>
@@ -187,19 +186,19 @@
               <ol>
                 <li>
                   <figure>
-                    <span><img alt="" src="../asset/image/img.png"></span>
+                    <picture><img alt="" src="../asset/image/img.png"></picture>
                     <h6>收銀結帳</h6>
                   </figure>
                 </li>
                 <li>
                   <figure>
-                    <span><img alt="" src="../asset/image/img.png"></span>
+                    <picture><img alt="" src="../asset/image/img.png"></picture>
                     <h6>客顯行銷</h6>
                   </figure>
                 </li>
                 <li>
                   <figure>
-                    <span><img alt="" src="../asset/image/img.png"></span>
+                    <picture><img alt="" src="../asset/image/img.png"></picture>
                     <h6>核銷票券</h6>
                   </figure>
                 </li>
@@ -219,19 +218,19 @@
               <ol>
                 <li>
                   <figure>
-                    <span><img alt="" src="../asset/image/img.png"></span>
+                    <picture><img alt="" src="../asset/image/img.png"></picture>
                     <h6>多元報表</h6>
                   </figure>
                 </li>
                 <li>
                   <figure>
-                    <span><img alt="" src="../asset/image/img.png"></span>
+                    <picture><img alt="" src="../asset/image/img.png"></picture>
                     <h6>多店管理</h6>
                   </figure>
                 </li>
                 <li>
                   <figure>
-                    <span><img alt="" src="../asset/image/img.png"></span>
+                    <picture><img alt="" src="../asset/image/img.png"></picture>
                     <h6>會員管理</h6>
                   </figure>
                 </li>

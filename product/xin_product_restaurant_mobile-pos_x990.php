@@ -19,68 +19,7 @@
       <!-- ARTICLE -->
       <article>
 
-        <section class="header_banner mobile-pos_banner">
-          <article>
-            <hgroup>
-              <h1>行動POS收銀機</h1>
-              <span><img alt="" src="../asset/image/img.png"></span>
-              <h5>開店必備，一機就搞定</h5>
-            </hgroup>
-            <ol>
-              <li>
-                <figure>
-                  <span><img alt="" src="../asset/image/img.png"></span>
-                  <h6>行動點餐</h6>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <span><img alt="" src="../asset/image/img.png"></span>
-                  <h6>外送外賣</h6>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <span><img alt="" src="../asset/image/img.png"></span>
-                  <h6>多元支付</h6>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <span><img alt="" src="../asset/image/img.png"></span>
-                  <h6>服務收款</h6>
-                </figure>
-              </li>
-            </ol>
-            <nav class="product-nav-img">
-              <article>
-                <ol>
-                  <li>
-                    <span><img alt="" src="../asset/image/img.png"></span>
-                    <a href="xin_product_restaurant_mobile-pos_v1.php" data-type="button"></a>
-                  </li>
-                  <li>
-                    <span><img alt="" src="../asset/image/img.png"></span>
-                    <a href="xin_product_restaurant_mobile-pos_x990.php" data-type="button" class="active"></a>
-                  </li>
-                </ol>
-              </article>
-            </nav>
-          </article>
-        </section>
-
-        <nav class="product-nav mobile-pos-nav">
-		  <article>
-			<ol>
-			  <li>
-				<a href="xin_product_restaurant_mobile-pos_v1.php" data-type="button">簡易掃碼版</a>
-			  </li>
-			  <li>
-				<a href="xin_product_restaurant_mobile-pos_x990.php" data-type="button" class="active">進階感應版</a>
-			  </li>
-			</ol>
-		  </article>
-		</nav>
+        <?php include("xin_product_restsurant_mobile-pos_id=banner.php"); ?>
 
         <nav class="sub-nav-2">
           <article>

@@ -1502,6 +1502,323 @@ nav.counter-nav {
 .counter_hardware_peripherals {
   display: none;
 }
+
+
+
+//-----------------------------------------------------------------------------
+// 櫃檯 - 概觀
+//------ -----------------------------------------------------------------------
+
+.retail-solution_counter_banner {
+  // @extend .counter_banner;
+  @extend %banner_restaurant-solution;
+  background-image: url('../../image/_global/cloud-bg.png'), url("../../image/_global/bg-blue-dark.jpg");
+  $color: white;
+  color: $color;
+
+  article {
+    padding-bottom: 0;
+
+    hgroup img {
+      @include img('product/pos/title.png');
+    }
+    > ol {
+      @extend %banner_main-svg;
+
+      li {
+        $color: white;
+
+        &:nth-child(1) span img {
+          @include svg_safety($color);
+        }
+
+        &:nth-child(2) span img {
+          @include svg_expand($color);
+        }
+
+        &:nth-child(3) span img {
+          @include svg_operating($color);
+        }
+      }
+    }
+    nav.product-nav-img {
+      @extend %counter-nav;
+      margin-top: 55px;
+      @include tablet-7inch-max {
+        margin-top: 22%;
+      }
+
+      article {
+        @include tablet-7inch-max {
+          padding: 0;
+        }
+      }
+
+      li {
+        span img {
+          @include scale-4x3;
+        }
+
+        &:nth-child(1) {
+          span img {
+            @include img('product/pos/bpos.png');
+          }
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          span img {
+            @include img('solution/retail/b1pos.png');
+          }
+        }
+        a[data-type="button"] {
+          @include btn-full;
+        }
+      }
+    }
+    nav > ol li {
+      
+
+      &.active,
+      &:hover {
+        &:nth-child(1) h5,
+        &:nth-child(2) h5,
+        &:nth-child(3) h5 {
+          $color: #2b6ebd;
+          color: $color;
+          border-color: $color;
+          background-color: $section-bg;
+        }
+      }
+    }
+  }
+}
+
+.retail-solution_counter_overview_situation {
+  // @extend .counter_overview_situation;
+  @include section;
+  background-color: $section-bg;
+  margin-bottom: 0;
+
+  hgroup {
+    h4 {
+      color: #999999;
+    }
+  }
+
+  ol {
+    @include list-grid-3_desktop;
+    @include list-grid-2_mobile;
+
+    li {
+      margin-top: 35px;
+
+      img {
+        @include scale(150px,150px);
+        margin-bottom: 10px;
+      }
+      &:nth-child(1) img {
+        @include img('_global/it-1.jpg');
+      }
+
+      &:nth-child(2) img {
+        @include img('_global/it-3.jpg');
+      }
+
+      &:nth-child(3) img {
+        @include img('_global/it-6.jpg');
+      }
+    }
+  }
+}
+
+.retail-solution_counter_overview_b1pos-cloud {
+  // @extend .counter_overview_b1pos-cloud;
+  @include section;
+  @include section-img-left;
+  @include section-img-up_mobile;
+  @include bg('_global/cloud-gray.jpg');
+  background-position: top;
+  margin-bottom: 0;
+  $color: #4b63a9;
+
+  article {
+    @include tablet-7inch {
+      padding-bottom: 0;
+    }
+  }
+  figure {
+    hgroup {
+      h2 {
+        color: $color;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          vertical-align: text-bottom;
+          margin-right: 20px;
+          @include scale(50px,50px);
+          @include svg_cloud3($color);
+        }
+      }
+
+      ol {
+        @extend %circle-block;
+        @include list-grid-4;
+        margin: 25px 0;
+
+        li {
+          span {
+            background-color: white;
+          }
+
+          &:nth-child(1) img {
+            @include svg_window($color);
+          }
+
+          &:nth-child(2) img {
+            @include svg_upload($color);
+          }
+
+          &:nth-child(3) img {
+            @include svg_date1(#4b63a9);
+          }
+
+          &:nth-child(4) img {
+            @include svg_date1($color);
+          }
+        }
+      }
+
+      a[data-type="button"] {
+        @extend %button-dark;
+      }
+    }
+
+    figure figure {
+      img {
+        @include img('solution/retail/b1pos-img.png');
+      }
+    }
+  }
+}
+
+.retail-solution_counter_overview_b1pos {
+  // @extend .counter_overview_b1pos;
+  @include section;
+  @include section-img-left;
+  @include section-img-up_mobile;
+  @include bg('_global/cloud-white.jpg');
+  background-position: top;
+  $color: #4b63a9;
+
+  article {
+    @include tablet-7inch {
+      padding-bottom: 0;
+    }
+  }
+
+  figure {
+    hgroup {
+      h2 {
+        color: $color;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          vertical-align: text-bottom;
+          margin-right: 20px;
+          @include scale(50px,50px);
+          @include svg_desk($color);
+        }
+      }
+
+      ol {
+        @extend %circle-block;
+        @include list-grid-4;
+        margin: 25px 0;
+
+        li {
+          span {
+            background-color: $section-bg;
+          }
+
+          &:nth-child(1) img {
+            @include svg_window($color);
+          }
+
+          &:nth-child(2) img {
+            @include svg_copy($color);
+          }
+
+          &:nth-child(3) img {
+            @include svg_money1(#4b63a9);
+          }
+
+          &:nth-child(4) img {
+            @include svg_money1($color);
+          }
+        }
+      }
+
+      a[data-type="button"] {
+        @extend %button-dark;
+      }
+    }
+
+    figure figure {
+      img {
+        @include img('solution/retail/b1pos-img.png');
+      }
+    }
+  }
+}
+
+body.retail-solution {
+  // 櫃檯 - BPOS 軟體介紹
+  .counter_bpos_software_banner {
+    // 文字顏色,背景色左,背景色右
+    @include banner-gradient(white,#3f9fd9,#378fce);
+  }
+  // 櫃檯 - B1POS 軟體介紹
+  .b1pos_software_banner {
+    // 文字顏色,背景色左,背景色右
+    @include banner-gradient(white,#3f9fd9,#378fce);
+  }
+  // 櫃檯 - BPOS 硬體介紹
+  .bpos_hardware_banner {
+    // 文字顏色,背景色左,背景色右
+    @include banner-gradient(white,#3f9fd9,#378fce);
+
+    figure {
+      text-align: center;
+
+      hgroup ol {
+        @include block-t1(rgba(55, 143, 206, 0.99));
+      }
+    }
+  }
+  // 櫃檯 - B1POS 硬體介紹
+  .counter_b1pos_hardware_banner {
+    $color: #89b22b;
+    // 文字顏色,背景色左,背景色右
+    @include banner-gradient(white,#3f9fd9,#378fce);
+
+    figure {
+      text-align: center;
+
+      hgroup ol {
+        @include block-t80(rgba(55, 143, 206, 0.99));
+      }
+    }
+  }
+  // 櫃檯 - 單機專業版
+  .b1pos_overview_content > figure:nth-child(1) > article > figure > figure img {
+    @include img('solution/retail/b1pos-img.png');
+  }
+}
+
+
+
 //-----------------------------------------------------------------------------
 // 櫃台 - 功能模組
 //-----------------------------------------------------------------------------
@@ -1521,3 +1838,4 @@ nav.counter-nav {
     display: none;
   }
 }
+

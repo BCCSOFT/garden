@@ -1,8 +1,8 @@
 <?php include("../asset/head/_all/xin_all_front.php"); ?>
 <?php include("../asset/head/product/xin_head_product_retail_mobile-pos.php"); ?>
 <?php include("../asset/head/_all/xin_all_link.php"); ?>
-<link rel="stylesheet" type="text/css" href="../asset/style/page-css/restaurant-solution.css">
-<link rel="stylesheet" type="text/css" href="../asset/style/page-css/retail-solution.css">
+<link rel="stylesheet" type="text/css" href="../asset/style/page-css/feature.css">
+<link rel="stylesheet" type="text/css" href="../asset/style/page-css/mobile-pos.css">
 <?php include("../asset/head/_all/xin_all_script.php"); ?>
 
 <body id="retail-solution_mobile-pos" class="gx xin retail-solution">

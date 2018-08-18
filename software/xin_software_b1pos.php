@@ -1,7 +1,7 @@
 <?php include("../asset/head/_all/xin_all_front.php"); ?>
 <?php include("../asset/head/software/xin_head_software_b1pos.php"); ?>
 <?php include("../asset/head/_all/xin_all_link.php"); ?>
-<link rel="stylesheet" type="text/css" href="../asset/style/page-css/restaurant-solution.css">
+<link rel="stylesheet" type="text/css" href="../asset/style/page-css/pos.css">
 <?php include("../asset/head/_all/xin_all_script.php"); ?>
 
 <body id="pos-b1pos" class="gx xin">

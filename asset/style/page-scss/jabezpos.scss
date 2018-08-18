@@ -1444,6 +1444,263 @@
   }
 
 }
+
+
+
+// 手機板 tab-nav
+$default: #5e7885;
+$free: #3b4952;
+$bluenote: #3590c7;
+$orangeA: #f19149;
+$orangeB: #ea8336;
+
+.price-tab-nav{
+	margin: 5%;
+	display: none;
+	border-radius: 4px;
+	overflow: hidden;
+	@include tablet-7inch-max{
+		display: block;
+    	margin: 5% 0;
+	}
+  ul{
+  	border: solid 1px #3b4952;
+    border-radius: 6px;
+    display: table;
+    width: 100%;
+    li{
+    	display: inline-block;
+      width: 25%;
+      border-left: solid 1px #252d30;
+      &:first-child{
+      	border-left: none;
+      }
+        
+      a{
+      	display: block;
+        text-align: center;
+        padding: 15px 0;
+        color: #fff;
+        background-color: $default;
+
+      }
+        
+      a.price-a{
+      	&.active, &:hover{
+          background-color: $free;
+      	}
+      }
+        
+      a.price-b{
+      	&.active, &:hover{
+          background-color: $bluenote;
+      	}
+      }
+        
+      a.price-c{
+      	&.active, &:hover{
+          background-color: $orangeA;
+      	}
+      }
+        
+      a.price-d{
+      	&.active, &:hover{
+          background-color: $orangeB;
+      	}
+      }  
+    }   
+  }  
+}
+
+
+// colgroup
+$white: #fff;
+$gray: #eee;
+
+.side-nav{
+  background-color: $white;
+}
+.version-free{
+  background-color: $white;
+}
+.version-retail{
+  background-color: $gray;
+}
+.version-food-before{
+  background-color: $white;
+}
+.version-food-after{
+  background-color: $gray;
+}
+
+
+// 側邊攔
+#side_nav{
+	display: table-cell;
+	background-color: #f8f8f8;
+
+	@include tablet-7inch-max{
+		 display: none;
+	}
+}
+
+
+// 創業版
+#version_free{
+	background-color: $free;
+	h3{
+		display: none;
+	} 
+	a{
+		background-color: #5f7886;
+	}  
+}
+  
+
+// 零售百貨版
+#version_retail{
+	background-color: $bluenote;
+	a{
+		background-color: #1f5f9f;
+	} 
+}
+  
+
+// 餐飲先結版
+#version_food_before{
+	background-color: $orangeA;
+	a{
+		background-color: #cc6633;
+	}
+}
+  
+
+// 餐飲後結版
+#version_food_after{
+	background-color: $orangeB;
+	a{
+		background-color: #cc6633;
+	} 
+}
+
+
+
+// tooltip
+$tooltip: #3b4a51;
+.tooltip-font, .tooltip-back{
+	display: inline-block;
+  	z-index: 0;
+}
+  
+
+*[data-tooltip]{
+	position: relative;
+
+	@include tablet-7inch-max{
+		&:hover:before, &:hover:after{
+			display: none;
+		}
+      
+	    &.active:before, &.active:after{
+	      display: block;
+	    }
+	}
+
+  &::before{
+  	content: attr(data-tooltip);
+    display: block;
+    float: left;
+    color: #fff;
+    background: $tooltip;
+    padding: 8px;
+    position: absolute;
+    font-size: 0.8em;
+    border-radius: 4px;
+    width: 160px;
+    display: none;
+    z-index: 5;
+  }
+    
+  &::after{
+  	content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    display: none;
+    z-index: 5;
+  }
+    
+  &:hover:before, &:hover:after{
+  	display: block;
+  }
+    
+}
+  
+
+// 所有空值的tooltip隱藏
+*[data-tooltip=""]{
+	&::before, &::after,&:hover:before, &:hover:after{
+		display: none;
+	}
+    
+}
+  
+
+*[data-placement="top"]{
+	&::before{
+      bottom: 100%;
+	}
+    &::after{
+    	border-width: 5px 5px 0 5px;
+		border-top-color: $tooltip;
+		top: 0;
+		left: 50%;
+    }  
+}
+    
+*[data-placement="bottom"]{
+	 &::before{
+	 	top: 100%;
+	 }
+      
+    &::after{
+    	border-width: 0 5px 5px 5px;
+		border-bottom-color: $tooltip;
+		bottom: 0;
+		left: 50%;
+    }
+      
+}
+   
+*[data-placement="left"]{
+	&::before{
+      right: 100%;
+	}
+    &::after{
+		border-width: 5px 0 5px 5px;
+		border-left-color: $tooltip;
+		top: 60%;
+    }
+      
+}
+    
+*[data-placement="right"]{
+	&::before{
+      left: 100%;
+	}
+    &::after{
+    	border-width: 5px 5px 5px 0;
+		border-right-color: $tooltip;
+		right: 0;
+		top: 60%;
+    } 
+}
+  
+  
+
 //-----------------------------------------------------------------------------
 // jabezpos 雲端後台管理 - 相關介紹
 //-----------------------------------------------------------------------------
@@ -1500,6 +1757,7 @@
   ol {
     @include list-grid-3;
     max-width: 600px;
+    text-align: center;
 
     a {
       height: 60px;
@@ -1515,6 +1773,9 @@
     }
   }
 }
+
+
+
 //------------------------------------------------------------------------------
 // 獲獎肯定
 //------------------------------------------------------------------------------

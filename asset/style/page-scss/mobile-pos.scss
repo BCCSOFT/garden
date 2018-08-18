@@ -950,3 +950,217 @@ nav.mobile-pos-nav {
 .x990_hardware_spec {
   @extend .v1_hardware_spec;
 }
+
+
+
+//-----------------------------------------------------------------------------
+// 行動商務 - 概觀
+//------ -----------------------------------------------------------------------
+
+.retail-solution_mobile_banner {
+  // @extend .mobile-pos_banner;
+  @extend %banner_restaurant-solution;
+  background-image: url('../../image/_global/cloud-bg.png'), url("../../image/_global/bg-blue-light.jpg");
+  $color: white;
+
+  article {
+    padding-bottom: 0;
+
+    hgroup img {
+      @include img('product/mobile-pos/title.png');
+    }
+
+    > ol {
+      @extend %banner_main-svg;
+
+      li {
+        &:nth-child(1) span img {
+          @include svg_payment($color);
+        }
+
+        &:nth-child(2) span img {
+          @include svg_multivariate($color);
+        }
+
+        &:nth-child(3) span img {
+          @include svg_invoice($color);
+        }
+      }
+    }
+
+    nav.product-nav-img {
+      @extend %mobile-pos-nav;
+      margin-top: 55px;
+      @include tablet-7inch-max {
+        margin-top: 10%;
+      }
+
+      article {
+        @include tablet-7inch-max {
+          padding: 0;
+        }
+      }
+
+      li {
+        span img {
+          @include scale-4x3;
+        }
+
+        &:nth-child(1) {
+          span img {
+            @include img('product/mobile-pos/v1-banner.png');
+          }
+        }
+
+        &:nth-child(2) {
+          span img {
+            @include img('product/mobile-pos/x990-banner.png');
+          }
+        }
+
+        a[data-type="button"] {
+          @include btn-full;
+        }
+      }
+    }
+  }
+}
+
+body.retail-solution {
+  $color: #00b9f6;
+  nav.mobile-pos-nav a {
+    &.active,
+    &:hover {
+      color: $color;
+      border-color: $color;
+    }
+  }
+  .mobile-pos_overview_v1{
+    h2{
+      color: $color;
+      &:before{
+        @include svg_code($color);
+      }
+    }
+    ol {
+        @include block-v1($color);
+      }
+  }
+  .mobile-pos_overview_x990{
+    h2{
+      color: $color;
+      &:before{
+        @include svg_sound($color);
+      }
+    }
+     ol {
+        @include block-x990($color);
+      }
+  }
+}
+
+.retail-solution_mobile_overview_situation {
+  @include section;
+  background-color: $section-bg;
+  $color: #0dbcef;
+
+  ol {
+    @include list-grid-4_desktop;
+    @include list-grid-3_mobile;
+
+    li {
+      &:nth-child(1) img {
+        @include svg_restaurant($color);
+      }
+
+      &:nth-child(2) img {
+        @include svg_retail($color);
+      }
+
+      &:nth-child(3) img {
+        @include svg_dog($color);
+      }
+
+      &:nth-child(4) img {
+        @include svg_drug($color);
+      }
+
+      &:nth-child(5) img {
+        @include svg_pay($color);
+      }
+
+      &:nth-child(6) img {
+        @include svg_home-delivery($color);
+      }
+
+      &:nth-child(7) img {
+        @include svg_cooperation($color);
+      }
+
+      &:nth-child(8) img {
+        @include svg_pig($color);
+      }
+
+      &:nth-child(9) img {
+        @include svg_e-supplier($color);
+      }
+
+      &:nth-child(10) img {
+        @include svg_delivery-2($color);
+      }
+
+      &:nth-child(11) img {
+        @include svg_business-circles($color);
+      }
+
+      &:nth-child(12) img {
+        @include svg_medicine-box($color);
+      }
+
+      figure {
+        padding: 10% 15%;
+      }
+
+      span {
+        text-align: right;
+        width: 60px;
+      }
+
+      img {
+        @include scale(60px,60px);
+      }
+    }
+  }
+}
+
+body.retail-solution {
+  // 行動商務 - 軟體介紹
+  .mecr_software_banner {
+    //(文字色,背景色左,背景色右)
+    @include banner-gradient(white,#53cdf4,#01c0f4);
+  }
+  // 行動商務 - 簡易掃碼版 - 硬體介紹
+  .v1_hardware_banner {
+    //(文字色,背景色左,背景色右)
+    @include banner-gradient(white,#53cdf4,#01c0f4);
+
+    figure {
+      text-align: center;
+
+      hgroup ol {
+        @include block-v1(rgba(0, 184, 235, 0.99));
+      }
+    }
+  }
+  // 行動商務 - 進階感應版 - 硬體介紹
+  .x990_hardware_banner {
+    //(文字色,背景色左,背景色右)
+    @include banner-gradient(white,#53cdf4,#01c0f4);
+
+    figure {
+      hgroup ol {
+        @include block-x990(rgba(0, 184, 235, 0.99));
+      }
+    }
+  }
+}
