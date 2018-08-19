@@ -15542,21 +15542,6 @@
 		"oAP": "\/case\/xin_case_id=retail.php",
 		"oF": 0
 		},
-	"\/composer.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/composer-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/composer.phar": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/composer.phar",
-		"oF": 0
-		},
 	"\/feature\/xin_feature_analysis-report.php": {
 		"cB": 0,
 		"ft": 8192,
